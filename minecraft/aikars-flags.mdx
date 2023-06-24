@@ -1,0 +1,100 @@
+---
+  title: "Optimizing Minecraft Servers with Aikar's Flags" 
+  sidebarTitle: "Aikar's Flags"
+  description: "A guide to using Aikar's flags to optimize the performance of your Minecraft server." 
+---
+
+"Aikar's Flags" are command-line options for common
+[JVM](https://en.wikipedia.org/wiki/Java_virtual_machine) implementations like
+OpenJDK and OpenJ9 designed to improve performance of the JVM's G1GC garbage
+collector for the Minecraft Java Edition server.
+
+All Minecraft server lineups from BerryByte come equipped with Aikar's flags by
+default.
+
+## Setting up the flags
+
+Setting up Aikar's Flags for your server is a very simple process, simply update
+the parameters of the command that you use to start up your server with the
+flags listed below.
+
+<Info>
+  Remember to replace `{SERVER_MEMORY}` with the amount of RAM you want to
+  allocate to your server.
+</Info>
+
+### Less than 12GB of RAM
+
+```bash copy
+java -Xms{SERVER_MEMORY}M -Xmx{SERVER_MEMORY}M -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar paper.jar --nogui
+```
+
+### 12GB of RAM or more
+
+```bash copy
+java -Xms{SERVER_MEMORY}M -Xmx{SERVER_MEMORY}M -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=40 -XX:G1MaxNewSizePercent=50 -XX:G1HeapRegionSize=16M -XX:G1ReservePercent=15 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=20 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar paper.jar --nogui
+```
+
+## Breakdown
+
+<Warning>
+  If you're running on a shared hosting (one bulky machine runs multiple
+  Minecraft servers) with strict resource allocation (e.g. Docker containers;
+  this applies for BerryByte's Minecraft lineup), it is recommended to leave out
+  roughly 1GB of RAM for the JVM's overhead (this is automatically done at
+  BerryByte).
+</Warning>
+
+- `-Xmx`: Sets the maximum amount of memory that the JVM can use. This can help
+  prevent the server from crashing due to out-of-memory errors.
+- `-Xms`: Sets the initial amount of memory that the JVM uses when starting up.
+  Aikar's flags set this to the same value as `-Xmx`, because unused memory is
+  wasted memory.
+- `-XX:+UseG1GC`: Enables the Garbage-First (G1) Garbage Collector, which is a
+  low-latency garbage collector that adaptively chooses how much memory to give
+  to each region to optimize pause time
+- `-XX:+ParallelRefProcEnabled`: Enables parallel reference processing which
+  helps improves performance and limit lag spikes.
+- `-XX:MaxGCPauseMillis`: Sets the maximum amount of time that the JVM can spend
+  on garbage collection. This can help reduce lag spikes.
+- `-XX:+UnlockExperimentalVMOptions`: Unlocks experimental JVM options.
+- `-XX:+DisableExplicitGC`: Disables explicit garbage collection, which can help
+  reduce lag spikes.
+- `-XX:+AlwaysPreTouch`: Enables pre-touching, which can help reduce lag spikes.
+- `-XX:G1NewSizePercent`: Sets the percentage of the heap that is used for new
+  objects.
+- `-XX:G1MaxNewSizePercent`: Sets the maximum percentage of the heap that is
+  used for new objects.
+- `-XX:G1HeapRegionSize`: Sets the size of the G1 heap region.
+- `-XX:G1ReservePercent`: Sets the percentage of the heap that is reserved for
+  G1.
+- `-XX:G1HeapWastePercent`: Sets the percentage of the heap that is wasted.
+- `-XX:G1MixedGCCountTarget`: Sets the target number of mixed garbage
+  collections.
+- `-XX:InitiatingHeapOccupancyPercent`: Sets the percentage of the heap that is
+  used before a mixed garbage collection is triggered.
+- `-XX:G1MixedGCLiveThresholdPercent`: Sets the percentage of live objects that
+  are required for a mixed garbage collection to be triggered.
+- `-XX:G1RSetUpdatingPauseTimePercent`: Sets the percentage of time that is
+  spent on updating the remembered set.
+- `-XX:SurvivorRatio`: Sets the ratio of the survivor space to the eden space.
+- `-XX:+PerfDisableSharedMem`: Disables shared memory, which can help reduce lag
+  spikes.
+- `-XX:MaxTenuringThreshold`: Sets the maximum tenuring threshold, which can
+  help reduce lag spikes.
+
+<Info>
+  This is only a quick recap, you should give [Aikar's
+  blog](https://mcflags.emc.gs) a read if you're interested on how these really
+  work.
+</Info>
+
+It is important to carefully consider the values you use for each startup flag,
+as setting them too high or too low can have negative impacts on the performance
+of the server. If you are having trouble using Aikar's flags, check the
+`server.log` file in the logs folder of your server for any error messages.
+
+If you continue to experience issues with the flags, feel free to ask for help
+on our [Discord server](https://berrybyte.net/discord). If these flags have
+helped your server significantly, consider donating to
+[Aikar](https://donate.emc.gs/MC%20Flags) to support his work.

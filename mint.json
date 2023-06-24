@@ -1,0 +1,86 @@
+{
+  "name": "BerryByte",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#DC3962",
+    "light": "#FF81A0",
+    "dark": "#AE0C35"
+  },
+  "topbarCtaButton": {
+    "name": "Deploy Now",
+    "url": "https://berrybyte.net/vps"
+  },
+  "topbarLinks": [
+    {
+      "name": "GitHub",
+      "url": "https://github.com/berrybyte-net/documentation"
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Minecraft",
+      "icon": "cubes",
+      "url": "minecraft"
+    },
+    {
+      "name": "Rust",
+      "icon": "radiation",
+      "url": "rust"
+    },
+    {
+      "name": "Contact Us",
+      "icon": "envelope",
+      "url": "mailto:hello@berrybyte.net"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Welcome",
+      "pages": ["introduction"]
+    },
+    {
+      "group": "Lime (Game Panel)",
+      "pages": [
+        "lime/overview",
+        "lime/backups",
+        "lime/importing-files",
+        "lime/recycle-bin",
+        "lime/sub-users"
+      ]
+    },
+    {
+      "group": "Minecraft",
+      "pages": [
+        "minecraft/introduction",
+        {
+          "group": "Plugins",
+          "pages": [
+            "minecraft/plugins/chunky",
+            "minecraft/plugins/dynmap"
+          ]
+        },
+        {
+          "group": "Common Errors",
+          "pages": ["minecraft/common-errors/connection-timed-out"]
+        },
+        "minecraft/aikars-flags",
+        "minecraft/updating-jars",
+        "minecraft/installing-modpacks",
+        "minecraft/changing-versions"
+      ]
+    },
+    {
+      "group": "Rust",
+      "pages": ["rust/introduction"]
+    }
+  ],
+  "footerSocials": {
+    "website": "https://berrybyte.net/",
+    "github": "https://github.com/berrybyte-net/documentation",
+    "discord": "https://discord.gg/Wc9wMZxQ2D"
+  }
+}

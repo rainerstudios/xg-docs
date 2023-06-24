@@ -1,0 +1,133 @@
+---
+title: "Backups"
+description: "A guide how to back up your server's files in Lime."
+---
+
+Our team truly believes that the key to success is backups. We're not kidding.
+Backups are an essential tool for everyone, whether they are server developers,
+junior enthusiasts, or even the average end-user. Backups make life safe.<br/>
+Here at BerryByte, we've developed and fine-tuned a set of backup tools to make
+your life easy. In addition to you taking your own backups, we take daily
+backups on every server to ensure the most safe and available service for our
+users. We also utilize data deduplication, and data mirroring to further make
+the backups more efficient.
+
+To take things even further, we've added additional functionality to the normal
+backup experience, including:
+
+## Creating
+
+To create a 1:1 copy of your server to store safely, head to
+https://game.berrybyte.net/`server-id`/backups, replacing the `server-id` value
+with your own. This is found beside the IP address and the server software text
+opposite the power controls.
+
+![](/images/backups.png)
+
+Below the description of the backup system, you can find a button named **Create
+Backup**, which will open a modal with information you can fill out:
+
+![](/images/backups-2.png)
+
+- `Backup name`: Name it something memorable, or alternatively you can leave
+  this empty which will be autofilled with a timestamp.
+- `Ignored Files & Directories`: If there are any files or folders you would
+  like to ignore and not take a backup of, list them here. You will need to
+  enter the path of the directory/file relative to the main directory, e.g.
+  `/plugins/Dynmap/*`. This ignores all files inside the `Dynmap` directory.
+- `Locked`: Set a lock on the backup to prevent accidental deletions. You can
+  toggle this by clicking the three dots on the specified backup to remove or
+  enable the lock.
+
+## Deleting
+
+The Basic plan comes with 3 backup slots, Minecraft+ comes with 8 backup slots,
+and Minecraft Elder comes with 10. If you are out of slots, you can delete a
+backup to create space for a new one. This can be done by pressing the three
+dots on the specified backup and pressing `Delete`. A confirmation modal will
+pop up which you can confirm or deny the deletion process. These backups
+**CANNOT** be recovered, so delete at your own risk.
+
+## Restoring
+
+Now that you've created some backups, and you have a situation where you need to
+restore it. A bad plugin configuration, or someone raided and nuked your SMP
+(we've all been there).
+
+Restoring backups is as easy as pressing two buttons! You can press the three
+dots on the backup you would like to restore, and a modal will pop up asking you
+whether you would like to delete all files before restoring the backup. If
+selected, this **CANNOT** be reversed, so restore at your own risk. An advice
+would be to take a backup of the server before restoring it if you are unsure
+whether it may fix or break it.
+
+![](/images/backups-3.png)
+
+## Mounting
+
+Sometimes, you may not want to restore the whole 1:1 copy of the server you
+created, as that would overwrite the whole server. You may only want to restore
+specific files, like a config.yml from a plugin you accidentally misconfigured,
+or deleted the `server.properties` file by accident and want to restore that
+without losing all of your progress.
+
+All these reasons inspired us to create a **Backup Mounter**. This feature
+allows you to **mount** a backup _as a folder_ to your file manager, where you
+can restore specific files or folders!
+
+<Warning>
+  During the process of a mounted backup, you may not be able to run power
+  controls or do similar tasks until it is unmounted.
+</Warning>
+
+![](/images/backups-4.png)
+
+To mount a backup, press the three dots on the backup you would like to mount,
+and it will mount the backup in your file manager.
+
+![](/images/backups-5.png)
+
+To unmount the backup, press the icon on the mounted backup folder inside the
+file manager, and it will unmount the backup for you. Now, you can simply go
+into the folder, select the specific files you want to restore and either press
+`Restore` which restores the file/folder back to its relative directory in the
+server, or `Move` which allows you to restore the file/folder to a different
+directory - use the `../` path before the file/folder, in the popup modal,
+you're wanting to restore to, to move out of the mounted backup folder and
+restore to a custom path.
+
+## Technology
+
+### Deduplication
+
+Our backup system uses advanced techniques such as
+[data deduplication](https://en.wikipedia.org/wiki/Data_deduplication).<br/>
+Deduplication is a technique where after you take the **initial full server
+backup**, the backups created after it only saves the files that were changed.
+
+**Example:**
+
+- You take the initial backup of your server which creates a 1:1 copy.
+- To introduce some new features, you start by adding two new plugins.
+- You take a backup again, but this time it only backs up the two plugins you
+  installed.
+
+The whole point of this system is to make backups significantly more efficient
+and quicker, and in our tests we saw over 15x difference in speeds!
+
+### Off-site backups
+
+As well as you taking your own backups, we take redundant backups to our
+off-site servers **every 24 hours**. To restore a backup,
+[create a ticket](https://berrybyte.net/ticket) in the client area, and provide:
+
+- your server's ID (from the URL)
+- E-mail address
+- the date of the backup you want restored
+
+Once we have this information, we'll restore the backup for you.
+
+<Warning>
+  We recommend taking another backup before we restore the backup for you, as
+  rolling back restored backups is not possible.
+</Warning>

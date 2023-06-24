@@ -1,0 +1,75 @@
+---
+title: "Importing files"
+description:
+  "We've included and built in several ways to upload your server's files or
+  folders into the panel including SFTP, web upload, server importer, and
+  download from URL."
+---
+
+## Web upload
+
+To directly upload files to the panel, you can head to the **File Manager** tab,
+and drag-and-drop the files to the screen.
+
+If you want to upload a folder to the panel, you may encounter a
+`Failed to get multipart form data from request` error. You will need to archive
+the folder using a tool like [7Zip](https://7zip.org) or
+[WinRAR](https://winrar.org) and upload it that way. Once uploaded, you can
+press the three dots and press the **Unarchive** button.
+
+This method of upload is limited to **100MB**.
+
+## Server importer
+
+On the panel, we've built in a tool to import your server's files from another
+host or server directly into the panel. This tool is located in the **File
+Manager** tab, and is the **Import Files** button. Refer to the GIF below for a
+visual example.
+
+![](/images/importing.gif)
+
+There, you can fill in the fields with the details of the SFTP/FTP/FTPS
+credentials from your old host. Normally, the base directory can be left as
+default for most users, unless you only want to import a specific folder. For
+example, if you only want to import the `plugins` folder, you would fill the
+field as `/plugins` and the panel will disregard all other files except for that
+specific folder.
+
+Once you've filled in the fields, you can press the **Import Files** button.
+This will import all of your server's files, like your server's configuration
+files, such as the `server.properties` file, and your server's plugins, and
+worlds (unless you specified otherwise).
+
+## Importing via SFTP
+
+[SFTP](https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol) is a secure way
+to transfer files from your computer to the panel. This is a great way to upload
+your server's files to the panel, and is the recommended way to upload your
+server's files especially if the files are stored on your computer, or if the
+files are larger than 100MB.
+
+1. Download a SFTP client such as [WinSCP](https://winscp.net/eng/index.php)
+   (recommended) or [FileZilla](https://filezilla-project.org).
+2. Once installed, head to the **Settings** tab, and press the **Launch SFTP**
+   button.
+3. You will be prompted with a window to enter your SFTP password, it will be
+   the same password used to log in to the control panel.
+4. Locate the files/directories on your computer that you want to transfer, and
+   drag-and-drop them into the window of your FTP client. This will upload the
+   files to the panel and a rough ETA (estimated time of arrival) will be
+   displayed normally at the bottom of the screen.
+
+## Download files from a URL
+
+You can also download files from a URL directly into the panel. This is a great
+way to download a plugin, a resource pack or a server JAR from a website and
+upload it directly into the panel.
+
+1. Head to the **File Manager** tab, and press the **Download from URL** button.
+2. You will be prompted with a window to enter the URL of the file you want to
+   download. You can also enter the name of the file you want to download, and
+   the location you want to download it to.
+3. Once you've filled in the fields, you can press the **Download** button. This
+   will download the file from the URL, and upload it to the panel.
+
+![](/images/importing-2.gif)
