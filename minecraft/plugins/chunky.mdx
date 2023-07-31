@@ -1,8 +1,7 @@
 ---
 title: "Chunky"
-description:
-  "A guide to using Chunky to pre-generate your worlds; increase performance and
-  reduce server lag."
+description: "A guide to using Chunky to pre-generate your worlds; increase performance and reduce server lag."
+tags: ["chunky", "pregen", "pregeneration", "pre-gen", "pre-generation", "performance", "lag", "minecraft", "minecraft server", "optimize server"]
 ---
 
 [Chunky](https://github.com/pop4959/Chunky) is a Bukkit plugin (or a mod), that
@@ -14,50 +13,38 @@ move through chunks that are already generated.
 
 ### Bukkit-based servers
 
-To get started with pre-generating your world on a Bukkit-based server, download
-the plugin's JAR file from
-[SpigotMC](https://www.spigotmc.org/resources/chunky.81534/).<br/> Before using
-the plugin, place the downloaded JAR file into your `plugins` folder (either
-drag and drop into the file manager or [use SFTP](../../lime/importing-files)).
+To get started with pre-generating your world on a Bukkit-based server, download the plugin's JAR file from [SpigotMC](https://www.spigotmc.org/resources/chunky.81534/).<br/>
+Before using the plugin, place the downloaded JAR file into your `plugins` folder (either drag and drop into the file manager or [use SFTP](../../lime/importing-files)).
 
 ### Forge or Fabric-based servers
 
-To pre-generate worlds on modded servers, download the mod's file from
-[CurseForge](https://www.curseforge.com/minecraft/mc-mods/chunky-pregenerator-forge)
-or [Modrinth](https://modrinth.com/mod/chunky).<br/> Once downloaded, place the
-downloaded JAR file into your `/mods` folder (either drag and drop into the file
-manager or [use SFTP](/lime/importing-files).
+To pre-generate worlds on modded servers, download the mod's file from [CurseForge](https://www.curseforge.com/minecraft/mc-mods/chunky-pregenerator-forge) or [Modrinth](https://modrinth.com/mod/chunky).<br/>
+Once downloaded, place the downloaded JAR file into your `/mods` folder (either drag and drop into the file manager or [use SFTP](../../lime/importing-files)).
 
 Restart the server and Chunky should be good to go!
 
 ## Usage
 
-Using the plugin is fairly easy, however always take a backup of your server
-before you start, just to be on the safe side.
+Using the plugin is fairly easy, however always take a backup of your server before you start, just to be on the safe side.
 
 Chunky is a powerful tool with loads of commands, but we will only use these:
 
-1. `/chunky radius <chunk-size>` - sets the radius from the center to be
-   pre-generated
-   - the radius is how many blocks from the center chunk will be pre-generated
+1. `/chunky radius <chunk-size>` - sets the radius from the center to be pre-generated
+    - the radius is how many blocks from the center chunk will be pre-generated
 2. `/chunky center <x> <z>` - sets the center of the chunks to be pre-generated
-   - the center is the chunk that the pre-generation will start from, most
-     people should leave it as default, but it can be changed
-3. `/chunky setcorners <x1> <z1> <x2> <z2>` - sets the corners of the chunks to
-   be pre-generated
+    - the center is the chunk that the pre-generation will start from, most people should leave it as default, but it can be changed
+3. `/chunky setcorners <x1> <z1> <x2> <z2>` - sets the corners of the chunks to be pre-generated
 4. `/chunky start` - starts the generation process
 5. `/chunky pause` - pauses the generation process
 6. `/chunky resume` - resumes the generation process
 7. `/chunky stop` - stops the generation process
 8. `/chunky status` - shows the status of the generation process
 
-See [Chunky's documentation](https://github.com/pop4959/Chunky/wiki) for more
-commands and useful tips.
+See [Chunky's documentation](https://github.com/pop4959/Chunky/wiki) for more commands and useful tips.
 
 ### Example
 
-To pregenerate a 5000x5000 chunk area centered at `0,0`, you would use the
-following commands:
+To pregenerate a 5000x5000 chunk area centered at `0,0`, you would use the following commands:
 
 - `/chunky radius 5000`
 - `/chunky center 0 0`
@@ -67,16 +54,11 @@ following commands:
     Don't go crazy high with the radius! It can take a while (hours in fact) to pre-generate a world.
 
     Although you can play while running the plugin, you **will** experience some noticeable lag, so it's best to start it before you head to bed and wake up to a pre-generated server in the morning.
-
 </Warning>
-
 <Warning>
-  Note that pre-generation increases world size substantially, so make sure you
-  have enough free space on your disk.
+    Note that pre-generation increases world size substantially, so make sure you have enough free space on your disk. Check out [onlinemo.de/world](https://onlinemo.de/world) to calculate how large your world(s) will be before pregenerating them.
 </Warning>
 
-Once Chunky is done, all the chunks from X 5000 and Z 5000 to X -5000 and Z-5000
-have been pre-generated.
+Once Chunky is done, all the chunks from X 5000 and Z 5000 to X -5000 and Z-5000 have been pre-generated.
 
-If you have any questions, feel free to ask in our
-[Discord server](https://berrybyte.net/discord)!
+If you have any questions, feel free to ask in our [Discord server](https://berrybyte.net/discord)!
