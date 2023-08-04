@@ -20,12 +20,12 @@ could be due to one of the following reasons:
 - Double-check your proxy's configuration, if you have one.
 - See if anybody else experiences these issues on your server, if not, it's most
   likely a problem with your connection.
-- Use [Cloudflare's WARP](https://1.1.1.1/) - a tool that helps you connect to
-  more optimized network routes. This is a popular remedy especially for
-  lower-end connections.
+- Use [Cloudflare's WARP](https://1.1.1.1/) - a tool that helps you connect to a network with more optimized routes. This is a popular remedy especially for lower-end connections.
 - Increase the
   [`paper.playerconnection.keepalive`](https://docs.papermc.io/paper/reference/system-properties#paperplayerconnectionkeepalive)
-  timeout property (Paper only).
+  timeout property (Paper-forks only).
+
+  <Tip>Example: add `-Dpaper.playerconnection.keepalive=90` to your startup flags; extends the keepalive timeout to 90 seconds.</Tip>
 
 If nothing helped, reach out to us on [Discord](https://berrybyte.net/discord)
 or in a [ticket](https://berrybyte.net/ticket).

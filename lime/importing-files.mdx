@@ -8,25 +8,27 @@ description:
 
 ## Web upload
 
+<Info>This method of upload is limited to **100MB**.</Info>
+
 To directly upload files to the panel, you can head to the **File Manager** tab,
 and drag-and-drop the files to the screen.
 
-If you want to upload a folder to the panel, you may encounter a
-`Failed to get multipart form data from request` error. You will need to archive
-the folder using a tool like [7Zip](https://7zip.org) or
-[WinRAR](https://winrar.org) and upload it that way. Once uploaded, you can
-press the three dots and press the **Unarchive** button.
-
-This method of upload is limited to **100MB**.
+When trying to directly upload a folder to the file manager, you will encounter an error that reads: `Failed to get multipart form data from request`.
+You will need to archive the folder using a tool like [7Zip](https://7zip.org) or [WinRAR](https://winrar.org) and upload it that way.
+Once uploaded, you can press the three dots and press the **Unarchive** button.
 
 ## Server importer
+
+<Info>This method of upload does **not** have a size limitation.</Info>
 
 On the panel, we've built in a tool to import your server's files from another
 host or server directly into the panel. This tool is located in the **File
 Manager** tab, and is the **Import Files** button. Refer to the GIF below for a
 visual example.
 
-![](/images/importing.gif)
+<Frame>
+  <img src="/images/importing.gif" />
+</Frame>
 
 There, you can fill in the fields with the details of the SFTP/FTP/FTPS
 credentials from your old host. Normally, the base directory can be left as
@@ -41,6 +43,8 @@ files, such as the `server.properties` file, and your server's plugins, and
 worlds (unless you specified otherwise).
 
 ## Importing via SFTP
+
+<Info>This method of upload does **not** have a size limitation.</Info>
 
 [SFTP](https://en.wikipedia.org/wiki/SSH_File_Transfer_Protocol) is a secure way
 to transfer files from your computer to the panel. This is a great way to upload
@@ -72,4 +76,6 @@ upload it directly into the panel.
 3. Once you've filled in the fields, you can press the **Download** button. This
    will download the file from the URL, and upload it to the panel.
 
-![](/images/importing-2.gif)
+<Frame>
+  <img src="/images/importing-2.gif" />
+</Frame>
