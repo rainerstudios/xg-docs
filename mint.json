@@ -14,10 +14,20 @@
     "name": "Deploy Now",
     "url": "https://berrybyte.net/vps"
   },
+    "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true,
+    "raiseIssue": true
+  },
+  "analytics": {
+    "plausible": {
+        "domain": "berrybyte.net"
+    }
+  },
   "topbarLinks": [
     {
-      "name": "GitHub",
-      "url": "https://github.com/berrybyte-net/documentation"
+      "name": "Contact Sales",
+      "url": "mailto:hello@berrybyte.net"
     }
   ],
   "anchors": [
@@ -30,6 +40,11 @@
       "name": "Rust",
       "icon": "radiation",
       "url": "rust"
+    },
+    {
+      "name": "VPS",
+      "icon": "server",
+      "url": "vps"
     },
     {
       "name": "Contact Us",
@@ -49,7 +64,15 @@
         "lime/backups",
         "lime/importing-files",
         "lime/recycle-bin",
-        "lime/sub-users"
+        "lime/sub-users",
+        "lime/server-slices"
+      ]
+    },
+    {
+      "group": "Fusion (VPS Control Panel)",
+      "pages": [
+        "fusion/overview",
+        "fusion/backups"
       ]
     },
     {
@@ -60,7 +83,9 @@
           "group": "Plugins",
           "pages": [
             "minecraft/plugins/chunky",
-            "minecraft/plugins/dynmap"
+            "minecraft/plugins/dynmap",
+            "minecraft/plugins/geyser",
+            "minecraft/plugins/votifier"
           ]
         },
         {
@@ -76,6 +101,10 @@
     {
       "group": "Rust",
       "pages": ["rust/introduction"]
+    },
+    {
+      "group": "VPS",
+      "pages": ["vps/introduction"]
     }
   ],
   "footerSocials": {
