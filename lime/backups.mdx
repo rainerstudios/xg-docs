@@ -5,11 +5,12 @@ description: "A guide how to back up your server's files in Lime."
 
 Our team truly believes that the key to success is backups. We're not kidding.
 Backups are an essential tool for everyone, whether they are server developers,
-junior enthusiasts, or even the average end-user. Backups make life safe.<br/>
+junior enthusiasts, or even the average end-user. **Backups make life safe.**
+
 Here at BerryByte, we've developed and fine-tuned a set of backup tools to make
-your life easy. In addition to you taking your own backups, we take daily
-backups on every server to ensure the most safe and available service for our
-users. We also utilize data deduplication, and data mirroring to further make
+your life easy. In addition to you taking your own backups, we take **daily
+off-site backups** on every server to ensure the most safe and available service for our
+users. We also utilize **data deduplication**, and **data mirroring** to further make
 the backups more efficient.
 
 To take things even further, we've added additional functionality to the normal
@@ -26,8 +27,8 @@ opposite the power controls.
   <img src="/images/backups.png" />
 </Frame>
 
-Below the description of the backup system, you can find a button named **Create
-Backup**, which will open a modal with information you can fill out:
+Below the description of the backup system, you can find a button named "**Create
+Backup**", which will open a modal with information you can fill out:
 
 <Frame>
   <img src="/images/backups-2.png" />
@@ -48,9 +49,10 @@ Backup**, which will open a modal with information you can fill out:
 The Basic plan comes with 3 backup slots, Minecraft+ comes with 8 backup slots,
 and Minecraft Elder comes with 10. If you are out of slots, you can delete a
 backup to create space for a new one. This can be done by pressing the three
-dots on the specified backup and pressing `Delete`. A confirmation modal will
-pop up which you can confirm or deny the deletion process. These backups
-**CANNOT** be recovered, so delete at your own risk.
+dots on the specified backup and pressing "**Delete**". A confirmation modal will
+pop up which you can confirm or deny the deletion process. 
+
+<Warning>These backups **CANNOT** be recovered, so delete at your own risk.</Warning>
 
 ## Restoring
 
@@ -100,11 +102,29 @@ and it will mount the backup in your file manager.
 To unmount the backup, press the icon on the mounted backup folder inside the
 file manager, and it will unmount the backup for you. Now, you can simply go
 into the folder, select the specific files you want to restore and either press
-`Restore` which restores the file/folder back to its relative directory in the
-server, or `Move` which allows you to restore the file/folder to a different
+"**Restore**" which restores the file/folder back to its relative directory in the
+server, or "**Move**" which allows you to restore the file/folder to a different
 directory - use the `../` path before the file/folder, in the popup modal,
 you're wanting to restore to, to move out of the mounted backup folder and
 restore to a custom path.
+
+## Off-site backups
+
+As well as you taking your own backups, we take redundant backups to our
+off-site servers **every 24 hours** with a retention of 14 days. To restore a backup,
+[create a ticket](https://berrybyte.net/ticket) in the client area, and provide:
+
+- Your server ID (**"Settings"** tab -> **"Debug Information"**)
+- Email address
+- The date of the backup you want restored
+
+Once we have this information, we'll restore the backup for you.
+
+<Warning>
+  We recommend taking another backup before we restore the backup for you, as
+  rolling back restored backups is not possible.
+</Warning>
+
 
 ## Technology
 
@@ -122,22 +142,6 @@ backup**, the backups created after it only saves the files that were changed.
 - You take a backup again, but this time it only backs up the two plugins you
   installed.
 
-The whole point of this system is to make backups significantly more efficient
-and quicker, and in our tests we saw over 15x difference in speeds!
+The idea behind the implementation of this system is to make backups significantly more efficient, quicker, and allow us to offer more backup slots for all servers.
 
-### Off-site backups
-
-As well as you taking your own backups, we take redundant backups to our
-off-site servers **every 24 hours** with a retention of 14 days. To restore a backup,
-[create a ticket](https://berrybyte.net/ticket) in the client area, and provide:
-
-- Your server ID (**"Settings"** tab -> **"Debug Information"**)
-- Email address
-- The date of the backup you want restored
-
-Once we have this information, we'll restore the backup for you.
-
-<Warning>
-  We recommend taking another backup before we restore the backup for you, as
-  rolling back restored backups is not possible.
-</Warning>
+If you need help, reach out to us on our [Community Discord](https://berrybyte.net/discord) or in a [ticket](https://berrybyte.net/ticket). 

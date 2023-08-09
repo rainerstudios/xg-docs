@@ -17,6 +17,12 @@ When trying to directly upload a folder to the file manager, you will encounter 
 You will need to archive the folder using a tool like [7Zip](https://7zip.org) or [WinRAR](https://winrar.org) and upload it that way.
 Once uploaded, you can press the three dots and press the **Unarchive** button.
 
+### The following archive types are supported:
+
+- .zip
+- .7zip
+- .tar.gz
+
 ## Server importer
 
 <Info>This method of upload does **not** have a size limitation.</Info>
@@ -63,7 +69,13 @@ files are larger than 100MB.
    files to the panel and a rough ETA (estimated time of arrival) will be
    displayed normally at the bottom of the screen.
 
+The speed of the transfer may seem significantly low, however in most cases that is due to importing hundreds (sometimes even thousands!) of several smaller files rather than one big file.
+
+<Tip>To speed up the SFTP import, archive your files into any one of the [supported archive types](#the-following-archive-types-are-supported). Then, transfer that archive through SFTP and [unarchive](/lime/unarchiving) it on the panel directly.</Tip>
+
 ## Download files from a URL
+
+<Info>This method of upload does **not** have a size limitation.</Info>
 
 You can also download files from a URL directly into the panel. This is a great
 way to download a plugin, a resource pack or a server JAR from a website and
@@ -79,3 +91,5 @@ upload it directly into the panel.
 <Frame>
   <img src="/images/importing-2.gif" />
 </Frame>
+
+If you need help, reach out to us on [Discord](https://berrybyte.net/discord) or in a [ticket](https://berrybyte.net/ticket).

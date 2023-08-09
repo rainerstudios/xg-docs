@@ -14,18 +14,18 @@ This guide will walk you through installation and usage of Dynmap on your Minecr
     You will need a public IP or a port forwarding service to allow other people to use your Dynmap, if you're running your Minecraft server locally.
 </Warning>
 
-To install Dynmap on your Minecraft server, follow these steps:
+To install and configure Dynmap on your Minecraft server, follow these steps:
 
 1. Download the latest version of Dynmap from [SpigotMC](https://www.spigotmc.org/resources/dynmap%C2%AE.274/).
-2. Place the downloaded JAR file in the `plugins`/`mods` (depends on your server software; `plugins` for Bukkit-based servers, `mods` for Forge and Fabric) folder of your Minecraft server.
-3. Start the server. The plugin will automatically be installed and activated.
+2. Place the downloaded JAR file in the `plugins`/`mods` (depends on your server software; `plugins` for Bukkit-based servers, `mods` for Forge and Fabric) folder of your Minecraft server. Refer to [this guide](../../lime/importing-files) for help.
+3. Restart the server. The plugin will automatically be installed and activated.
 4. When the server has fully started, stop the server.
 5. Port-forward Dynmap's web interface (this is done in your router's configuration, if you're running your Minecraft server locally; this is done in the Network tab on Lime).
 6. Navigate to the `plugins/dynmap` folder in your server's directory.
 7. Edit the `configuration.txt` file and set the port to the one created in the 5th step, and a URL path you want to use for the Dynmap web interface (e.g. /dynmap). Make sure to save the file.
 8. Start the server again. Dynmap will now be fully installed and configured.
 
-### Reverse-proxying
+## Reverse-proxying
 
 A [reverse proxy](https://en.wikipedia.org/wiki/Reverse_proxy) allows you to access the Dynmap web interface using a custom domain name, instead of the server's IP address.
 
@@ -55,7 +55,8 @@ All the steps stated below after the 2nd step have been simplified to a single c
 curl -s https://cdn.berrybyte.net/scripts/dynmap.sh | sudo bash
 ```
 
-##### Manually
+####
+ Manually
 
 1. Set up a server to act as the reverse proxy. This can be a dedicated physical or virtual machine from a public cloud provider (order one at https://berrybyte.net/vps ;) ).
 2. Install a web server on the machine which you intend to run the reverse proxy on (e.g. Nginx, Apache, etc.): `sudo apt update && sudo apt -y install nginx`
@@ -93,7 +94,7 @@ On the left side of the interface, you will see a list of available maps. You ca
 
 ## Customization
 
-Dynmap has a wide range of customization options, which can be accessed by clicking on the **Configure Dynmap** button at the top of the web interface. From here, you can adjust settings such as the map's zoom level, the visibility of players and markers on the map, and the appearance of the map itself.
+Dynmap has a wide range of customization options, which can be accessed by clicking on the "**Configure Dynmap**" button at the top of the web interface. From here, you can adjust settings such as the map's zoom level, the visibility of players and markers on the map, and the appearance of the map itself.
 
 For more advanced customization options, you can edit the configuration.txt file in the `plugins/dynmap` folder on your server. This file contains detailed documentation for all available customization options.
 

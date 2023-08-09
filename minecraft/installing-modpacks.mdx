@@ -1,29 +1,27 @@
 ---
 title: "Installing modpacks"
-description: "While our team is in the process of developing a modpack manager solution to be
-integrated into Lime, we'll have to stick with a manual installation for now."
----
+description: "Learn how to install modpacks from RLCraft, All The Mods 9 (ATM9), and more on your Minecraft server."
+--- 
+
+While our team is in the process of developing a modpack manager solution to be integrated into Lime, we'll have to stick with a manual installation for now.
 
 ## Installation
 
-To install a modpack,
-[upload the modpack's server archive](/lime/importing-files) (usually in a
-`.zip` format) to your file manager. Once uploaded, you will need to find the
-required Forge version specified in the modpack's readme file or on the
-modpack's webpage. In the "Minecraft" tab, input the version number (e.g.
-`1.16.5-36.2.39`) and press **Reinstall** in the "Settings" tab to download the
-necessary Forge version.
+To install a modpack, [upload the modpack's server archive](../../lime/importing-files) (usually in a `.zip` format) to your file manager. 
 
-Next, delete all files except for your modpack and select **Reinstall** again.
-Start the server at least once, then unpack the modpack's archive file. Finally,
-restart the server to complete the modpack installation process.
+Once uploaded, you will need to find the required Forge version specified in the modpack's readme file or on the modpack's webpage. In the "Startup" tab, input the version number (e.g. `1.16.5-36.2.39`) in the "Forge Version" field. Press **Reinstall** in the "Settings" tab to download the necessary Forge version.
 
-If the .zip of the modpack opens a folder, head into that folder and select all
-the files. Then, press the "Archive" button and move the archived file into the
-main directory. This can be done by pressing the **Move** button and adding a
-`../` behind the name of the file (e.g `../archive-2023-01-08T021140Z.tar.gz`).
-This will move the file one directory up. Then, press the **Unarchive** button,
-that will extract the files into the main directory.
+Next, delete all files except for your modpack and select **Reinstall** again. Start the server at least once, then unpack the modpack's archive file. This can be done by clicking on the three dots beside the file, and pressing "Unarchive". Finally, restart the server to complete the modpack installation process.
 
-Feel free to ask in our [Discord server](https://berrybyte.net/discord), if you
-have any questions.
+If the .zip of the modpack opens a folder inside the archive, head into that folder and select all the files. Then, press the "Archive" button and move the archived file into the main directory. This can be done by pressing the **Move** button and adding a `../` behind the name of the file (e.g `../archive-2023-01-08T021140Z.tar.gz`) - (Edit: we've added an arrow besides the field to add the `../` automatically). This will move the file one directory up. Then, press the **Unarchive** button, that will extract the files into the main directory.
+
+Start your server, and you should be good to go! Do keep in mind it can take more time than normal when starting the server for the first time!
+
+## FAQ
+
+- **When I click on the three-dots, I don't see any unarchive button:** This normally means that the archive (.zip file) may have been corrupted during upload, or during when you downloaded it. Re-upload the archive to the server again, and see if that resolves it - if not, download the archive again.
+- **How do I upload my own custom modpack to the server:** Follow the same steps as mentioned, but upload your own archive to the server. Normally you may want to package the archive with the mod files, and the configuration files you've changed that are different from the default files that ship with Forge.
+- **I don't see any specific Forge version specified for the modpack:** If you aren't able to find any specific Forge version in the modpack's readme file, nor on the modpacks' webpage, instead of inputting a version number in the "Forge Version" field, you can leave that empty. Instead, enter a version in the "Minecraft Version" field with the version the modpack is for (e.g 1.16.5, 1.12.2, etc).
+
+
+Feel free to ask in our [Discord server](https://berrybyte.net/discord), if you have any questions.
