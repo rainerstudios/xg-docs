@@ -95,7 +95,8 @@
         "minecraft/aikars-flags",
         "minecraft/updating-jars",
         "minecraft/installing-modpacks",
-        "minecraft/changing-versions"
+        "minecraft/changing-versions",
+        "minecraft/convert-world"
       ]
     },
     {
