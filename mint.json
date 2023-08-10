@@ -61,11 +61,12 @@
       "group": "Lime (Game Panel)",
       "pages": [
         "lime/overview",
+        "lime/changelogs",
         "lime/backups",
+        "lime/server-slices",
         "lime/importing-files",
         "lime/recycle-bin",
-        "lime/sub-users",
-        "lime/server-slices"
+        "lime/sub-users"
       ]
     },
     {
