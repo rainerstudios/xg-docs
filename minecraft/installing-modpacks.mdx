@@ -1,27 +1,53 @@
 ---
 title: "Installing modpacks"
-description: "Learn how to install modpacks from RLCraft, All The Mods 9 (ATM9), and more on your Minecraft server."
---- 
+description: "Learn how to install modpacks from RLCraft, All The Mods 9 (ATM9), all the way to your own custom modpacks on your Minecraft server."
+---
 
 While our team is in the process of developing a modpack manager solution to be integrated into Lime, we'll have to stick with a manual installation for now.
 
+This guide will help you through the manual steps on how to upload, and play your favourite modpack on your Minecraft server.
+
 ## Installation
 
-To install a modpack, [upload the modpack's server archive](../lime/importing-files) (usually in a `.zip` format) to your file manager. 
+1. **Upload the modpack to your Minecraft Server:** 
 
-Once uploaded, you will need to find the required Forge version specified in the modpack's readme file or on the modpack's webpage. In the "Startup" tab, input the version number (e.g. `1.16.5-36.2.39`) in the "Forge Version" field. Press **Reinstall** in the "Settings" tab to download the necessary Forge version.
+To get started with installing your favourite modpack on your Minecraft server, first, [upload the modpack's server archive](../lime/importing-files) (usually in a `.zip` format) to your file manager on [Lime](https://game.berrybyte.net). This can be found on wherever you downloaded the modpack from, usually [Modrinth](https://modrinth.com), [CurseForge](https://curseforge.com), and others.
 
-Next, delete all files except for your modpack and select **Reinstall** again. Start the server at least once, then unpack the modpack's archive file. This can be done by clicking on the three dots beside the file, and pressing "Unarchive". Finally, restart the server to complete the modpack installation process.
+2. **Installing the correct version of Forge on your Minecraft Server**:
 
-If the .zip of the modpack opens a folder inside the archive, head into that folder and select all the files. Then, press the "Archive" button and move the archived file into the main directory. This can be done by pressing the **Move** button and adding a `../` behind the name of the file (e.g `../archive-2023-01-08T021140Z.tar.gz`) - (Edit: we've added an arrow besides the field to add the `../` automatically). This will move the file one directory up. Then, press the **Unarchive** button, that will extract the files into the main directory.
+Once uploaded, you will need to find the required Forge version specified in the modpack's readme file or on the modpack's webpage (usually similar to a set of numbers like `43.2.14`). In the "**Startup**" tab, input the version number (e.g. `1.19.1-43.2.14` - notice how we put the Minecraft version and then the forge version in between hyphens) in the "**Forge Version**" field. 
 
-Start your server, and you should be good to go! Do keep in mind it can take more time than normal when starting the server for the first time!
+Next, delete all the files inside your file manager **except** for the modpack's server archive. Press "**Reinstall**" in the "**Settings**" tab to install the necessary Forge version.
+
+3. **Unpacking the modpack server files:**
+
+Start the server at least once to generate all the server files and folders, and then unpack/unarchive the modpack's archive by clicking the three dots beside the archive, and pressing "**Unarchive**". 
+
+Finally, start the server to complete the modpack installation process and you should be good to go!
+
+<Note>Do keep in mind it can take more time than normal to start up the server when doing it for the first time with the modpack installed!</Note>
 
 ## FAQ
 
-- **When I click on the three-dots, I don't see any unarchive button:** This normally means that the archive (.zip file) may have been corrupted during upload, or during when you downloaded it. Re-upload the archive to the server again, and see if that resolves it - if not, download the archive again.
-- **How do I upload my own custom modpack to the server:** Follow the same steps as mentioned, but upload your own archive to the server. Normally you may want to package the archive with the mod files, and the configuration files you've changed that are different from the default files that ship with Forge.
-- **I don't see any specific Forge version specified for the modpack:** If you aren't able to find any specific Forge version in the modpack's readme file, nor on the modpacks' webpage, instead of inputting a version number in the "Forge Version" field, you can leave that empty. Instead, enter a version in the "Minecraft Version" field with the version the modpack is for (e.g 1.16.5, 1.12.2, etc).
+<Accordion title="Unarchiving the .zip/archive unpacks a folder instead of the files">
+Head into the unarchived folder, select all the files, and create an archive of all the files you need to import (three dots -> "**Archive**"). 
+
+Next, move the archive into the main directory. This can be done by pressing the "**Move**" button and adding a `../` behind the name of the file (e.g `../archive.tar.gz`) - (**Edit:** we've added an arrow besides the field to add the `../` automatically). This will move the file one directory up.
+
+Finally, press the "**Unarchive**" button, that will extract the files into the main directory into their own respective folders.
+</Accordion>
+
+<Accordion title="When I click on the three-dots, I don't see any unarchive button">
+This normally means that the archive (.zip file) may have been corrupted during upload, or during when you downloaded the archive. Re-upload the archive to the server again, and see if that resolves it - if not, download the archive again.
+</Accordion>
+
+<Accordion title="How do I upload my own custom modpack to the server">
+Follow the same steps as mentioned, but upload your own archive to the server. Normally you may want to package the archive with the mod files, and the configuration files you've changed that are different from the default files that ship with Forge.
+</Accordion>
+
+<Accordion title="I don't see any specific Forge version specified for the modpack">
+If you aren't able to find any specific Forge version in the modpack's readme file, nor on the modpacks' webpage, instead of inputting a version number in the "Forge Version" field, you can leave that empty. Instead, enter a version in the "Minecraft Version" field with the version the modpack is for (e.g 1.16.5, 1.12.2, etc). This will install the latest recommended available build.
+</Accordion>
 
 
-Feel free to ask in our [Discord server](https://berrybyte.net/discord), if you have any questions.
+Feel free to get help in our [Discord server](https://berrybyte.net/discord) if you run into issues!
