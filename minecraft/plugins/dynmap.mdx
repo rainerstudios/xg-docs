@@ -1,9 +1,10 @@
 ---
-  title: "Dynmap"
+  title: "Dynmap: Google Maps for your Minecraft Server"
+  sidebarTitle: "Dynmap"
   description: "A guide to use Dynmap to create and view a live map of your Minecraft server."
 ---
 
-[Dynmap®](https://github.com/webbukkit/dynmap) is a Bukkit plugin (or a mod), which can be used to view a live map of the server's worlds in a browser.
+[Dynmap®](https://github.com/webbukkit/dynmap) is a Bukkit plugin (and a mod), which can be used to view a live map of the server's worlds in a browser.
 
 There are more optimized alternatives like [BlueMap](https://github.com/BlueMap-Minecraft/BlueMap) and [squaremap](https://github.com/jpenilla/squaremap), but Dynmap is still a popular choice for many Minecraft servers.<br/>
 This guide will walk you through installation and usage of Dynmap on your Minecraft server!
@@ -16,8 +17,8 @@ This guide will walk you through installation and usage of Dynmap on your Minecr
 
 To install and configure Dynmap on your Minecraft server, follow these steps:
 
-1. Download the latest version of Dynmap from [SpigotMC](https://www.spigotmc.org/resources/dynmap%C2%AE.274/).
-2. Place the downloaded JAR file in the `plugins`/`mods` (depends on your server software; `plugins` for Bukkit-based servers, `mods` for Forge and Fabric) folder of your Minecraft server. Refer to [this guide](lime/importing-files.mdx) for help.
+1. Download the latest version of Dynmap from [SpigotMC](https://www.spigotmc.org/resources/dynmap%C2%AE.274/) (if you're running Paper, SpigotMC; any Bukkit forks), or [CurseForge](https://www.curseforge.com/minecraft/mc-mods/dynmapforge) (if you're running a modded server).
+2. Place the downloaded JAR file in the `plugins`/`mods` (depends on your server software; `plugins` for Bukkit-based servers, `mods` for Forge and Fabric) folder of your Minecraft server. Refer to [this guide](lime/importing-files) for help.
 3. Restart the server. The plugin will automatically be installed and activated.
 4. When the server has fully started, stop the server.
 5. Port-forward Dynmap's web interface (this is done in your router's configuration, if you're running your Minecraft server locally; this is done in the Network tab on Lime).
@@ -29,7 +30,7 @@ To install and configure Dynmap on your Minecraft server, follow these steps:
 
 A [reverse proxy](https://en.wikipedia.org/wiki/Reverse_proxy) allows you to access the Dynmap web interface using a custom domain name, instead of the server's IP address.
 
-#### With Lime
+#### With Lime at BerryByte
 
 If you have a Minecraft server from BerryByte, we've simplified all steps below to a few buttons on [Lime](../../lime/overview), where you can easily set up a reverse proxy for Dynmap using the [Proxies Manager](lime/proxies) tool. We take care of SSL certificates and all the configuration for you.
 

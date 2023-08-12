@@ -26,8 +26,8 @@
   },
   "topbarLinks": [
     {
-      "name": "Contact Sales",
-      "url": "mailto:hello@berrybyte.net"
+      "name": "Contact sales",
+      "url": "https://berrybyte.net/tickets "
     }
   ],
   "anchors": [
@@ -61,7 +61,6 @@
       "group": "Lime (Game Panel)",
       "pages": [
         "lime/overview",
-        "lime/changelogs",
         "lime/backups",
         "lime/server-slices",
         "lime/importing-files",
