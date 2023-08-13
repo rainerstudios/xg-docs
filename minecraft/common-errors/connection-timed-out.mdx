@@ -24,9 +24,11 @@ could be due to one of the following reasons:
 - Increase the
   [`paper.playerconnection.keepalive`](https://docs.papermc.io/paper/reference/system-properties#paperplayerconnectionkeepalive)
   timeout property (Paper-forks only).
-- Take an MTR (my trace-route) and analyze the output.
 
 <Tip>Example: add `-Dpaper.playerconnection.keepalive=90` to your startup flags; extends the keepalive timeout to 90 seconds.</Tip>
 
-If nothing helped, reach out to us on [Discord](https://berrybyte.net/discord)
-or in a [ticket](https://berrybyte.net/ticket).
+- Take an [MTR](https://www.cloudflare.com/learning/network-layer/what-is-mtr/) (my trace-route, a tool which allows one to diagnose network paths and routes) and analyze the output. Share the output with the BerryByte team and we can identify where the issue lies.
+
+
+If none of these suggestions help, reach out to us on [Discord](https://berrybyte.net/discord)
+or through a [ticket](https://berrybyte.net/ticket).
