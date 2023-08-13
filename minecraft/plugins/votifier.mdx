@@ -1,11 +1,11 @@
 ---
 title: "Votifier: Add voting and rewards functionality to your Minecraft Server"
 sidebarTitle: "Votifier"
-description: "A guide for using Votifier (NuVotifier) to add the voting, configuring rewards, and more to your Minecraft server with voting sites."
+description: "A guide for using Votifier (NuVotifier) to add voting, configuring rewards, and more to your Minecraft server with voting sites."
 tags: ["votifier", "voting", "minecraft", "paper", "nuvotifier", "rewards", "vote-forwarding"]
 ---
 
-[NuVotifier](https://www.spigotmc.org/resources/nuvotifier.13449/) is a Bukkit plugin which can be used to integrate the **voting functionality** to your Minecraft server and have your server **appear on voting sites**. This plugin is a fork of the original outdated voting plugin: **Votifier**. NuVotifier offers robust code, compatible with the latest Minecraft updates, and vote forwarding.
+[NuVotifier](https://www.spigotmc.org/resources/nuvotifier.13449/) is a plugin which can be used to integrate the **voting functionality** to your Minecraft server and have your server **appear on voting sites**. This plugin is a fork of the original outdated voting plugin: **Votifier**. NuVotifier offers robust code, compatible with the latest Minecraft updates, and vote forwarding.
 
 The plugin can also be **installed on proxies** like BungeeCord, Waterfall, Velocity, and others to be able to forward votes to other servers on the network. The plugin is also **backwards-compatible** with Minecraft versions so all versions from 1.7.2 to the latest version (1.19.2 at the time of writing) is supported. Neat, right?
 
@@ -16,7 +16,133 @@ This guide will walk you through installation and usage of NuVotifier (Votifier)
 
 To install and configure NuVotifier on your Minecraft server, follow these steps:
 
-1. Download the latest version of NuVotifier from [SpigotMC](https://www.spigotmc.org/resources/nuvotifier.13449/).
-2. Place the downloaded JAR file in the `plugins`/`mods` (depends on your server software; `plugins` for Bukkit-based servers, `mods` for Forge and Fabric) folder of your Minecraft server. Refer to [this guide](../../lime/importing-files) for help.
+<Tip>The same JAR works for both proxies (Bungeecord / Velocity) and Bukkit-based servers.</Tip>
+
+1. Download the latest version of NuVotifier from [SpigotMC](https://www.spigotmc.org/resources/nuvotifier.13449/) or [Github](https://github.com/parallelblock/NuVotifier/releases).
+2. Place the downloaded JAR file in the `plugins` (The same directory, `plugins`, can be used for both Bukkit-based servers and proxies) folder of your Minecraft server. Refer to [this guide](../../lime/importing-files) for help.
 3. Restart the server. The plugin will automatically be installed and activated.
-4. When the server has fully started, stop the server.
+
+## Normal Bukkit-based Server Setup
+
+1. **Open a listening port for the plugin:**
+
+To have voting sites listen for votes through the plugin, you need to have an open port that can be accessed by the site available. You can do this by heading into the `Network` tab on the game control panel, Lime, and press the "**Create Allocation**" button to create a port.
+
+The default port NuVotifier uses is `8192` however you can change that value to any open and unused port between `1` and `65535`. 
+
+2. **Label the newly-created port on the `Network` tab:**
+
+Once the port is made, you can label the port for future reference in the `Notes` area. **Do not** make this the **Primary** port as that would be the port reserved to connect to your Minecraft server. 
+
+3. **Configure the port and the IP address in the configuration file**
+
+Head to `/plugins/Votifier/` and open the `config.yml` file. There, modify the `port` value (on `line 6` at the time of writing this guide) to the port that you've created on the previous step.
+
+The `ip` value is by default set to `0.0.0.0` which listens to all interfaces (IP addresses) that is bound to your server. The default value should usually work, and in the case it doesn't, change it to the IP address that was opened with the port you created in step 1. 
+
+```yml /plugins/Votifier/config.yml
+# The IP to listen to. Use 0.0.0.0 if you wish to listen to all interfaces on your server. (All IP addresses)
+# This defaults to the IP you have configured your server to listen on, or 0.0.0.0 if you have not configured this.
+host: 0.0.0.0
+
+# Port to listen for new votes on
+port: 25566 # by default this is set to 8192, however you can modify this value to whichever port you have opened.
+```
+
+## Bungeecord / Velocity Setup
+
+<Warning>We **highly recommend** using Velocity in place for Bungeecord to ensure your backend servers can only be accessed by your proxy. This prevents bad actors to spam the server with votes.</Warning>
+
+1. **Installing the plugin:**
+
+NuVotifier's jar is compatible with both proxies, and Bukkit-based servers. You will need to install the plugin on all of the servers you want to have voting functionality with, as well as the proxy server (this can be Bungeecord, Waterfall, Velocity, etc).
+
+Place the jar in the plugin directory of the respective servers, and restart those servers to allow it to generate the configuration files and load the plugin onto the server.
+
+2. **Installing vote listeners:**
+
+<Info>The plugin **does not** include listener functionality. Once the plugin is installed, you'll need to install a vote listener plugin.</Info>
+
+Likewise from the previous step, each server that requires voting functionality will also require a vote listener plugin as well. Here are some common popular choices:
+
+- [SuperbVote](https://www.spigotmc.org/resources/superbvote.11626/)
+- [VotingPlugin](https://www.spigotmc.org/resources/votingplugin.15358/) (Advanced)
+- [UltimateVotes](https://www.spigotmc.org/resources/ultimatevotes-1-8-8-1-15-2-spigot-bungeecord-uuid.516/) (Paid)
+- [Enjin](https://www.spigotmc.org/resources/enjin-cms-donationcraft-plugin.17209/) (Requires Enjin)
+
+3. **Configuring vote forwarding**
+
+#### Backend Servers (Bukkit-based servers)
+
+As we are taking a Velocity / Bungeecord approach, we need to configure vote forwarding to ensure votes are passed on from proxy to backend servers.
+
+To do this, we need to set the `method` value in the config file to use `pluginMessaging`. This also means we are not passing votes through ports, rather through plugin messaging so we can disable ports in all of the backend server. This can be done by changing the `port` value to `-1`. 
+
+**Do NOT** do this part on the proxy server.
+
+```yml /plugins/Votifier/config.yml
+# Port to listen for new votes on
+port: -1 # the default value is set to 8192
+
+..
+..
+
+forwarding:
+  # Sets whether to set up a remote method for fowarding. Supported methods:
+  # - none - Does not set up a forwarding method.
+  # - pluginMessaging - Sets up plugin messaging
+  method: pluginMessaging # the default value is set to `none`, on proxy setups change this to `pluginMessaging`.
+```
+
+#### Proxy Servers (Velocity / Bungeecord)
+
+Open a port for NuVotifier in the `Network` tab. See step 1 and 2 from the ["**Normal Bukkit-based Server Setup**"](#normal-bukkit-based-server-setup) section. 
+
+Now, moving onto the proxy configuration file, head to `/plugins/Votifier` and open the `config.toml` file. There, you need to input the port you've just created into the `port` value. Furthermore, you also need to set the `method` under the `forwarding` section to `pluginMessaging`.
+
+```yml /plugins/Votifier/config.toml
+# Port to listen for new votes on
+port: 8192 # default is 8192, change this value to the port you've just created
+
+..
+..
+
+forwarding:
+  # Sets whether to set up a remote method for fowarding. Supported methods:
+  # - none - Does not set up a forwarding method.
+  # - pluginMessaging - Sets up plugin messaging
+  method: pluginMessaging # default is set to none, change this to pluginMessaging
+  pluginMessaging:
+    channel: nuvotifier:votes
+```
+
+This concludes basic setup where all all votes are forwarded to each server that is available through the `/server` command. You can make further modifications and changes to the way it's setup by using [NuVotifier's guide](https://github.com/NuVotifier/NuVotifier/wiki/Setup-Guide) as reference 
+
+## Adding your server to a voting site
+
+By adding NuVotifier and a rewards plugin to your Minecraft server, you can configure votes and add your server to a Minecraft server list site, like [minecraftservers.org](https://minecraftservers.org).
+
+1. Register for an account at [minecraftservers.org](https://minecraftservers.org). Please ensure to use a strong password for your account!
+2. Once registered, and you have verified your account, press the "**add a server**" button on the top.
+3. Fill in the details of your server:
+- **Name**: The name of your server (can be anything like BerryCraft, ByteBlock, etc!).
+- **IP/Host**: The IP address / FQDN / domain of your server/
+- **Port**: Enter the port of your Minecraft server. Default is `25565`, however it can vary on your setup. It is the 4-5 digit number beside the IP address.
+- **Enable Votifier**: Enable this if you have installed the Votifier plugin.
+- **Discord**: Add the discord invite link to your community if you have one (optional).
+- **Country**: Where the server / community is located (optional).
+- **Banner**: The featured image or gif displayed on the site with your server.
+- **Description**: What your community is about, what you offer, what makes your server unique!
+- **Tags**: Things about your server, for example `bedwars`, `smp`, `skywars`, `prison`, etc.
+- **YouTube Video**: Add a link to a YouTube video describing and featuring your server (optional).
+- **I am human**: are you human?
+
+4. Don't forget to "**Enable Votifier**". There, enter the IP address (the numbers before the colon) with the port you've created for Votifier [here](#proxy-servers-velocity-bungeecord). As for the `Public Key`, you can copy that value from the `/plugins/Votifier/rsa/public.key` file.
+
+<Warning>Keep your private key safe! If exposed, it allows anyone, especially bad actors, to send as many votes as they'd like to your server!</Warning>
+
+5. Test the system! You can use the commands: `/testvote` (for Bukkit-based or Sponge servers), or `/ptestvote` (for Velocity / Bungeecord servers).
+
+## Configure rewards
+
+WIP
