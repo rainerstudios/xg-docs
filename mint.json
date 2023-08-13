@@ -26,7 +26,7 @@
   },
   "topbarLinks": [
     {
-      "name": "Contact sales",
+      "name": "Contact us",
       "url": "https://berrybyte.net/tickets "
     }
   ],
@@ -37,19 +37,14 @@
       "url": "minecraft"
     },
     {
-      "name": "Rust",
-      "icon": "radiation",
-      "url": "rust"
-    },
-    {
-      "name": "VPS",
+      "name": "Virtual Servers",
       "icon": "server",
       "url": "vps"
     },
     {
-      "name": "Contact Us",
-      "icon": "envelope",
-      "url": "mailto:hello@berrybyte.net"
+      "name": "Discord Community",
+      "icon": "discord",
+      "url": "https://berrybyte.net/discord"
     }
   ],
   "navigation": [
@@ -98,10 +93,6 @@
         "minecraft/changing-versions",
         "minecraft/convert-world"
       ]
-    },
-    {
-      "group": "Rust",
-      "pages": ["rust/introduction"]
     },
     {
       "group": "VPS",
