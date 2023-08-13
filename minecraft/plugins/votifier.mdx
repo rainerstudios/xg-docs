@@ -22,7 +22,7 @@ To install and configure NuVotifier on your Minecraft server, follow these steps
 2. Place the downloaded JAR file in the `plugins` (The same directory, `plugins`, can be used for both Bukkit-based servers and proxies) folder of your Minecraft server. Refer to [this guide](../../lime/importing-files) for help.
 3. Restart the server. The plugin will automatically be installed and activated.
 
-## Normal Bukkit-based Server Setup
+## Normal Bukkit-based server setup
 
 1. **Open a listening port for the plugin:**
 
@@ -49,6 +49,10 @@ host: 0.0.0.0
 port: 25566 # by default this is set to 8192, however you can modify this value to whichever port you have opened.
 ```
 
+4. **Configure rewards (optional)**
+
+Refer to [this section](#configure-rewards) for recommended options and a guide on configuring rewards.
+
 ## Bungeecord / Velocity Setup
 
 <Warning>We **highly recommend** using Velocity in place for Bungeecord to ensure your backend servers can only be accessed by your proxy. This prevents bad actors to spam the server with votes.</Warning>
@@ -63,12 +67,9 @@ Place the jar in the plugin directory of the respective servers, and restart tho
 
 <Info>The plugin **does not** include listener functionality. Once the plugin is installed, you'll need to install a vote listener plugin.</Info>
 
-Likewise from the previous step, each server that requires voting functionality will also require a vote listener plugin as well. Here are some common popular choices:
+Likewise from the previous step, each server that requires voting functionality will also require a vote listener plugin as well. Refer to [this section](#configure-rewards) for popular and recommended choices. 
 
-- [SuperbVote](https://www.spigotmc.org/resources/superbvote.11626/)
-- [VotingPlugin](https://www.spigotmc.org/resources/votingplugin.15358/) (Advanced)
-- [UltimateVotes](https://www.spigotmc.org/resources/ultimatevotes-1-8-8-1-15-2-spigot-bungeecord-uuid.516/) (Paid)
-- [Enjin](https://www.spigotmc.org/resources/enjin-cms-donationcraft-plugin.17209/) (Requires Enjin)
+Once you've selected one, install the plugin on each server, including the proxy.
 
 3. **Configuring vote forwarding**
 
@@ -135,14 +136,67 @@ By adding NuVotifier and a rewards plugin to your Minecraft server, you can conf
 - **Description**: What your community is about, what you offer, what makes your server unique!
 - **Tags**: Things about your server, for example `bedwars`, `smp`, `skywars`, `prison`, etc.
 - **YouTube Video**: Add a link to a YouTube video describing and featuring your server (optional).
-- **I am human**: are you human?
+- **I am human**: are you hooman?
 
-4. Don't forget to "**Enable Votifier**". There, enter the IP address (the numbers before the colon) with the port you've created for Votifier [here](#proxy-servers-velocity-bungeecord). As for the `Public Key`, you can copy that value from the `/plugins/Votifier/rsa/public.key` file.
+4. Don't forget to "**Enable Votifier**". There, enter the following information:
+- **IP address** (the numbers before the colon).
+- **The port** you've created for Votifier [here](#proxy-servers-velocity-bungeecord).
+- `Public Key`, copy the contents of the `/plugins/Votifier/rsa/public.key` file, and paste it into the field.
 
 <Warning>Keep your private key safe! If exposed, it allows anyone, especially bad actors, to send as many votes as they'd like to your server!</Warning>
 
-5. Test the system! You can use the commands: `/testvote` (for Bukkit-based or Sponge servers), or `/ptestvote` (for Velocity / Bungeecord servers).
+5. **Test the system!** Press the "Send Test Vote" button, and if it's successful, you should see the plugin respond back in the server console.
+
+<Tip>You can use the commands: `/testvote` (for Bukkit-based or Sponge servers), or `/ptestvote` (for Velocity / Bungeecord servers).</Tip>
 
 ## Configure rewards
 
-WIP
+1. **Install a vote listener plugin**
+
+As mentioned before, NuVotifier **does not** include listener functionality. Here are some common popular choices:
+
+- [SuperbVote](https://www.spigotmc.org/resources/superbvote.11626/)
+- [VotingPlugin](https://www.spigotmc.org/resources/votingplugin.15358/) (Advanced)
+- [UltimateVotes](https://www.spigotmc.org/resources/ultimatevotes-1-8-8-1-15-2-spigot-bungeecord-uuid.516/) (Paid)
+- [Enjin](https://www.spigotmc.org/resources/enjin-cms-donationcraft-plugin.17209/) (Requires Enjin)
+
+We'll use **SuperbVote** as an example for this guide, however most voting plugins should be relatively similar to setup.
+
+2. **Configure rewards on vote**
+
+Head to `/plugins/SuperbVote` and open the `config.yml` file. Find the `rewards` value in the file (line 50 at the time of writing, or use `CTRL + F` to search) and configure the commands that are executed.
+
+As the plugin also offers `if` functionality, you can configure different players to receive different rewards depending on the permission they have.
+
+#### Example:
+
+```yml /plugins/SuperbVote/config.yml
+rewards:
+  # Example of matchers. See https://github.com/minecrafter/SuperbVote/wiki/Configuration#if for a full list of available
+  # matchers.
+  - if:
+      permission: superbvote.test # player requires this permission to receive reward
+      chance-percentage: 5 # configure the rarity of rewards
+      service: SpecialService
+    commands:
+    - give %player% diamond 4
+..
+..
+
+  - if:
+      default: true # requires no specific permission to receive rewards
+    commands:
+    - eco give %player% 1000
+```
+
+You can use the following placeholders to configure the commands and the broadcast message:
+
+- `%player%`: Player's username.
+- `%player_uuid%`: Player's UUID.
+- `%service%`: The service where the vote came from.
+- `%votes%`: Returns the number of votes the player has.
+- [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) placeholders.
+
+<Tip>Enable the `/vote` command for players by changing the `vote-command` from `false` to `true`.</Tip>
+
+Aaand voilà! You now have voting and rewards functionality setup on your Minecraft server! If you need help, reach out to us on our [Community Discord](https://berrybyte.net/discord) or in a [ticket](https://berrybyte.net/ticket). 
