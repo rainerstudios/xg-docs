@@ -15,9 +15,9 @@
     "url": "https://berrybyte.net/vps"
   },
     "feedback": {
-    "thumbsRating": true,
+    "thumbsRating": false,
     "suggestEdit": true,
-    "raiseIssue": true
+    "raiseIssue": false
   },
   "analytics": {
     "plausible": {
