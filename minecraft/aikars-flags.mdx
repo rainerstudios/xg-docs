@@ -39,13 +39,13 @@ java -Xms{SERVER_MEMORY}M -Xmx{SERVER_MEMORY}M -XX:+UseG1GC -XX:+ParallelRefProc
 
 ## Breakdown
 
-<Warning>
+<Note>
   If you're running on a shared hosting (one bulky machine runs multiple
   Minecraft servers) with strict resource allocation (e.g. Docker containers;
   this applies for BerryByte's Minecraft lineup), it is recommended to leave out
   roughly 1GB of RAM for the JVM's overhead (this is automatically done at
   BerryByte).
-</Warning>
+</Note>
 
 - `-Xmx`: Sets the maximum amount of memory that the JVM can use. This can help
   prevent the server from crashing due to out-of-memory errors.
@@ -61,6 +61,9 @@ java -Xms{SERVER_MEMORY}M -Xmx{SERVER_MEMORY}M -XX:+UseG1GC -XX:+ParallelRefProc
 - `-XX:+UnlockExperimentalVMOptions`: Unlocks experimental JVM options which are needed for Aikar's flags.
 - `-XX:+DisableExplicitGC`: Disables explicit garbage collection, which prevents bad plugin code from affecting your server.
 - `-XX:+AlwaysPreTouch`: Enables pre-touching, which will preallocate all the memory at process start.
+
+<Warning>This flag is removed by default on BerryByte servers, and if you are running the [Pterodactyl](https://pterodactyl.io) panel, you should remove this flag too. This flag pre-allocates all memory to the process on startup, starving and freezing/crashing the docker container. If not, you can ignore this warning.</Warning>
+
 - `-XX:G1NewSizePercent`: Sets the percentage of the heap that is used for new
   objects.
 - `-XX:G1MaxNewSizePercent`: Sets the maximum percentage of the heap that is
