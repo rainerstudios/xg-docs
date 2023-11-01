@@ -34,7 +34,7 @@
     {
       "name": "Minecraft",
       "icon": "cubes",
-      "url": "minecraft"
+      "url": "games/minecraft"
     },
     {
       "name": "Virtual Servers",
@@ -73,25 +73,25 @@
     {
       "group": "Minecraft",
       "pages": [
-        "minecraft/introduction",
+        "games/minecraft/introduction",
         {
           "group": "Plugins",
           "pages": [
-            "minecraft/plugins/chunky",
-            "minecraft/plugins/dynmap",
-            "minecraft/plugins/geyser",
-            "minecraft/plugins/votifier"
+            "games/minecraft/plugins/chunky",
+            "games/minecraft/plugins/dynmap",
+            "games/minecraft/plugins/geyser",
+            "games/minecraft/plugins/votifier"
           ]
         },
         {
           "group": "Common Errors",
-          "pages": ["minecraft/common-errors/connection-timed-out"]
+          "pages": ["games/minecraft/common-errors/connection-timed-out"]
         },
-        "minecraft/aikars-flags",
-        "minecraft/updating-jars",
-        "minecraft/installing-modpacks",
-        "minecraft/changing-versions",
-        "minecraft/convert-world"
+        "games/minecraft/aikars-flags",
+        "games/minecraft/updating-jars",
+        "games/minecraft/installing-modpacks",
+        "games/minecraft/changing-versions",
+        "games/minecraft/convert-world"
       ]
     },
     {
