@@ -8,7 +8,11 @@
   "colors": {
     "primary": "#DC3962",
     "light": "#FF81A0",
-    "dark": "#AE0C35"
+    "dark": "#AE0C35",
+    "background": {
+      "dark": "#12141C",
+      "light": "#f7f7f7"
+    }
   },
   "topbarCtaButton": {
     "name": "Deploy Now",
@@ -91,7 +95,8 @@
         "games/minecraft/updating-jars",
         "games/minecraft/installing-modpacks",
         "games/minecraft/changing-versions",
-        "games/minecraft/convert-world"
+        "games/minecraft/convert-world",
+        "games/minecraft/resource-packs"
       ]
     },
     {
