@@ -4,15 +4,15 @@
   description: "A guide to using Aikar's flags to optimize the performance of your Minecraft server."
 ---
 
-"Aikar's Flags" are command-line options for common
+"Aikar's Flags" are command-line options (flags) for common
 [JVM](https://en.wikipedia.org/wiki/Java_virtual_machine) implementations like
-OpenJDK and OpenJ9 designed to improve performance of the JVM's G1GC garbage
-collector for the Minecraft Java Edition server.
+OpenJDK and OpenJ9. These flags are designed to improve performance of the JVM's G1GC garbage
+collector, enhancing the performance for Minecraft servers.
 
 All Minecraft server lineups from BerryByte come equipped with Aikar's flags by
 default.
 
-<Warning>Aikar's Flags allocates all available memory to the server (unused memory is wasted memory) which may make the server appear to be using 100% RAM at all times. This is not what's actually being used rather what's being allocated to it. Install [Spark](https://spark.lucko.me/download) and run `/spark health` for accurate memory usage.</Warning>
+<Info>Aikar's Flags allocates all available memory to the server (unused memory is wasted memory) which may make the server appear to be using 100% RAM at all times. This is not what's actually being used rather what's being allocated to it. Install [Spark](https://spark.lucko.me/download) and run `/spark health` for accurate memory usage.</Info>
 
 ## Setting up the flags
 
