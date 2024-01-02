@@ -68,13 +68,6 @@
       ]
     },
     {
-      "group": "Fusion (VPS Control Panel)",
-      "pages": [
-        "fusion/overview",
-        "fusion/backups"
-      ]
-    },
-    {
       "group": "Minecraft",
       "pages": [
         "games/minecraft/introduction",

@@ -1,34 +1,33 @@
 ---
-title: "Connection timed out"
+title: "How to Fix 'Server Connection Timed Out' Error in Minecraft"
+description: "Learn how to fix connection timeout error while playing on a Minecraft Server."
+sidebarTitle: "Connection timed out"
 ---
 
-If you are experiencing high ping or getting timed out while playing a game, it
-could be due to one of the following reasons:
+One of the most common issues while playing on a [Minecraft Server](https://berrybyte.net/minecraft) is the "**server connection timed out**" error, preventing you from joining the server. You may be experiencing high ping or getting timed out while playing Minecraft, it could be due to various reasons like a bad internet connection, configuration issue, or you're running out of server resources.
 
-1. The game server (or proxy, e.g. BungeeCord/Velocity) has insufficient
+## Reasons
+
+1. The game server (or a proxy like [BungeeCord](https://www.spigotmc.org/wiki/bungeecord/) or [Velocity](https://papermc.io/software/velocity)) has insufficient
    resources to handle the amount of players.
-2. There is an outage/issue with our network - you can check out our monitoring
-   [here](https://status.berrybyte.net/).
-3. The proxy (e.g. BungeeCord/Velocity) is misconfigured (only applies if you
-   have one).
+2. There is an outage/issue with the host's network - you can check for incidents on our
+   [status page](https://status.berrybyte.net/).
+3. The proxy (e.g. [BungeeCord](https://www.spigotmc.org/wiki/bungeecord/), [Velocity](https://papermc.io/software/velocity), or [Waterfall](https://papermc.io/software/waterfall)) is misconfigured (only applies if you
+   have one). Check the configuration files and make sure you've set it up correctly.
 4. There is a problem with your
-   [ISP](https://en.wikipedia.org/wiki/Internet_service_provider) - this is the
-   case most of the time.
+   [ISP](https://en.wikipedia.org/wiki/Internet_service_provider) (Internet Service Provider) - this is the
+   case most of the time. Restart your router or contact your internet provider for further help.
 
 ## Remedy
 
-1. Double-check your proxy's configuration, if you have one.
-2. See if anybody else experiences these issues on your server, if not, it's most
-  likely a problem with your connection.
-3. Use [Cloudflare's WARP](https://1.1.1.1/) - a tool that helps you connect to a network with more optimized routes. This is a popular remedy especially for lower-end connections.
-4. Increase the
-  [`paper.playerconnection.keepalive`](https://docs.papermc.io/paper/reference/system-properties#paperplayerconnectionkeepalive)
-  timeout property (Paper-forks only).
-
-<Tip>Example: add `-Dpaper.playerconnection.keepalive=90` to your startup flags; extends the keepalive timeout to 90 seconds.</Tip>
-
-- Take an [MTR](https://www.cloudflare.com/learning/network-layer/what-is-mtr/) (my trace-route, a tool which allows one to diagnose network paths and routes) and analyze the output. Share the output with the BerryByte team and we can identify where the issue lies.
+- Double-check your proxy's configuration, if you have one.
+- Restart the Minecraft Server.
+- See if anybody else experiences these issues on your server, if not, it's most
+  likely a problem with your connection. You can test by using [mcsrvstat.us](https://mcsrvstat.us), a free website to check the status of a Minecraft server.
+- Use a VPN or proxy. We recommend using [Cloudflare's WARP](https://1.1.1.1/) - a tool that helps you connect to a network with more [optimized routes](https://www.cloudflare.com/en-gb/learning/network-layer/what-is-routing/). This is a popular remedy especially for lower-end connections.
+- Increase the [`paper.playerconnection.keepalive`](https://docs.papermc.io/paper/reference/system-properties#paperplayerconnectionkeepalive)
+  timeout flag on your Paper-based Minecraft server. To add, insert the  `-Dpaper.playerconnection.keepalive=90` flag to your Minecraft server startup flags; this extends the keepalive timeout to 90 seconds.
+- Take an [MTR](https://www.cloudflare.com/learning/network-layer/what-is-mtr/) (my trace-route, a tool which allows one to diagnose network paths and routes) and analyze the output. [Share the output](https://berrybyte.net/tickets) with the [BerryByte](https://berrybyte.net/) team and we can identify where the issue lies.
 
 
-If none of these suggestions help, reach out to us on [Discord](https://berrybyte.net/discord)
-or through a [ticket](https://berrybyte.net/ticket).
+If none of these suggestions help or have any questions, reach out to us on our [Discord community server](https://berrybyte.net/discord).
