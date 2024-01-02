@@ -1,24 +1,22 @@
 ---
-title: "Install Modpacks on Your Minecraft Server"
+title: "How to Install Modpacks on Your Minecraft Server"
 sidebarTitle: "Install modpacks"
 description: "Learn how to install any Forge or custom modpacks on your Minecraft servers."
 ---
 
-This guide will help you through the manual steps on how to upload, and play your favourite modpack on your Minecraft server!
+This guide will help you through the manual steps on how to upload, and play your favourite modpack on a Minecraft server!
 
-## Installation
+## Upload the modpack to your Minecraft Server
 
-1. **Upload the modpack to your Minecraft Server:** 
+To get started with installing your favourite modpack on your Minecraft server, first, [upload the modpack's server archive](../lime/importing-files) (usually in a `.zip` format) to your file manager on the [game panel](https://game.berrybyte.net). This can be found on wherever you downloaded the modpack from, usually [Modrinth](https://modrinth.com), [CurseForge](https://curseforge.com), and others.
 
-To get started with installing your favourite modpack on your Minecraft server, first, [upload the modpack's server archive](../lime/importing-files) (usually in a `.zip` format) to your file manager on [Lime](https://game.berrybyte.net). This can be found on wherever you downloaded the modpack from, usually [Modrinth](https://modrinth.com), [CurseForge](https://curseforge.com), and others.
-
-2. **Install the correct version of Forge on your Minecraft Server**:
+## Install the correct version of Forge on your Minecraft Server
 
 Once uploaded, you will need to find the required Forge version specified in the modpack's readme file or on the modpack's webpage (usually similar to a set of numbers like `43.2.14`). In the "**Startup**" tab, input the version number (e.g. `1.19.1-43.2.14` - notice how we put the Minecraft version and then the forge version in between hyphens) in the "**Forge Version**" field. 
 
 Next, delete all the files inside your file manager **except** for the modpack's server archive. Press "**Reinstall**" in the "**Settings**" tab to install the necessary Forge version.
 
-3. **Unpack the modpack server files:**
+### Unpack the modpack server files:
 
 Start the server at least once to generate all the server files and folders, and then unpack/unarchive the modpack's archive by clicking the three dots beside the archive, and pressing "**Unarchive**". 
 
@@ -29,11 +27,11 @@ Finally, start the server to complete the modpack installation process and you s
 ## FAQ
 
 <Accordion title="Unarchiving the .zip/archive unpacks a folder instead of the files">
-Head into the unarchived folder, select all the files, and create an archive of all the files you need to import (three dots -> "**Archive**"). 
+Head into the unarchived folder, select all the files, and create an archive of all the files you need to import (click the three dots -> "**Archive**"). 
 
-Next, move the archive into the main directory. This can be done by pressing the "**Move**" button and adding a `../` behind the name of the file (e.g `../archive.tar.gz`) - (**Edit:** we've added an arrow besides the field to add the `../` automatically). This will move the file one directory up.
+Next, move the archive into the main folder. This can be done by pressing the "**Move**" button and clicking the "**Arrow**" button, which adds a `../` behind the name of the file (e.g `../archive.tar.gz`). This will move the file one folder up.
 
-Finally, press the "**Unarchive**" button, that will extract the files into the main directory into their own respective folders.
+Finally, press the "**Unarchive**" button. This will extract the files into the main folder.
 </Accordion>
 
 <Accordion title="When I click on the three-dots, I don't see any unarchive button">
@@ -45,7 +43,7 @@ Follow the same steps as mentioned, but upload your own archive to the server. N
 </Accordion>
 
 <Accordion title="I don't see any specific Forge version specified for the modpack">
-If you aren't able to find any specific Forge version in the modpack's readme file, nor on the modpacks' webpage, instead of inputting a version number in the "Forge Version" field, you can leave that empty. Instead, enter a version in the "Minecraft Version" field with the version the modpack is for (e.g 1.16.5, 1.12.2, etc). This will install the latest recommended available build.
+If you aren't able to find any specific Forge version in the modpack's readme file, nor on the modpacks' webpage, leave the "**Forge Version**" field empty. <br/> <br/> Instead, enter a version in the "**Minecraft Version**" field with the Minecraft version of the modpack (e.g 1.16.5, 1.12.2, etc). This will install the latest recommended available build.
 </Accordion>
 
 
