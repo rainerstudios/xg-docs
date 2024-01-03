@@ -4,10 +4,11 @@
   description: "Dynmap is a Minecraft plugin to create and view a live map of your Minecraft server world."
 ---
 
-[Dynmap®](https://github.com/webbukkit/dynmap) is a Bukkit plugin (and a mod), which can be used to view a live map of the server's worlds in a browser.
+[Dynmap®](https://github.com/webbukkit/dynmap) is a Bukkit plugin and a mod which can be used to view a live map of the server's worlds in a browser. Think of like Google Maps but for your Minecraft server!
 
 There are more optimized alternatives like [BlueMap](https://github.com/BlueMap-Minecraft/BlueMap) and [squaremap](https://github.com/jpenilla/squaremap), but Dynmap is still a popular choice for many Minecraft servers.<br/>
-This guide will walk you through installation and usage of Dynmap on your Minecraft server!
+
+This guide will walk you through installation and usage of Dynmap on your [Minecraft server](https://berrybyte.net/minecraft)!
 
 ## Installation
 
@@ -18,24 +19,24 @@ This guide will walk you through installation and usage of Dynmap on your Minecr
 To install and configure Dynmap on your Minecraft server, follow these steps:
 
 1. Download the latest version of Dynmap from [SpigotMC](https://www.spigotmc.org/resources/dynmap%C2%AE.274/) (if you're running Paper, SpigotMC; any Bukkit forks), or [CurseForge](https://www.curseforge.com/minecraft/mc-mods/dynmapforge) (if you're running a modded server).
-2. Place the downloaded JAR file in the `plugins`/`mods` (depends on your server software; `plugins` for Bukkit-based servers, `mods` for Forge and Fabric) folder of your Minecraft server. Refer to [this guide](lime/importing-files) for help.
+2. Place the downloaded JAR file in the `plugins`/`mods` (depends on your server software; `plugins` for Bukkit-based servers, `mods` for Forge and Fabric) folder of your Minecraft server. Refer to [this guide](../../../lime/importing-files) for help.
 3. Restart the server. The plugin will automatically be installed and activated.
 4. When the server has fully started, stop the server.
-5. Port-forward Dynmap's web interface (this is done in your router's configuration, if you're running your Minecraft server locally; this is done in the Network tab on Lime).
+5. Port-forward Dynmap's web interface (this is done in your router's configuration if you're running your Minecraft server locally. Otherwise this can done in the Network tab on [Lime](https://game.berrybyte.net/)).
 6. Navigate to the `plugins/dynmap` folder in your server's directory.
 7. Edit the `configuration.txt` file and set the port to the one created in the 5th step, and a URL path you want to use for the Dynmap web interface (e.g. /dynmap). Make sure to save the file.
 8. Start the server again. Dynmap will now be fully installed and configured.
 
-## Reverse-proxying
+## Reverse proxy
 
-A [reverse proxy](https://en.wikipedia.org/wiki/Reverse_proxy) allows you to access the Dynmap web interface using a custom domain name, instead of the server's IP address.
+To use a custom domain for Dynmap instead of a long numerical IP, you can use a [reverse proxy](https://en.wikipedia.org/wiki/Reverse_proxy) which allows you to access Dynmap using a custom domain name!
 
 #### With Lime at BerryByte
 
-If you have a Minecraft server from BerryByte, we've simplified all steps below to a few buttons on [Lime](../../lime/overview), where you can easily set up a reverse proxy for Dynmap using the [Proxies Manager](lime/proxies) tool. We take care of SSL certificates and all the configuration for you.
+If you have a [Minecraft server from BerryByte](https://berrybyte.net/minecraft), we've simplified all steps below to a few buttons on [Lime](https://game.berrybyte.net), where you can easily set up a reverse proxy for Dynmap using the [Proxies Manager](lime/proxies) tool. We take care of SSL certificates and all the configuration for you.
 
-1. Create a DNS record for your custom domain to point to `cotton.api.berrybyte.network`. If you're using Cloudflare, make sure to set the proxy status to DNS only.
-2. Head to the [Proxies Manager](lime/proxies) tool and click on the "**Create Proxy**" button.
+1. Create a DNS record for your custom domain to point to `cotton.api.berrybyte.network`. If you're using [Cloudflare](https://cloudflare.com), make sure to set the proxy status to DNS only.
+2. Head to the Proxies Manager tool and click on the "**Create Proxy**" button.
 3. In `Source`, input the domain used in step 1. In `Allocation`, input the allocation you created for Dynmap in the installation steps and press "**Create**".
 
 Head to your domain, and it should be all ready and configured!
@@ -43,10 +44,8 @@ Head to your domain, and it should be all ready and configured!
 #### Locally or at another provider (Advanced)
 
 <Warning>
-    This part of the guide presumes you have a Debian/Ubuntu-based server, steps may differ for other distributions.
+    This part of the guide presumes you have a Debian/Ubuntu-based server, steps may differ for other OSs.
 </Warning>
-
-To use a domain for the map of your Minecraft server manually, you'll need to set up a reverse proxy.
 
 **Automatically:**
 
