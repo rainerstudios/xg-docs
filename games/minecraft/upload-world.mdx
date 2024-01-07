@@ -1,0 +1,34 @@
+---
+title: "How to Upload and use a Custom World on Your Minecraft Server"
+sidebarTitle: "Upload a world"
+description: "Learn how to upload custom and singleplayer worlds to your Minecraft server."
+---
+
+<Warning>Make sure the version of the world matches the Minecraft version that's running on the Minecraft server</Warning> 
+
+## Finding a singleplayer world from your computer
+
+If you wish to upload a singleplayer world from your computer to a [Minecraft server](https://berrybyte.net/minecraft), follow these steps: 
+
+### On Windows:
+
+1. Enter `Windows Key + R` on your keyboard and enter `%AppData%`
+2. Head to the `.minecraft` folder and then `/saves`
+3. Locate the world you wish to upload, and archive the folder with a tool like [WinRAR](https://winrar.com) or [7Zip](https://7zip.com)
+
+### On a Mac:
+
+1. Navigate to `~/Library/Application Support/minecraft` folder by pasting the file path on your Mac's [Spotlight](https://support.apple.com/guide/mac-help/search-with-spotlight-mchlp1008/mac)
+2. Right click the world folder, and select "**Compress [fileName]**"
+
+## Uploading the world to your server
+
+1. Stop the server
+2. [Upload the world archive](../../importing-files) to the **File Manager** on the [game panel](https://game.berrybyte.net/)
+3. Select the three dots beside the file, and click "**Unarchive**"
+4. Modify the `level-name` value in `server.properties` file to the name of the world folder
+5. Start the server!
+
+And voilà, you should now be able to use and play your custom world on your Minecraft server!
+
+If you're having trouble uploading your world, send us a message on our [community Discord server](https://berrybyte.net/discord) or [contact support](https://berrybyte.net/tickets).

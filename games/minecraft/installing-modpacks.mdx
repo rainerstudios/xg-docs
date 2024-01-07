@@ -1,30 +1,34 @@
 ---
 title: "How to Install Modpacks on Your Minecraft Server"
 sidebarTitle: "Install modpacks"
-description: "Learn how to install any Forge or custom modpacks on your Minecraft servers."
+description: "Learn how to install any Forge or custom modpacks on your Minecraft server."
 ---
 
 This guide will help you through the manual steps on how to upload, and play your favourite modpack on a Minecraft server!
 
 ## Upload the modpack to your Minecraft Server
 
-To get started with installing your favourite modpack on your Minecraft server, first, [upload the modpack's server archive](../lime/importing-files) (usually in a `.zip` format) to your file manager on the [game panel](https://game.berrybyte.net). This can be found on wherever you downloaded the modpack from, usually [Modrinth](https://modrinth.com), [CurseForge](https://curseforge.com), and others.
+To get started with installing your favourite modpack on your Minecraft server, first, [upload the modpack's server archive](../lime/importing-files) (usually in a `.zip` format) to your file manager on the [game panel](https://game.berrybyte.net).
+
+This can be found on wherever you downloaded the modpack from, usually [Modrinth](https://modrinth.com), [CurseForge](https://curseforge.com), and others.
 
 ## Install the correct version of Forge on your Minecraft Server
 
-Once uploaded, you will need to find the required Forge version specified in the modpack's readme file or on the modpack's webpage (usually similar to a set of numbers like `43.2.14`). In the "**Startup**" tab, input the version number (e.g. `1.19.1-43.2.14` - notice how we put the Minecraft version and then the forge version in between hyphens) in the "**Forge Version**" field. 
+Once uploaded, you will need to find the required Forge version specified in the modpack's readme file or on the modpack's webpage (usually similar to a set of numbers like `43.2.14`).
+
+In the "**Startup**" tab, input the version number (e.g. `1.19.1-43.2.14` - notice how we put the Minecraft version and then the forge version in between hyphens) in the "**Forge Version**" field. 
 
 Next, delete all the files inside your file manager **except** for the modpack's server archive. Press "**Reinstall**" in the "**Settings**" tab to install the necessary Forge version.
 
-### Unpack the modpack server files:
+## Unpack the modpack server files:
 
-Start the server at least once to generate all the server files and folders, and then unpack/unarchive the modpack's archive by clicking the three dots beside the archive, and pressing "**Unarchive**". 
+Start the server at least once to generate all the server files and folders. Then unpack the modpack's archive by clicking the three dots, and pressing the "**Unarchive**". 
 
 Finally, start the server to complete the modpack installation process and you should be good to go!
 
 <Note>Do keep in mind it can take more time than normal to start up the server when doing it for the first time with the modpack installed!</Note>
 
-## FAQ
+## Frequently Asked Questions
 
 <Accordion title="Unarchiving the .zip/archive unpacks a folder instead of the files">
 Head into the unarchived folder, select all the files, and create an archive of all the files you need to import (click the three dots -> "**Archive**"). 
@@ -38,7 +42,7 @@ Finally, press the "**Unarchive**" button. This will extract the files into the 
 This normally means that the archive (.zip file) may have been corrupted during upload, or during when you downloaded the archive. Re-upload the archive to the server again, and see if that resolves it - if not, download the server modpack archive again from the modpack site.
 </Accordion>
 
-<Accordion title="How do I upload my own custom modpack to the server">
+<Accordion title="How do I upload my own custom modpack to the server?">
 Follow the same steps as mentioned, but upload your own archive to the server. Normally you may want to package the archive with the mod files, and the configuration files you've changed that are different from the default files that ship with Forge.
 </Accordion>
 
