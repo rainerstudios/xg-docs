@@ -84,12 +84,15 @@
           "group": "Common Errors",
           "pages": ["games/minecraft/common-errors/connection-timed-out"]
         },
-        "games/minecraft/aikars-flags",
         "games/minecraft/updating-jars",
         "games/minecraft/installing-modpacks",
+        "games/minecraft/installing-mods",
         "games/minecraft/changing-versions",
+        "games/minecraft/join-server",
         "games/minecraft/convert-world",
-        "games/minecraft/resource-packs"
+        "games/minecraft/upload-world",
+        "games/minecraft/resource-packs",
+        "games/minecraft/aikars-flags"
       ]
     },
     {
