@@ -82,7 +82,10 @@
         },
         {
           "group": "Common Errors",
-          "pages": ["games/minecraft/common-errors/connection-timed-out"]
+          "pages": [
+            "games/minecraft/common-errors/connection-timed-out",
+            "games/minecraft/common-errors/exception-server-tick-loop"
+          ]
         },
         "games/minecraft/updating-jars",
         "games/minecraft/installing-modpacks",
