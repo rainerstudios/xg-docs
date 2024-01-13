@@ -1,12 +1,12 @@
 ---
-title: "How to Fix the 'Exception Server Tick Loop' Error in Minecraft"
+title: "How to Fix 'Exception Server Tick Loop' Error in Minecraft"
 sidebarTitle: "Exception server tick loop"
 description: "A .json file likely may have become corrupted. This guide shows you how to fix this common error server owners face for a Minecraft server."
 ---
 
-You may have encountered this error message on your [Minecraft server](https://berrybyte.net/minecraft) causing it to crash or prevent it from starting up. This typically means that one of your .json configuration files may have become corrupt.
+You may have encountered this error message on your Minecraft server causing it to crash or prevent it from starting up. This typically means that one of your .json configuration files may have become corrupt.
 
-Error: `java.lang.NullPointerException: Exception in server tick loop` 
+<Warning>The error: `java.lang.NullPointerException: Exception in server tick loop`</Warning>
 
 Head to the [game control panel](https://game.berrybyte.net) and let's get this fixed!
 
@@ -14,7 +14,9 @@ Head to the [game control panel](https://game.berrybyte.net) and let's get this 
 2. In the file manager, delete the `whitelist.json`, `banned-player.json`, and the `banned-ips.json`
 3. Start the server
 
-This will regenerate the files in a correct format for you. Alternatively, you can [restore a backup](../../../lime/backups#mounting) of those files, and you can also make sure it's correctly formatted with a [json validator & formatter tool](https://jsonlint.com/) ensuring they have the `[]` symbol at the beginning and end of the files.
+This will regenerate the files in a correct format for you. 
+
+Alternatively, you can [restore a backup](../../../lime/backups#mounting) of those files or you can also make sure it's correctly formatted with a [json validator & formatter tool](https://jsonlint.com/) ensuring they have the `[]` symbol at the beginning and end of the files.
 
 
 Still running into issues? Have a chat us in our [Discord community](https://berrybyte.net/discord), or [contact support team](https://berrybyte.net/support).

@@ -84,7 +84,8 @@
           "group": "Common Errors",
           "pages": [
             "games/minecraft/common-errors/connection-timed-out",
-            "games/minecraft/common-errors/exception-server-tick-loop"
+            "games/minecraft/common-errors/exception-server-tick-loop",
+            "games/minecraft/common-errors/failed-to-check-session-lock"
           ]
         },
         "games/minecraft/updating-jars",
