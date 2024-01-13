@@ -18,14 +18,14 @@ This guide will walk you through installation and usage of Dynmap on your [Minec
 
 To install and configure Dynmap on your Minecraft server, follow these steps:
 
-1. Download the latest version of Dynmap from [SpigotMC](https://www.spigotmc.org/resources/dynmap%C2%AE.274/) (if you're running Paper, SpigotMC; any Bukkit forks), or [CurseForge](https://www.curseforge.com/minecraft/mc-mods/dynmapforge) (if you're running a modded server).
+1. Download the latest version of the Dynmap plugin from [SpigotMC](https://www.spigotmc.org/resources/dynmap%C2%AE.274/) or the Dynmap mod from [CurseForge](https://www.curseforge.com/minecraft/mc-mods/dynmapforge) (if you're running a modded server).
 2. Place the downloaded JAR file in the `plugins`/`mods` (depends on your server software; `plugins` for Bukkit-based servers, `mods` for Forge and Fabric) folder of your Minecraft server. Refer to [this guide](../../../lime/importing-files) for help.
-3. Restart the server. The plugin will automatically be installed and activated.
-4. When the server has fully started, stop the server.
-5. Port-forward Dynmap's web interface (this is done in your router's configuration if you're running your Minecraft server locally. Otherwise this can done in the Network tab on [Lime](https://game.berrybyte.net/)).
-6. Navigate to the `plugins/dynmap` folder in your server's directory.
-7. Edit the `configuration.txt` file and set the port to the one created in the 5th step, and a URL path you want to use for the Dynmap web interface (e.g. /dynmap). Make sure to save the file.
-8. Start the server again. Dynmap will now be fully installed and configured.
+3. Restart the server. The plugin will automatically be installed and activated
+4. When the server has fully started, stop the server to start configuring the plugin
+5. Create a port in the "**Network**" on the game panel
+6. Navigate to the `plugins/dynmap` folder in your server's directory
+7. Edit the `configuration.txt` file and set the port to the one created in the 5th step, and a URL path you want to use for the Dynmap web interface (e.g. /dynmap), and save
+8. Start the server again. Dynmap will now be fully installed and configured
 
 ## Reverse proxy
 
