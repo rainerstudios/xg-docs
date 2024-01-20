@@ -1,0 +1,36 @@
+---
+title: "How to Setup RCON on Your Minecraft Server"
+sidebarTitle: "Enable and setup RCON"
+description: "A guide on how to join a Minecraft server on both Java and Bedrock Edition."
+---
+
+RCON, short for Remote Console, is a tool that allows server admins to execute Minecraft server commands remotely. This tool is incredibly useful for managing your server without having to be in the game.
+
+## How to Enable RCON
+
+RCON is disabled on Minecraft servers by default, so you'll need to manually enable it. Here's how:
+
+1. Stop your server
+2. Head to **Files -> `server.properties`**
+3. Find `enable-rcon=false` and set it to `enable-rcon=true`
+4. To secure RCON, change `rcon.password` to a secure password and `rcon.port` to a new working port (**Network -> Create Allocation**)
+5. **Save** the file and restart your server
+
+And voilà! RCON is now setup for your server and secure!
+
+## Frequently Asked Questions
+
+<AccordionGroup>
+    <Accordion title="Is RCON secure?">
+    RCON is secure if you use a strong password at the `rcon.password` line in `server.properties` file, and limit who has access to it. You can also change the RCON port at `rcon.port` line to further secure RCON.
+    </Accordion>
+    <Accordion title="Can I use RCON to manage multiple servers?">
+    Yes, RCON can be set up on multiple servers, but each server requires a unique setup and password.
+    </Accordion>
+    <Accordion title="Can I perform all server commands through RCON?">
+    Most server commands can be executed via RCON, though some actions may require direct server access.
+    </Accordion>
+</AccordionGroup>
+
+Running into an issue with setting up RCON? Shoot us a message on our
+[community Discord server](https://berrybyte.net/discord) or [contact support](https://berrybyte.net/support).
