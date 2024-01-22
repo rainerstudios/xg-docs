@@ -15,7 +15,7 @@
     }
   },
   "topbarCtaButton": {
-    "name": "Deploy Now",
+    "name": "Create your server",
     "url": "https://berrybyte.net/"
   },
     "feedback": {
@@ -41,9 +41,9 @@
       "url": "games/minecraft"
     },
     {
-      "name": "Virtual Servers",
-      "icon": "server",
-      "url": "vps"
+      "name": "Palworld",
+      "icon": "dinosaur",
+      "url": "games/palworld"
     },
     {
       "name": "Discord Community",
@@ -102,6 +102,10 @@
         "games/minecraft/resource-packs",
         "games/minecraft/aikars-flags"
       ]
+    },
+    {
+      "group": "Palworld",
+      "pages": ["games/palworld/introduction","games/palworld/join-server"]
     },
     {
       "group": "VPS",
