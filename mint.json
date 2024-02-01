@@ -110,7 +110,8 @@
         "games/palworld/join-server",
         "games/palworld/update-server",
         "games/palworld/setup-server",
-        "games/palworld/configure-server-settings"
+        "games/palworld/configure-server-settings",
+        "games/palworld/fix-server-crashes"
       ]
     },
     {
