@@ -1,0 +1,37 @@
+---
+title: "How to Update Your Palworld Server"
+sidebarTitle: "Updating Palworld Server"
+description: "A guide on updating your Palworld dedicated server."
+tags: "palworld"
+---
+
+Every time Pocketpair, the creators behind the game Palworld, releases patches, bug fixes, and new features for the game, you'll need to update the servers as well.
+
+Luckily, we've simplified the whole process for you to a single click of a button!
+
+## Updating Palworld Server
+
+1. Login to the [game panel](https://game.berrybyte.net)
+2. Press the "**Restart**" button
+
+And voilà! Restarting the server from the game panel will automatically pull, verify, and apply the Palworld update onto your server for you!
+
+## Updating Palworld Server on Linux
+
+<Tip>Before updating, please take a backup! Saves headache down the line in case anything goes awry.</Tip>
+
+1. Launch or navigate to SteamCMD
+2. `login anonymous`
+3. `app_update 2394010 validate`
+4. `exit`
+
+Alternatively, you can run this command in a terminaal inside the SteamCMD directory:
+`./steamcmd.sh +force_install_dir /home/Steam/steamapps/common/PalServer +login anonymous +app_update 2394010 validate +quit`
+
+## Updating Palworld Server on Windows
+
+1. Open command prompt in the SteamCMD folder
+2. Run `steamcmd.exe +force_install_dir /home/Steam/steamapps/common/PalServer +login anonymous +app_update 2394010 validate +quit`
+
+Need help updating your Palworld server? Shoot us a message on our
+[community Discord server](https://berrybyte.net/discord) or [contact support](https://berrybyte.net/support).
