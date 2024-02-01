@@ -105,7 +105,13 @@
     },
     {
       "group": "Palworld",
-      "pages": ["games/palworld/introduction","games/palworld/join-server"]
+      "pages": [
+        "games/palworld/introduction",
+        "games/palworld/join-server",
+        "games/palworld/update-server",
+        "games/palworld/setup-server",
+        "games/palworld/configure-server-settings"
+      ]
     },
     {
       "group": "VPS",
