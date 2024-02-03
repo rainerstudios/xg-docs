@@ -24,8 +24,8 @@
     "raiseIssue": false
   },
   "analytics": {
-    "plausible": {
-        "domain": "berrybyte.net"
+    "ga4": {
+        "measurementID": "G-YNYEX38EPS"
     }
   },
   "topbarLinks": [
@@ -111,7 +111,10 @@
         "games/palworld/update-server",
         "games/palworld/setup-server",
         "games/palworld/configure-server-settings",
-        "games/palworld/fix-server-crashes"
+        "games/palworld/fix-server-crashes",
+        "games/palworld/ban-and-kick-players",
+        "games/palworld/unban-players",
+        "games/palworld/become-an-admin"
       ]
     },
     {
