@@ -46,6 +46,11 @@
       "url": "games/palworld"
     },
     {
+      "name": "Enshrouded",
+      "icon": "sword",
+      "url": "games/enshrouded"
+    },
+    {
       "name": "Discord Community",
       "icon": "discord",
       "url": "https://berrybyte.net/discord"
@@ -115,6 +120,12 @@
         "games/palworld/ban-and-kick-players",
         "games/palworld/unban-players",
         "games/palworld/become-an-admin"
+      ]
+    },
+    {
+      "group": "Enshrouded",
+      "pages": [
+        "games/enshrouded/introduction"
       ]
     },
     {
