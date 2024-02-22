@@ -125,7 +125,10 @@
     {
       "group": "Enshrouded",
       "pages": [
-        "games/enshrouded/introduction"
+        "games/enshrouded/introduction",
+        "games/enshrouded/join-server",
+        "games/enshrouded/transfer-world"
+
       ]
     },
     {
