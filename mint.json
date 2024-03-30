@@ -2,7 +2,7 @@
   "name": "BerryByte",
   "logo": {
     "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "dark": "/logo/dark-new.webp"
   },
   "favicon": "/favicon.png",
   "colors": {
@@ -115,6 +115,7 @@
         "games/palworld/join-server",
         "games/palworld/update-server",
         "games/palworld/setup-server",
+        "games/palworld/reset-server",
         "games/palworld/configure-server-settings",
         "games/palworld/fix-server-crashes",
         "games/palworld/ban-and-kick-players",
