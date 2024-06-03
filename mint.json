@@ -39,6 +39,26 @@
       "name": "Discord Community",
       "icon": "discord",
       "url": "https://berrybyte.net/discord"
+    },
+    {
+      "name": "Minecraft",
+      "icon": "cubes",
+      "url": "games/minecraft"
+    },
+    {
+      "name": "Palworld",
+      "icon": "dinosaur",
+      "url": "games/palworld"
+    },
+    {
+      "name": "Enshrouded",
+      "icon": "sword",
+      "url": "games/enshrouded"
+    },
+    {
+      "name": "Soulmask",
+      "icon": "mask",
+      "url": "games/soulmask"
     }
   ],
   "navigation": [
