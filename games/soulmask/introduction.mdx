@@ -5,27 +5,54 @@ description: "This category contains extensive guides and how-to's on hosting a 
 tags: "Soulmask, Soulmask game multiplayer, Soulmask always online, Soulmask community server"
 ---
 
-What is Soulmask? [Soulmask](https://store.steampowered.com/app/2646460/Soulmask/) is a sandbox multiplayer game where you must build a tribe.
+# Soulmask Server Setup Guide
 
-Want to host your own Soulmask dedicated server? **[BerryByte](https://berrybyte.net/soulmask-server-hosting)** is a budget-friendly and powerful Soulmask server host for community servers. Our servers are always online 24/7 so you can join in at any time of the day.
+What is Soulmask? [Soulmask](https://store.steampowered.com/app/2646460/Soulmask/) is a sandbox multiplayer game where you must build a tribe. Here's how to host your own server for Soulmask:
 
-Whether it be for a large public server, or just for your friends to hang around on, BerryByte has got you covered. [Create your Soulmask server](https://berrybyte.net/Soulmask) today!
+## With a hosting provider
+Creating your own Soulmask server is easy. **[BerryByte](https://berrybyte.net/soulmask-server-hosting)** is a budget-friendly and powerful Soulmask server host. Our servers are online 24/7 so you can join in at any time of the day.
 
-**Need some help?** Feel free to [open a ticket](https://berrybyte.net/support).
+1. Select your desired plan & location
+2. Complete checkout and check your email inbox
+3. Login to the [game control panel](https://game.berrybyte.net)
+4. [Join the server](./join-server) and enjoy the game!
 
-### Guides: 
+## Self-hosting a Soulmask dedicated server
+
+You can also alternatively run a server on your own computer/PC with [SteamCMD](https://developer.valvesoftware.com/wiki/SteamCMD) or from Steam library.
+
+### System requirements
+
+A single Soulmask server requires at least **16GB RAM**, **4 CPU cores**, and **20GB of storage**.
+
+### Installing game server
+
+**On Linux:**
+`steamcmd force_install_dir ./Soulmask_server/ +login anonymous app_update 3017300 quit`
+
+**On Windows:**
+`steamcmd.exe +force_install_dir c:\SteamCMD\Soulmask_server\ +login anonymous +app_update 3017310 +quit`
+
+### Starting game server
+
+Run the server by launching `StartServer.bat` (Windows) or `./StartServer.sh` (Linux)
+
+
+**Need some help?** Feel free to [open a ticket](https://berrybyte.net/support) or join our [community Discord server](https://berrybyte.net/discord).
+
+{/* ### Guides: 
 <Card title="How to Join a Soulmask Server?" href="/games/soulmask/join-server">
-</Card>
+</Card> */}
 
 ## Frequently Asked Questions
 
 <AccordionGroup>
 
 <Accordion title="What are the specs on the servers?">
-Our servers use the latest and greatest hardware on the market, solely using NVMe SSDs and min. 1Gbps per server.
+Our servers use the latest and greatest hardware on the market, solely using NVMe SSDs and minimum 1Gbps uplink per server.
 
-- CPU: **Intel** or Ryzen 9** processors
-- NVMe SSD in RAID 1 configuration
+- CPU: **Intel** or **Ryzen 9** processors
+- **NVMe SSD** in RAID 1 configuration
 - **DDR4** ECC RAM
 - **1Gbps** Network Port
 </Accordion>

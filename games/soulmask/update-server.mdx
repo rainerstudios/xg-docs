@@ -1,0 +1,42 @@
+---
+title: "How to Update Your Soulmask Server"
+sidebarTitle: "Updating Soulmask Server"
+description: "A guide on updating your Soulmask dedicated server."
+tags: "soulmask, update server, update dedicated server, update soulmask server"
+---
+
+Every time CampFire Studio, the creators behind the game Soulmask, releases patches, bug fixes, and new features for the game, you'll need to update the servers as well. If the server or game isn't updated, you may encounter the `The match you are trying to join is running an incompatible version of the game. Please try upgrading your game version.` error.
+
+<Frame>
+    <img src="/images/soulmask-incompatible.png" />
+</Frame>
+
+Luckily, we've simplified the whole process for you to a single click of a button at [BerryByte](https://berrybyte.net/soulmask-server-hosting)!
+
+## Updating Soulmask Server
+
+1. Login to the [game panel](https://game.berrybyte.net)
+2. In the **Startup** tab, make sure **Auto Update** is enabled
+2. Press the "**Restart**" button
+
+And voilà! Restarting the server from the game panel will automatically pull, verify, and apply the Soulmask update onto your server for you!
+
+## Updating Soulmask Server on Linux
+
+<Tip>Before updating, please take a backup! Saves headache down the line in case anything goes awry.</Tip>
+
+1. Launch or navigate to SteamCMD
+2. `login anonymous`
+3. `app_update 3017300 validate`
+4. `exit`
+
+Alternatively, you can run this command in a terminal inside the SteamCMD directory:
+`./steamcmd.sh +force_install_dir /home/Steam/steamapps/common/Soulmask_server +login anonymous +app_update 3017300 validate +quit`
+
+## Updating Soulmask Server on Windows
+
+1. Open command prompt in the SteamCMD folder
+2. Run `steamcmd.exe +force_install_dir /home/Steam/steamapps/common/Soulmask_server +login anonymous +app_update 3017300 validate +quit`
+
+Need help updating your Soulmask server? Shoot us a message on our
+[community Discord server](https://berrybyte.net/discord) or [contact support](https://berrybyte.net/support).
