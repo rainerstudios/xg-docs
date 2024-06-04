@@ -134,7 +134,7 @@
         "games/soulmask/introduction",
         "games/soulmask/join-server",
         "games/soulmask/update-server",
-        "games/soulmask/kick-and-ban-players",
+        "games/soulmask/banning-and-unbanning-players",
         "games/soulmask/change-server-settings"
       ]
     },
