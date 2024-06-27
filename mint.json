@@ -125,7 +125,8 @@
         "games/palworld/fix-server-crashes",
         "games/palworld/ban-and-kick-players",
         "games/palworld/unban-players",
-        "games/palworld/become-an-admin"
+        "games/palworld/become-an-admin",
+        "games/palworld/setup-xbox-dedicated-server"
       ]
     },
     {

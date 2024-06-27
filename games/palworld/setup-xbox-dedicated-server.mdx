@@ -1,0 +1,29 @@
+---
+title: "How to Setup an Xbox Dedicated Server for Palworld"
+sidebarTitle: "Setup Xbox Dedicated Server"
+description: "A guide on how to configure ane create an Xbox dedicated server for Palworld"
+tags: "palworld"
+---
+
+The new Palworld Sakurajima update brings Xbox dedicated servers. Want to setup your own Palworld server for Xbox? Use the following steps to allow connections from Xbox consoles (Xbox Series X, Xbox Series S, Xbox One) and the Microsoft Store version for Windows.
+
+Cross-play between Xbox and Steam version is not possible at the moment.
+
+## Creating an Xbox Dedicated Server
+
+To create an Xbox server and allow Xbox connections to your Palworld server, you need to modify the PalworldSettings.ini file and add the following content at the bottom of the file:
+
+```
+[/Script/Pal.PalGameWorldSettings]
+OptionSettings=(AllowConnectPlatform=Xbox)
+```
+
+Save the file, and then restart the server. 
+
+## Configure Community Server
+
+Once you've modified the config to allow Xbox connections, ensure the server is [configured as a community server](https://tech.palworldgame.com/getting-started/deploy-community-server). This is required as Xbox players can't join the server with an IP address, but rather join from the community server list.
+
+To configure a Palworld server as a community server, add the `-publiclobby` option to your startup arguments and restart the server.
+
+Once completed, give your server a restart, and you should now be able to join your Palworld server on Xbox! You can simplify these steps and [rent a lag-free Palworld server](https://berrybyte.net/palworld-server-hosting) from [BerryByte](https://berrybyte.net).
