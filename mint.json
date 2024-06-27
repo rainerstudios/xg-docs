@@ -118,6 +118,7 @@
       "pages": [
         "games/palworld/introduction",
         "games/palworld/join-server",
+        "games/palworld/join-xbox-server",
         "games/palworld/update-server",
         "games/palworld/setup-server",
         "games/palworld/reset-server",
