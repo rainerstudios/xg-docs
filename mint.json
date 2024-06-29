@@ -122,6 +122,7 @@
         "games/palworld/update-server",
         "games/palworld/setup-server",
         "games/palworld/reset-server",
+        "games/palworld/set-server-password",
         "games/palworld/configure-server-settings",
         "games/palworld/fix-server-crashes",
         "games/palworld/ban-and-kick-players",
