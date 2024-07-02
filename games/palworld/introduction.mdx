@@ -1,37 +1,58 @@
 ---
-title: "Hosting a Palworld Server"
+title: "How to Create and Host a Palworld Server"
 sidebarTitle: "Introduction"
 description: "This category contains extensive guides and how-to's on hosting a Palworld server."
-tags: "palworld, palworld game multiplayer, palworld always online, palworld community server"
+tags: "Palworld, Palworld game multiplayer, Palworld always online, Palworld community server"
 ---
-{/* 
-### Guides: 
-<Card title="How to Join a Palworld Server?" href="/games/palworld/join-server">
-</Card>
-<Card title="How to Update a Palworld Server?" href="/games/palworld/update-server">
-</Card>
-<Card title="How to Join a Palworld Server?" href="/games/palworld/join-server.mdx">
-</Card>
-<Card title="How to Join a Palworld Server?" href="/games/palworld/join-server.mdx">
+
+# Palworld Server Setup Guide
+
+What is Palworld? [Palworld](https://store.steampowered.com/app/1623730/palworld/) is a multiplayer action-adventure monster-collecting survival game by Pocket Pair, taken the gaming world by storm. Here's how to host your own server for [Palworld](https://www.pocketpair.jp/palworld):
+
+## With a hosting provider
+Creating your own Palworld server is easy. **[BerryByte](https://berrybyte.net/palworld-server-hosting)** is a budget-friendly and powerful Palworld server host. Our servers are online 24/7 so you can join in at any time of the day.
+
+1. Select your desired plan & location
+2. Complete checkout and check your email inbox
+3. Login to the [game control panel](https://game.berrybyte.net)
+4. [Join the server](./join-server) and enjoy the game!
+
+## Self-hosting a Palworld dedicated server
+
+You can also alternatively run a server on your own computer/PC with [SteamCMD](https://developer.valvesoftware.com/wiki/SteamCMD) or from Steam library.
+
+### System requirements
+
+A single Palworld server is recommended to have at least **16GB RAM**, **4 CPU cores**, and **20GB of storage**.
+
+### Installing game server
+
+**On Linux:**
+`steamcmd force_install_dir ./Palworld_server/ +login anonymous app_update 2394010 quit`
+
+**On Windows:**
+`steamcmd.exe +force_install_dir c:\SteamCMD\Palworld_server\ +login anonymous +app_update 2394010 +quit`
+
+### Starting game server
+
+Run the server by launching `StartServer.bat` (Windows) or `./StartServer.sh` (Linux). Make sure to have the UDP port 8211 and 27015 (query port) are port forwarded.
+
+
+**Need some help?** Feel free to [open a ticket](https://berrybyte.net/support) or join our [community Discord server](https://berrybyte.net/discord).
+
+{/* ### Guides: 
+<Card title="How to Join a Palworld Server?" href="/games/Palworld/join-server">
 </Card> */}
-
-What is Palworld? [Palworld](https://store.steampowered.com/app/1623730/Palworld/) is a multiplayer action-adventure monster-collecting survival game by Pocket Pair, taken the gaming world by storm.
-
-Want to host your own Palworld dedicated server? **[BerryByte](https://berrybyte.net)** is a budget-friendly and powerful Palworld server host for community servers. Our servers are always online 24/7 so you can join in at any time of the day.
-
-Whether it be for a large public server, or just for your friends to hang around on, BerryByte has got you covered. [Create your Palworld server](https://berrybyte.net/palworld-server-hosting) today!
-
-**Need some help?** Feel free to [open a ticket](https://berrybyte.net/support).
 
 ## Frequently Asked Questions
 
 <AccordionGroup>
 
 <Accordion title="What are the specs on the servers?">
-Our servers use the latest and greatest hardware on the market, solely using NVMe SSDs and min. 1Gbps per server.
+Our servers use the latest and greatest hardware on the market, solely using NVMe SSDs and minimum 1Gbps uplink per server.
 
-- CPU: **Ryzen 9 5950X** or equivalent. 4vCores per server.
-- NVMe SSD in RAID 1 configuration
+- CPU: **Intel** or **Ryzen 9** processors
+- **NVMe SSD** in RAID 1 configuration
 - **DDR4** ECC RAM
 - **1Gbps** Network Port
 </Accordion>
@@ -59,4 +80,4 @@ DDoS protection is **included with every server** at no extra cost. Protecting a
 </AccordionGroup>
 
 
-Create your Palworld server within minutes at [berrybyte.net/palworld](https://berrybyte.net/palworld-server-hosting/).
+Create your Palworld server within minutes at [berrybyte.net/palworld-server-hosting](https://berrybyte.net/palworld-server-hosting).
