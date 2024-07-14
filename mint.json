@@ -26,7 +26,10 @@
   "analytics": {
     "ga4": {
         "measurementId": "G-YNYEX38EPS"
-    }
+    },
+    "plausible": {
+      "domain": "docs.berrybyte.net"
+  }
   },
   "topbarLinks": [
     {
