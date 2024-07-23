@@ -127,6 +127,8 @@
         "games/palworld/reset-server",
         "games/palworld/set-server-password",
         "games/palworld/configure-server-settings",
+        "games/palworld/restore-autosave-backup",
+        "games/palworld/enable-autosave-automatic-backups",
         "games/palworld/fix-server-crashes",
         "games/palworld/ban-and-kick-players",
         "games/palworld/unban-players",

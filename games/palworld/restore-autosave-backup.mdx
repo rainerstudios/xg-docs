@@ -1,0 +1,34 @@
+---
+title: "How to Restore an AutoSave Backup for a Palworld Server"
+sidebarTitle: "Restore autosave backup"
+description: "A guide on restoring an autosave backup for your Palworld server to restore and rollback lost data or progress."
+tags: "palworld, palworld game multiplayer, palworld always online, palworld community server, palworld restore backup, automatic backups"
+---
+
+Lost your server's save data, bases, character progress or need to rollback in time? Has your [Palworld server](https://berrybyte.net/palworld-server-hosting) been wiped and is prompting you to create a new character?
+
+By default, [Palworld](https://www.pocketpair.jp/palworld) servers [create automatic save backups](./enable-autosave-automatic-backups) that can allow you to go back to a previous save or restore player characters and base progress. Here are the steps:
+
+## Restoring a backup
+
+1. **Stop** the server
+2. Open the **Files** tab
+3. Navigate to `/Pal/Saved/SaveGames/<ID>/backup/world`
+4. Go into the folder of the backup you would like to restore and select all files
+<Frame>
+  <img src="/images/palworld-select-backup.png" />
+</Frame>
+5. Press **Archive**, and **move the archive** to `/Pal/Saved/SaveGames`
+<Frame>
+  <img src="/images/move-archive.png" />
+</Frame>
+6. **Unarchive** the archive to restore the save and overwrite existing files
+<Frame>
+  <img src="/images/unarchive.png" />
+</Frame>
+7. **Start** the server
+
+This will rollback to the autosave to your server and restore the lost progress and fix the character prompting issue.
+
+Need help restoring backups for your [Palworld dedicated server](https://berrybyte.net/palworld-server-hosting)? Shoot us a message in our
+[community Discord server](https://berrybyte.net/discord) or [contact the Berry team](https://berrybyte.net/support).
