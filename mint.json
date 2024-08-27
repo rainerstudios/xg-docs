@@ -125,6 +125,7 @@
         "games/palworld/update-server",
         "games/palworld/setup-server",
         "games/palworld/reset-server",
+        "games/palworld/change-palworld-server-version",
         "games/palworld/set-server-password",
         "games/palworld/configure-server-settings",
         "games/palworld/restore-autosave-backup",
