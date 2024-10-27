@@ -1,1 +1,0 @@
-<script defer data-domain="docs.berrybyte.net" src="https://plausible.berryinternal.com/js/script.js"></script>

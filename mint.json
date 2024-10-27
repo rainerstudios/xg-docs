@@ -15,7 +15,7 @@
     }
   },
   "topbarCtaButton": {
-    "name": "Launch a server",
+    "name": "Create a server",
     "url": "https://berrybyte.net/"
   },
     "feedback": {
@@ -34,7 +34,7 @@
   "topbarLinks": [
     {
       "name": "Contact us",
-      "url": "https://berrybyte.net/tickets "
+      "url": "https://berrybyte.net/contact "
     }
   ],
   "anchors": [
@@ -67,17 +67,17 @@
   "navigation": [
     {
       "group": "Welcome",
-      "pages": ["introduction"]
+      "pages": ["introduction","quickstart","changelog"]
     },
     {
-      "group": "Lime (Game Panel)",
+      "group": "Game Panel",
       "pages": [
-        "lime/overview",
-        "lime/backups",
-        "lime/server-slices",
-        "lime/importing-files",
-        "lime/recycle-bin",
-        "lime/sub-users"
+        "panel/overview",
+        "panel/backups",
+        "panel/server-slices",
+        "panel/importing-files",
+        "panel/recycle-bin",
+        "panel/sub-users"
       ]
     },
     {
@@ -156,10 +156,6 @@
         "games/enshrouded/transfer-world"
 
       ]
-    },
-    {
-      "group": "VPS",
-      "pages": ["vps/introduction"]
     }
   ],
   "footerSocials": {
