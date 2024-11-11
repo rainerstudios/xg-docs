@@ -18,18 +18,18 @@
     "name": "Create a server",
     "url": "https://berrybyte.net/"
   },
-    "feedback": {
+  "feedback": {
     "thumbsRating": true,
     "suggestEdit": false,
     "raiseIssue": false
   },
   "analytics": {
     "ga4": {
-        "measurementId": "G-YNYEX38EPS"
+      "measurementId": "G-YNYEX38EPS"
     },
     "plausible": {
       "domain": "docs.berrybyte.net"
-  }
+    }
   },
   "topbarLinks": [
     {
@@ -38,11 +38,6 @@
     }
   ],
   "anchors": [
-    {
-      "name": "Discord Community",
-      "icon": "discord",
-      "url": "https://berrybyte.net/discord"
-    },
     {
       "name": "Minecraft",
       "icon": "cubes",
@@ -67,7 +62,11 @@
   "navigation": [
     {
       "group": "Welcome",
-      "pages": ["introduction","quickstart","changelog"]
+      "pages": ["introduction", "quickstart", "migration", "changelog"]
+    },
+    {
+      "group": "Help",
+      "pages": ["help/server-pending", "help/upgrade-plan", "help/cancel-plan"]
     },
     {
       "group": "Game Panel",
@@ -94,7 +93,7 @@
           ]
         },
         {
-          "group": "Common Errors",
+          "group": "Common errors",
           "pages": [
             "games/minecraft/common-errors/connection-timed-out",
             "games/minecraft/common-errors/exception-server-tick-loop",
@@ -154,7 +153,6 @@
         "games/enshrouded/introduction",
         "games/enshrouded/join-server",
         "games/enshrouded/transfer-world"
-
       ]
     }
   ],
