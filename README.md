@@ -7,7 +7,9 @@ Public community-written wiki for all game server & virtual server related topic
 To contribute, you will need to have basic knowledge of Git and Markdown.
 
 **Dependencies:**
+
 * [Node.js](https://nodejs.org/download/) (version 19 or higher)
+
 * [Mintlify](https://www.npmjs.com/package/mintlify) (`npm i -g mintlify`)
 
 Fork and clone this repository, switch to a new branch (e.g. `guide/some-game`).
