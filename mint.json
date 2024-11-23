@@ -57,6 +57,11 @@
       "name": "Soulmask",
       "icon": "mask",
       "url": "games/soulmask"
+    },
+    {
+      "name": "V Rising",
+      "icon": "fire",
+      "url": "games/vrising"
     }
   ],
   "navigation": [
@@ -153,6 +158,14 @@
         "games/enshrouded/introduction",
         "games/enshrouded/join-server",
         "games/enshrouded/transfer-world"
+      ]
+    },
+    {
+      "group": "V Rising",
+      "pages": [
+        "games/vrising/introduction",
+        "games/vrising/join-server",
+        "games/vrising/configure-server-settings"
       ]
     }
   ],
