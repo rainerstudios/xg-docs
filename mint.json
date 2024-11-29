@@ -165,7 +165,8 @@
       "pages": [
         "games/vrising/introduction",
         "games/vrising/join-server",
-        "games/vrising/configure-server-settings"
+        "games/vrising/configure-server-settings",
+        "games/vrising/change-difficulty"
       ]
     }
   ],
