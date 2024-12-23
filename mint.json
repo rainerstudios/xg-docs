@@ -126,20 +126,24 @@
         "games/palworld/introduction",
         "games/palworld/join-server",
         "games/palworld/join-xbox-server",
+        "games/palworld/configure-server-settings",
         "games/palworld/update-server",
+        "games/palworld/all-admin-commands",
+        "games/palworld/become-an-admin",
+        "games/palworld/enable-pvp",
         "games/palworld/setup-server",
         "games/palworld/reset-server",
         "games/palworld/change-server-version",
         "games/palworld/set-server-password",
-        "games/palworld/configure-server-settings",
         "games/palworld/restore-autosave-backup",
         "games/palworld/enable-autosave-automatic-backups",
         "games/palworld/fix-server-crashes",
         "games/palworld/ban-and-kick-players",
         "games/palworld/unban-players",
-        "games/palworld/become-an-admin",
         "games/palworld/setup-xbox-dedicated-server",
-        "games/palworld/xbox-platform-error"
+        "games/palworld/xbox-platform-error",
+        "games/palworld/item-drop-penalty",
+        "games/palworld/delete-player-data"
       ]
     },
     {
