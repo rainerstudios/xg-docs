@@ -134,6 +134,7 @@
         "games/palworld/setup-server",
         "games/palworld/reset-server",
         "games/palworld/change-server-version",
+        "games/palworld/install-mods",
         "games/palworld/set-server-password",
         "games/palworld/restore-autosave-backup",
         "games/palworld/enable-autosave-automatic-backups",
@@ -143,7 +144,8 @@
         "games/palworld/setup-xbox-dedicated-server",
         "games/palworld/xbox-platform-error",
         "games/palworld/item-drop-penalty",
-        "games/palworld/delete-player-data"
+        "games/palworld/delete-player-data",
+        "games/palworld/breed-pals"
       ]
     },
     {
