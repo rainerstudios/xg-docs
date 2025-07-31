@@ -1,10 +1,12 @@
 ---
-title: "How to Fix 'Server Connection Timed Out' Error in Minecraft"
-description: "Learn how to fix connection timeout error while playing on a Minecraft Server."
+title: "How to Fix Minecraft 'Connection Timed Out' Error - Complete Troubleshooting Guide"
+description: "Comprehensive guide to fixing Minecraft server connection timeout errors. Learn causes, solutions, and prevention methods for network connectivity issues, server resource problems, and ISP-related timeouts."
 sidebarTitle: "Connection timed out"
 ---
 
-One of the most common issues while playing on a [Minecraft Server](https://berrybyte.net/minecraft) is the "**server connection timed out**" error, preventing you from joining the server. You may be experiencing high ping or getting timed out while playing Minecraft, it could be due to various reasons like a bad internet connection, configuration issue, or you're running out of server resources.
+# How to Fix Minecraft 'Connection Timed Out' Error
+
+The "connection timed out" error is one of the most frustrating issues Minecraft players encounter when trying to join servers. This comprehensive troubleshooting guide covers all common causes and proven solutions to get you back into the game, whether the issue stems from network problems, server configuration, or resource limitations.
 
 ## Reasons
 
@@ -29,5 +31,26 @@ One of the most common issues while playing on a [Minecraft Server](https://berr
   timeout flag on your Paper-based Minecraft server. To add, insert the  `-Dpaper.playerconnection.keepalive=90` flag to your Minecraft server startup flags; this extends the keepalive timeout to 90 seconds.
 - Take an [MTR](https://www.cloudflare.com/learning/network-layer/what-is-mtr/) (my trace-route, a tool which allows one to diagnose network paths and routes) and analyze the output. [Share the output](https://berrybyte.net/tickets) with the [BerryByte](https://berrybyte.net/) team and we can identify where the issue lies.
 
+
+## Common Issues
+
+- **Timeout occurs only for specific players**: Usually ISP routing or regional network issues
+  - **Solution**: Try using Cloudflare WARP or a VPN to change network routing
+
+- **Timeout happens during peak hours**: Server resource limitations or network congestion
+  - **Solution**: Upgrade server resources or optimize server performance with Aikar's flags
+
+- **Proxy servers causing timeouts**: Misconfigured BungeeCord, Velocity, or Waterfall setup
+  - **Solution**: Review proxy configuration files and ensure proper server connections
+
+- **Intermittent timeouts**: Network instability or packet loss between client and server
+  - **Solution**: Run MTR diagnostics and contact hosting provider with results
+
+## Related Guides
+
+- [Joining Your Minecraft Server](/games/minecraft/join-server) - Basic connection troubleshooting
+- [Server Performance Optimization](/games/minecraft/aikars-flags) - Improve server resource usage
+- [Network Configuration](/panel/network) - Server port and network settings
+- [Server Status Monitoring](/panel/overview) - Check server health and performance
 
 If none of these suggestions help or have any questions, reach out to us on our [Discord community server](https://berrybyte.net/discord).

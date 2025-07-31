@@ -1,8 +1,12 @@
 ---
-title: "How to Install Mods on Your Minecraft Server"
+title: "How to Install Forge and Fabric Mods on Minecraft Server - Complete Modding Guide"
 sidebarTitle: "Install mods"
-description: "Learn how to install any Forge or Fabric mod on a Minecraft server."
+description: "Step-by-step guide to installing Forge and Fabric mods on your Minecraft server. Learn how to set up mod loaders, upload mod files, and troubleshoot common modding issues for enhanced gameplay."
 ---
+
+# How to Install Forge and Fabric Mods on Your Minecraft Server
+
+Installing mods on your Minecraft server opens up endless possibilities for enhanced gameplay, new features, and custom content. This comprehensive guide covers both Forge and Fabric mod installation, helping you transform your vanilla server into a modded experience with popular mods from CurseForge and Modrinth.
 
 ## Install Forge Mods
 
@@ -37,5 +41,26 @@ Once done, and you have the Fabric mod you wish to use downloaded and ready to u
 4. Restart your server and the Fabric mod should be installed!
 
 <Note>Many Fabric mods require the [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api) mod installed to work. Download the Fabric API mod and upload it to the `/mods` folder</Note>
+
+## Common Issues
+
+- **Mods not loading after restart**: Check that the mod is compatible with your server version and mod loader
+  - **Solution**: Verify mod compatibility and ensure you're using the correct Forge/Fabric version
+
+- **Server crashes when starting with mods**: Usually caused by incompatible mods or missing dependencies
+  - **Solution**: Check server logs for error messages and remove problematic mods one by one
+
+- **Fabric mods not working**: Many Fabric mods require the Fabric API to function
+  - **Solution**: Download and install the [Fabric API](https://www.curseforge.com/minecraft/mc-mods/fabric-api) mod
+
+- **Players can't join modded server**: Client-side mods must be installed on both server and client
+  - **Solution**: Ensure players have the same mods installed or use server-side only mods
+
+## Related Guides
+
+- [Installing Modpacks](/games/minecraft/installing-modpacks) - Set up complete modpack collections
+- [Changing Server Versions](/games/minecraft/changing-versions) - Switch versions for mod compatibility
+- [Server Performance with Aikar's Flags](/games/minecraft/aikars-flags) - Optimize modded server performance
+- [File Management](/panel/importing-files) - Learn more about uploading files to your server
 
 If you run into any issues or have questions, feel free to send us a message in our [community Discord server](https://berrybyte.net/discord) or [open a support ticket](https://berrybyte.net/tickets).

@@ -1,18 +1,33 @@
 ---
-title: "How to Install Modpacks on Your Minecraft Server"
+title: "How to Install Modpacks on Minecraft Server - RLCraft, ATM8, FTB Setup Guide"
 sidebarTitle: "Install modpacks"
-description: "Learn how to install any Forge or custom modpacks on your Minecraft server."
+description: "Complete guide to installing popular modpacks like RLCraft, All The Mods 8, and FTB on your Minecraft server. Learn how to upload modpack files, configure Forge versions, and troubleshoot common installation issues."
 ---
 
-This guide will help you through the manual steps on how to upload, and play your favourite modpack on a Minecraft server!
+# How to Install Modpacks on Your Minecraft Server
 
-## Upload the modpack to your Minecraft Server
+Installing modpacks transforms your Minecraft server into a curated experience with hundreds of mods working together seamlessly. This comprehensive guide covers both the automatic BerryByte installation method and manual setup process for popular modpacks like RLCraft, All The Mods 8, and Feed The Beast collections.
 
-To get started with installing your favourite modpack on your Minecraft server, first, [upload the modpack's server archive](../lime/importing-files) (usually in a `.zip` format) to your file manager on the [game panel](https://game.berrybyte.net).
+## Method 1: Automatic Installation (BerryByte)
+
+The easiest way to install modpacks on your BerryByte server:
+
+1. Head to the **Modpacks** tab in your [game panel](https://game.berrybyte.net)
+2. Search to find the modpack you want to install
+3. Click the **Install** icon next to your chosen modpack
+4. That's it! The modpack will be automatically installed with the correct Forge version and configuration
+
+## Method 2: Manual Installation
+
+If your desired modpack isn't available in the automatic installer, you can manually upload it:
+
+### Upload the modpack to your Minecraft Server
+
+To get started with manual installation, first [upload the modpack's server archive](../lime/importing-files) (usually in a `.zip` format) to your file manager on the [game panel](https://game.berrybyte.net).
 
 This can be found on wherever you downloaded the modpack from, usually [Modrinth](https://modrinth.com), [CurseForge](https://curseforge.com), and others.
 
-## Install the correct version of Forge on your Minecraft Server
+### Install the correct version of Forge on your Minecraft Server
 
 Once uploaded, you will need to find the required Forge version specified in the modpack's readme file or on the modpack's webpage (usually similar to a set of numbers like `43.2.14`).
 
@@ -20,7 +35,7 @@ In the "**Startup**" tab, input the version number (e.g. `1.19.1-43.2.14` - noti
 
 Next, delete all the files inside your file manager **except** for the modpack's server archive. Press "**Reinstall**" in the "**Settings**" tab to install the necessary Forge version.
 
-## Unpack the modpack server files:
+### Unpack the modpack server files
 
 Start the server at least once to generate all the server files and folders. Then unpack the modpack's archive by clicking the three dots, and pressing the "**Unarchive**". 
 
@@ -50,5 +65,29 @@ Follow the same steps as mentioned, but upload your own archive to the server. N
 If you aren't able to find any specific Forge version in the modpack's readme file, nor on the modpacks' webpage, leave the "**Forge Version**" field empty. <br/> <br/> Instead, enter a version in the "**Minecraft Version**" field with the Minecraft version of the modpack (e.g 1.16.5, 1.12.2, etc). This will install the latest recommended available build.
 </Accordion>
 
+
+## Common Issues
+
+- **Modpack not available in automatic installer**: Not all modpacks are included in the automatic system
+  - **Solution**: Use the manual installation method described above
+
+- **Server crashes on startup with modpack**: Usually caused by insufficient RAM or mod conflicts
+  - **Solution**: Increase server RAM allocation and check for incompatible mods in server logs
+
+- **Modpack files don't extract properly**: Archive corruption or incomplete upload
+  - **Solution**: Re-download and re-upload the modpack server files, ensure complete file transfer
+
+- **Players can't connect to modpack server**: Client-server modpack version mismatch
+  - **Solution**: Ensure players have the exact same modpack version installed on their clients
+
+- **Missing Forge version error**: Incorrect or missing Forge version specification
+  - **Solution**: Check modpack documentation for exact Forge version requirements
+
+## Related Guides
+
+- [Installing Individual Mods](/games/minecraft/installing-mods) - Add single mods to your server
+- [Server Performance Optimization](/games/minecraft/aikars-flags) - Optimize modpack server performance
+- [Changing Server Versions](/games/minecraft/changing-versions) - Manage Minecraft and Forge versions
+- [File Management](/panel/importing-files) - Learn more about uploading and managing server files
 
 Feel free to get help in our [Discord server](https://berrybyte.net/discord) if you run into issues!

@@ -1,0 +1,274 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "maple",
+  "name": "BerryByte Wiki",
+  "colors": {
+    "primary": "#DC3962",
+    "light": "#FF81A0",
+    "dark": "#AE0C35"
+  },
+  "favicon": "/favicon.png",
+  "navigation": {
+    "languages": [
+      {
+        "language": "en",
+        "dropdowns": [
+          {
+            "dropdown": "General Guides",
+            "icon": "book",
+            "description": "Getting started, billing, and server management guides",
+            "groups": [
+              {
+                "group": "Welcome",
+                "pages": [
+                  "introduction",
+                  "quickstart",
+                  "migration",
+                  "changelog"
+                ]
+              },
+              {
+                "group": "Help & Support",
+                "pages": [
+                  "help/server-pending",
+                  "help/upgrade-plan",
+                  "help/cancel-plan",
+                  "help/free-trial"
+                ]
+              },
+              {
+                "group": "Game Panel",
+                "pages": [
+                  "panel/overview",
+                  "panel/backups",
+                  "panel/server-slices",
+                  "panel/importing-files",
+                  "panel/recycle-bin",
+                  "panel/sub-users"
+                ]
+              }
+            ]
+          },
+          {
+            "dropdown": "Game Guides",
+            "description": "Server setup and config guides for supported games",
+            "icon": "gamepad",
+            "groups": [
+              {
+                "group": "Minecraft",
+                "pages": [
+                  "games/minecraft/introduction",
+                  "games/minecraft/join-server",
+                  "games/minecraft/updating-jars",
+                  "games/minecraft/changing-versions",
+                  "games/minecraft/server-icon",
+                  "games/minecraft/setting-up-rcon",
+                  "games/minecraft/installing-modpacks",
+                  "games/minecraft/installing-mods",
+                  "games/minecraft/plugins/chunky",
+                  "games/minecraft/plugins/dynmap",
+                  "games/minecraft/plugins/geyser",
+                  "games/minecraft/plugins/votifier",
+                  "games/minecraft/aikars-flags",
+                  "games/minecraft/resource-packs",
+                  "games/minecraft/convert-world",
+                  "games/minecraft/convert-bedrock-to-java",
+                  "games/minecraft/upload-world",
+                  "games/minecraft/common-errors/connection-timed-out",
+                  "games/minecraft/common-errors/exception-server-tick-loop",
+                  "games/minecraft/common-errors/failed-to-check-session-lock",
+                  "games/minecraft/common-errors/kicked-for-flying"
+                ]
+              },
+              {
+                "group": "Palworld",
+                "pages": [
+                  "games/palworld/introduction",
+                  "games/palworld/setup-server",
+                  "games/palworld/join-server",
+                  "games/palworld/join-xbox-server",
+                  "games/palworld/setup-xbox-dedicated-server",
+                  "games/palworld/update-server",
+                  "games/palworld/change-server-version",
+                  "games/palworld/install-mods",
+                  "games/palworld/configure-server-settings",
+                  "games/palworld/set-server-password",
+                  "games/palworld/enable-pvp",
+                  "games/palworld/item-drop-penalty",
+                  "games/palworld/breed-pals",
+                  "games/palworld/enable-autosave-automatic-backups",
+                  "games/palworld/restore-autosave-backup",
+                  "games/palworld/all-admin-commands",
+                  "games/palworld/become-an-admin",
+                  "games/palworld/ban-and-kick-players",
+                  "games/palworld/unban-players",
+                  "games/palworld/delete-player-data",
+                  "games/palworld/reset-server",
+                  "games/palworld/fix-server-crashes",
+                  "games/palworld/xbox-platform-error"
+                ]
+              },
+              {
+                "group": "Rust",
+                "pages": [
+                  "games/rust/introduction"
+                ]
+              },
+              {
+                "group": "Satisfactory",
+                "pages": [
+                  "games/satisfactory/introduction"
+                ]
+              },
+              {
+                "group": "Valheim",
+                "pages": [
+                  "games/valheim/introduction"
+                ]
+              },
+              {
+                "group": "V Rising",
+                "pages": [
+                  "games/vrising/introduction",
+                  "games/vrising/join-server",
+                  "games/vrising/configure-server-settings",
+                  "games/vrising/change-difficulty",
+                  "games/vrising/become-an-admin",
+                  "games/vrising/ban-and-kick-players"
+                ]
+              },
+              {
+                "group": "Factorio",
+                "pages": [
+                  "games/factorio/introduction"
+                ]
+              },
+              {
+                "group": "Sons of the Forest",
+                "pages": [
+                  "games/sons-of-the-forest/introduction"
+                ]
+              },
+              {
+                "group": "7 Days to Die",
+                "pages": [
+                  "games/7-days-to-die/introduction"
+                ]
+              },
+              {
+                "group": "Enshrouded",
+                "pages": [
+                  "games/enshrouded/introduction",
+                  "games/enshrouded/join-server",
+                  "games/enshrouded/transfer-world"
+                ]
+              },
+              {
+                "group": "Soulmask",
+                "pages": [
+                  "games/soulmask/introduction",
+                  "games/soulmask/join-server",
+                  "games/soulmask/update-server",
+                  "games/soulmask/change-server-settings",
+                  "games/soulmask/banning-and-unbanning-players"
+                ]
+              },
+              {
+                "group": "Unturned",
+                "pages": [
+                  "games/unturned/introduction"
+                ]
+              },
+              {
+                "group": "FiveM",
+                "pages": [
+                  "games/fivem/introduction"
+                ]
+              },
+              {
+                "group": "CS2",
+                "pages": [
+                  "games/cs2/introduction"
+                ]
+              },
+              {
+                "group": "Ark SE",
+                "pages": [
+                  "games/ark-se/introduction"
+                ]
+              },
+              {
+                "group": "Conan Exiles",
+                "pages": [
+                  "games/conan-exiles/introduction"
+                ]
+              },
+              {
+                "group": "Core Keeper",
+                "pages": [
+                  "games/core-keeper/introduction"
+                ]
+              },
+              {
+                "group": "Vintage Story",
+                "pages": [
+                  "games/vintage-story/introduction"
+                ]
+              },
+              {
+                "group": "Garry's Mod",
+                "pages": [
+                  "games/garrys-mod/introduction"
+                ]
+              },
+              {
+                "group": "Don't Starve Together",
+                "pages": [
+                  "games/dont-starve-together/introduction"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "light": "/logo/primary-lightmode.svg",
+    "dark": "/logo/primary-darkmode.svg"
+  },
+  "background": {
+    "color": {
+      "light": "#FEFEFE",
+      "dark": "#0F1419"
+    }
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Contact us",
+        "href": "https://berrybyte.net/contact"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Create a server",
+      "href": "https://berrybyte.net/"
+    }
+  },
+  "footer": {
+    "socials": {
+      "website": "https://berrybyte.net/",
+      "github": "https://github.com/berrybyte-net/docs",
+      "discord": "https://discord.gg/Wc9wMZxQ2D"
+    }
+  },
+  "integrations": {
+    "ga4": {
+      "measurementId": "G-YNYEX38EPS"
+    },
+    "plausible": {
+      "domain": "docs.berrybyte.net"
+    }
+  }
+}

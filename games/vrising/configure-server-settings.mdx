@@ -1,11 +1,13 @@
 ---
-title: "How to Configure V Rising Server Settings"
+title: "How to Configure V Rising Server Settings - Complete Customization Guide"
 sidebarTitle: "Configure V Rising server"
-description: "A guide on how to customise features and settings on a V Rising dedicated server."
+description: "Comprehensive guide to customizing V Rising server settings including PvP options, difficulty levels, and gameplay mechanics. Learn how to edit ServerGameSettings.json for optimal vampire survival experiences."
 tags: "vrising"
 ---
 
-Here's how you can change or modify the settings of your [V Rising dedicated server](https://berrybyte.net/v-rising-server-hosting):
+# How to Configure V Rising Server Settings
+
+Customizing your V Rising server settings allows you to create the perfect vampire survival experience for your community. Whether you want to adjust PvP settings, modify resource rates, or fine-tune difficulty levels, this guide covers the complete process of editing server configurations for optimal gothic multiplayer gameplay.
 
 ## Edit V Rising Server Settings
 
@@ -15,5 +17,26 @@ Here's how you can change or modify the settings of your [V Rising dedicated ser
 4. **Restart** the server
 
 You can view a list of all the settings you can change [here](https://vrising.fandom.com/wiki/Server_settings).
+
+## Common Issues
+
+- **Settings not applying after restart**: JSON syntax errors or invalid values
+  - **Solution**: Validate JSON syntax and ensure all values are within acceptable ranges
+
+- **Server won't start after configuration changes**: Corrupted settings file or invalid parameters
+  - **Solution**: Restore backup of ServerGameSettings.json and make changes incrementally
+
+- **Configuration file not found**: Server hasn't been started or files not generated
+  - **Solution**: Start server once to generate default configuration files
+
+- **Changes revert after server restart**: File permissions or write access issues
+  - **Solution**: Ensure proper file permissions and save changes before restarting
+
+## Related Guides
+
+- [Change Difficulty](/games/vrising/change-difficulty) - Adjust server challenge level
+- [Become an Admin](/games/vrising/become-an-admin) - Gain administrator privileges
+- [Ban and Kick Players](/games/vrising/ban-and-kick-players) - Manage server access
+- [Join V Rising Server](/games/vrising/join-server) - Connect to your configured server
 
 Need help? [Chat with us](https://berrybyte.net/contact) or join our [community Discord server](https://discord.com/invite/Pv8DMpXtma).

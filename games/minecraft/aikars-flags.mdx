@@ -1,14 +1,12 @@
 ---
-  title: "Optimizing Minecraft Servers with Aikar's Flags"
-  sidebarTitle: "Aikar's flags"
-  description: "A guide to using Aikar's flags to optimize the performance of your Minecraft server."
+title: "How to Optimize Minecraft Server Performance with Aikar's Flags - JVM Tuning Guide"
+sidebarTitle: "Aikar's flags"
+description: "Complete guide to implementing Aikar's flags for Minecraft server optimization. Learn how to configure JVM startup parameters to improve server performance, reduce lag, and optimize garbage collection for better gameplay."
 ---
 
-Aikar's Flags are startup flags (CLI options) designed to improve performance and optimize Minecraft servers.
+# How to Optimize Minecraft Server Performance with Aikar's Flags
 
-Technical explanation: Command-line options for the [JVM](https://en.wikipedia.org/wiki/Java_virtual_machine) implementations like
-OpenJDK and OpenJ9. These flags are designed to improve performance of the JVM's G1GC garbage
-collector, this enhancing the performance for Minecraft servers.
+Aikar's Flags are specialized JVM startup parameters designed to dramatically improve Minecraft server performance through optimized garbage collection and memory management. These command-line options enhance your server's stability, reduce lag spikes, and provide smoother gameplay for all players by fine-tuning Java's G1 garbage collector specifically for Minecraft's unique memory usage patterns.
 
 **All Minecraft server lineups from BerryByte come equipped with Aikar's flags by
 default.**
@@ -98,7 +96,22 @@ as setting them too high or too low can have negative impacts on the performance
 of the server. If you are having trouble using Aikar's flags, check the
 `server.log` file in the logs folder of your server for any error messages.
 
-If you continue to experience issues with the flags, feel free to ask for help
-on our [Discord server](https://berrybyte.net/discord). If these flags have
-helped your server significantly, consider donating to
-[Aikar](https://donate.emc.gs/MC%20Flags) to support his work.
+## Common Issues
+
+- **Server appears to use 100% RAM**: This is normal behavior with Aikar's flags as they allocate all available memory
+  - **Solution**: Use the Spark plugin and run `/spark health` to check actual memory usage
+
+- **Server crashes with "Cannot allocate memory" error**: Usually occurs when `-XX:+AlwaysPreTouch` is used in containerized environments
+  - **Solution**: Remove the `-XX:+AlwaysPreTouch` flag if running on Pterodactyl or similar container systems
+
+- **Poor performance after applying flags**: May indicate incorrect memory allocation or incompatible Java version
+  - **Solution**: Ensure you're using Java 11+ and have allocated appropriate RAM amounts (leave 1GB for JVM overhead)
+
+## Related Guides
+
+- [Changing Minecraft Versions](/games/minecraft/changing-versions) - Switch server versions for optimal flag compatibility
+- [Server Performance Optimization](/games/minecraft/server-optimization) - Additional performance tuning tips
+- [Chunky Plugin Setup](/games/minecraft/plugins/chunky) - Pre-generate chunks to reduce server load
+- [Server Troubleshooting](/panel/overview) - General server performance issues
+
+If you continue to experience issues with the flags, feel free to ask for help on our [Discord server](https://berrybyte.net/discord). If these flags have helped your server significantly, consider donating to [Aikar](https://donate.emc.gs/MC%20Flags) to support his work.

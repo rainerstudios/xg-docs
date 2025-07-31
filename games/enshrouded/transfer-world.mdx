@@ -1,23 +1,25 @@
 ---
-title: "How to Transfer and Upload World Save to an Enshrouded Server"
+title: "How to Transfer Enshrouded World Save to Server - Complete Migration Guide"
 sidebarTitle: "Transfer and upload world save"
-description: "A guide on how to upload and transfer local world save to an Enshrouded server."
+description: "Comprehensive guide to transferring local Enshrouded world saves to your dedicated server. Learn how to locate save files, backup existing worlds, and upload custom worlds for multiplayer gameplay."
 tags: "enshrouded, enshrouded game multiplayer, enshrouded always online, enshrouded community server"
 ---
 
-Want to transfer your local Enshrouded game world save to a server? This can easily be done with the following steps: 
+# How to Transfer Enshrouded World Save to Your Server
+
+Transferring your local Enshrouded world save to a dedicated server allows you to continue your survival progress with friends in multiplayer. This comprehensive guide covers the complete process of locating your save files, safely backing up existing server data, and uploading your custom world for seamless multiplayer continuation. 
 
 ## Preparing the Server
 1. Login to the BerryByte [game control panel](https://game.berrybyte.net)
 2. **Stop** the server via the control panel. 
 <Frame>
-  <img src="/images/control-panel.png" />
+  <img src="/images/panel/control-panel.png" />
 </Frame>
 3. Go to Files and select the savegame folder. 
 4. Create a new directory called "old" and drag all the files to it. 
 5. This will create a backup of the world, just to be safe. Configure full server backups [here](/lime/backups.mdx). 
 <Frame>
-  <img src="/images/backup-enshrouded.png" />
+  <img src="/images/games/enshrouded/backup-enshrouded.png" />
 </Frame>
 
 ## Locating the Enshrouded world files
@@ -26,7 +28,7 @@ Want to transfer your local Enshrouded game world save to a server? This can eas
 3. Locate the file with a string of 8 characters. This is often called **3ad85aea**
 NOTE: If the game file has a different name please rename it to **3ad85aea** before uploading. 
 <Frame>
-  <img src="/images/savedfile-location.png" />
+  <img src="/images/general/savedfile-location.png" />
 </Frame>
 
 ## Copying the file
@@ -35,5 +37,25 @@ NOTE: If the game file has a different name please rename it to **3ad85aea** bef
 Voila. Your new file is added. Happy Playing
 
 
-Need help updating your Enshrouded server? Shoot us a message on our
-[community Discord server](https://berrybyte.net/discord) or [contact support](https://berrybyte.net/support).
+## Common Issues
+
+- **Save file not found in Steam directory**: Different Steam installation or user profile
+  - **Solution**: Check alternative Steam installation paths or verify correct Steam user ID
+
+- **World doesn't load after transfer**: Incorrect file naming or corrupted save data
+  - **Solution**: Ensure file is named "3ad85aea" exactly and verify save file integrity
+
+- **Server crashes after world upload**: Incompatible save version or corrupted data
+  - **Solution**: Restore from backup and try re-exporting the save file from game
+
+- **Progress lost after transfer**: Incomplete save file or missing character data
+  - **Solution**: Verify all save components are transferred and check for additional save files
+
+## Related Guides
+
+- [Join Enshrouded Server](/games/enshrouded/join-server) - Connect to your server after world transfer
+- [Server Backups](/panel/backups) - Protect your world data with automatic backups
+- [File Management](/panel/importing-files) - Learn more about uploading files to your server
+- [Server Configuration](/games/enshrouded/configure-server) - Customize server settings
+
+Need help updating your Enshrouded server? Shoot us a message on our [community Discord server](https://berrybyte.net/discord) or [contact support](https://berrybyte.net/support).

@@ -1,16 +1,18 @@
 ---
-title: "How to Configure Palworld Server Settings"
+title: "How to Configure Palworld Server Settings - Complete Customization Guide"
 sidebarTitle: "Configure Palworld Server"
-description: "A guide on how to customise features and settings on a Palworld dedicated server."
+description: "Comprehensive guide to customizing Palworld server settings including XP rates, death penalties, PvP options, and gameplay mechanics. Learn both GUI and manual configuration methods for optimal server management."
 tags: "palworld"
 ---
 
-Want to change your [Palworld server](https://berrybyte.net/palworld-server-hosting) settings, like the XP rate, or want to change the Death Penalty so you don't drop items on death? Here's how you can change or modify the settings:
+# How to Configure Palworld Server Settings
+
+Customizing your Palworld server settings allows you to create the perfect gameplay experience for your community. Whether you want to adjust XP rates for faster progression, modify death penalties, or fine-tune resource collection rates, this guide covers both the user-friendly GUI method and manual configuration editing for complete control over your server.
 
 ## Configure Palworld Server Settings
 1. Open the **Palworld Settings** tab
 <Frame>
-  <img src="/images/palworldsettings.png" />
+  <img src="/images/games/palworld/palworldsettings.png" />
 </Frame>
 2. Search for the option/settings you want to change
 3. Edit the field with your desired value or option
@@ -21,7 +23,7 @@ Want to change your [Palworld server](https://berrybyte.net/palworld-server-host
 1. **Stop** the server
 2. Navigate to **Pal** -> **Saved** -> **Config** -> **LinuxServer** -> **PalWorldSettings.ini**
 <Frame>
-  <img src="/images/palworldsettings-ini.png" />
+  <img src="/images/games/palworld/palworldsettings-ini.png" />
 </Frame>
 3. Make your changes and save the file
 4. **Start** the server
@@ -37,5 +39,25 @@ OptionSettings=(Difficulty=None,DayTimeSpeedRate=1.000000,NightTimeSpeedRate=1.0
 
 You can view a list of all the settings you can change [here](https://palworld.wiki.gg/wiki/PalWorldSettings.ini).
 
-Need help configuring settings on your [Palworld server](https://berrybyte.net/palworld-server-hosting)? Shoot us a message on our
-[community Discord server](https://berrybyte.net/discord) or [contact support](https://berrybyte.net/support).
+## Common Issues
+
+- **Settings reset after server restart**: Changes made while server was running
+  - **Solution**: Always stop the server before editing PalWorldSettings.ini file
+
+- **Configuration file appears empty**: File may not have been generated yet
+  - **Solution**: Start the server once to generate default configuration files
+
+- **Invalid configuration syntax**: Incorrect formatting in settings file
+  - **Solution**: Ensure all settings are on one line and properly formatted as shown in example
+
+- **Changes don't take effect**: Server cache or incorrect file location
+  - **Solution**: Restart server after changes and verify you're editing the correct config file
+
+## Related Guides
+
+- [Enable PvP](/games/palworld/enable-pvp) - Set up player vs player combat
+- [Set Server Password](/games/palworld/set-server-password) - Protect your server access
+- [Item Drop Penalty](/games/palworld/item-drop-penalty) - Configure death penalties
+- [Admin Commands](/games/palworld/all-admin-commands) - Manage server with commands
+
+Need help configuring settings on your [Palworld server](https://berrybyte.net/palworld-server-hosting)? Shoot us a message on our [community Discord server](https://berrybyte.net/discord) or [contact support](https://berrybyte.net/support).
