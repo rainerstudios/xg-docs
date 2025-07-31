@@ -8,21 +8,22 @@
     "dark": "#AE0C35"
   },
   "favicon": "/favicon.png",
-  "anchors": [
+  "tabs": [
     {
-      "name": "Panel",
-      "icon": "desktop",
-      "url": "panel"
+      "name": "Documentation",
+      "url": "/"
     },
     {
-      "name": "Billing",
-      "icon": "credit-card", 
-      "url": "billing"
+      "name": "Panel",
+      "url": "/panel"
+    },
+    {
+      "name": "Billing", 
+      "url": "/billing"
     },
     {
       "name": "Games",
-      "icon": "gamepad",
-      "url": "games"
+      "url": "/games"
     }
   ],
   "navigation": [
@@ -56,109 +57,109 @@
         "help/free-trial"
       ]
     },
-      {
-        "group": "Minecraft",
-        "pages": [
-          "games/minecraft/introduction",
-          "games/minecraft/join-server",
-          "games/minecraft/updating-jars",
-          "games/minecraft/changing-versions",
-          "games/minecraft/server-icon",
-          "games/minecraft/setting-up-rcon",
-          "games/minecraft/installing-modpacks",
-          "games/minecraft/installing-mods",
-          "games/minecraft/plugins/chunky",
-          "games/minecraft/plugins/dynmap",
-          "games/minecraft/plugins/geyser",
-          "games/minecraft/plugins/votifier",
-          "games/minecraft/aikars-flags",
-          "games/minecraft/resource-packs",
-          "games/minecraft/convert-world",
-          "games/minecraft/convert-bedrock-to-java",
-          "games/minecraft/upload-world",
-          "games/minecraft/common-errors/connection-timed-out",
-          "games/minecraft/common-errors/exception-server-tick-loop",
-          "games/minecraft/common-errors/failed-to-check-session-lock",
-          "games/minecraft/common-errors/kicked-for-flying"
-        ]
-      },
-      {
-        "group": "Palworld",
-        "pages": [
-          "games/palworld/introduction",
-          "games/palworld/setup-server",
-          "games/palworld/join-server",
-          "games/palworld/join-xbox-server",
-          "games/palworld/setup-xbox-dedicated-server",
-          "games/palworld/update-server",
-          "games/palworld/change-server-version",
-          "games/palworld/install-mods",
-          "games/palworld/configure-server-settings",
-          "games/palworld/set-server-password",
-          "games/palworld/enable-pvp",
-          "games/palworld/item-drop-penalty",
-          "games/palworld/breed-pals",
-          "games/palworld/enable-autosave-automatic-backups",
-          "games/palworld/restore-autosave-backup",
-          "games/palworld/all-admin-commands",
-          "games/palworld/become-an-admin",
-          "games/palworld/ban-and-kick-players",
-          "games/palworld/unban-players",
-          "games/palworld/delete-player-data",
-          "games/palworld/reset-server",
-          "games/palworld/fix-server-crashes",
-          "games/palworld/xbox-platform-error"
-        ]
-      },
-      {
-        "group": "V Rising",
-        "pages": [
-          "games/vrising/introduction",
-          "games/vrising/join-server",
-          "games/vrising/configure-server-settings",
-          "games/vrising/change-difficulty",
-          "games/vrising/become-an-admin",
-          "games/vrising/ban-and-kick-players"
-        ]
-      },
-      {
-        "group": "Enshrouded",
-        "pages": [
-          "games/enshrouded/introduction",
-          "games/enshrouded/join-server",
-          "games/enshrouded/transfer-world"
-        ]
-      },
-      {
-        "group": "Soulmask",
-        "pages": [
-          "games/soulmask/introduction",
-          "games/soulmask/join-server",
-          "games/soulmask/update-server",
-          "games/soulmask/change-server-settings",
-          "games/soulmask/banning-and-unbanning-players"
-        ]
-      },
-      {
-        "group": "Other Games",
-        "pages": [
-          "games/rust/introduction",
-          "games/satisfactory/introduction",
-          "games/valheim/introduction",
-          "games/factorio/introduction",
-          "games/sons-of-the-forest/introduction",
-          "games/7-days-to-die/introduction",
-          "games/unturned/introduction",
-          "games/fivem/introduction",
-          "games/cs2/introduction",
-          "games/ark-se/introduction",
-          "games/conan-exiles/introduction",
-          "games/core-keeper/introduction",
-          "games/vintage-story/introduction",
-          "games/garrys-mod/introduction",
-          "games/dont-starve-together/introduction"
-        ]
-      }
+    {
+      "group": "Minecraft",
+      "pages": [
+        "games/minecraft/introduction",
+        "games/minecraft/join-server",
+        "games/minecraft/updating-jars",
+        "games/minecraft/changing-versions",
+        "games/minecraft/server-icon",
+        "games/minecraft/setting-up-rcon",
+        "games/minecraft/installing-modpacks",
+        "games/minecraft/installing-mods",
+        "games/minecraft/plugins/chunky",
+        "games/minecraft/plugins/dynmap",
+        "games/minecraft/plugins/geyser",
+        "games/minecraft/plugins/votifier",
+        "games/minecraft/aikars-flags",
+        "games/minecraft/resource-packs",
+        "games/minecraft/convert-world",
+        "games/minecraft/convert-bedrock-to-java",
+        "games/minecraft/upload-world",
+        "games/minecraft/common-errors/connection-timed-out",
+        "games/minecraft/common-errors/exception-server-tick-loop",
+        "games/minecraft/common-errors/failed-to-check-session-lock",
+        "games/minecraft/common-errors/kicked-for-flying"
+      ]
+    },
+    {
+      "group": "Palworld",
+      "pages": [
+        "games/palworld/introduction",
+        "games/palworld/setup-server",
+        "games/palworld/join-server",
+        "games/palworld/join-xbox-server",
+        "games/palworld/setup-xbox-dedicated-server",
+        "games/palworld/update-server",
+        "games/palworld/change-server-version",
+        "games/palworld/install-mods",
+        "games/palworld/configure-server-settings",
+        "games/palworld/set-server-password",
+        "games/palworld/enable-pvp",
+        "games/palworld/item-drop-penalty",
+        "games/palworld/breed-pals",
+        "games/palworld/enable-autosave-automatic-backups",
+        "games/palworld/restore-autosave-backup",
+        "games/palworld/all-admin-commands",
+        "games/palworld/become-an-admin",
+        "games/palworld/ban-and-kick-players",
+        "games/palworld/unban-players",
+        "games/palworld/delete-player-data",
+        "games/palworld/reset-server",
+        "games/palworld/fix-server-crashes",
+        "games/palworld/xbox-platform-error"
+      ]
+    },
+    {
+      "group": "V Rising",
+      "pages": [
+        "games/vrising/introduction",
+        "games/vrising/join-server",
+        "games/vrising/configure-server-settings",
+        "games/vrising/change-difficulty",
+        "games/vrising/become-an-admin",
+        "games/vrising/ban-and-kick-players"
+      ]
+    },
+    {
+      "group": "Enshrouded",
+      "pages": [
+        "games/enshrouded/introduction",
+        "games/enshrouded/join-server",
+        "games/enshrouded/transfer-world"
+      ]
+    },
+    {
+      "group": "Soulmask",
+      "pages": [
+        "games/soulmask/introduction",
+        "games/soulmask/join-server",
+        "games/soulmask/update-server",
+        "games/soulmask/change-server-settings",
+        "games/soulmask/banning-and-unbanning-players"
+      ]
+    },
+    {
+      "group": "Other Games",
+      "pages": [
+        "games/rust/introduction",
+        "games/satisfactory/introduction",
+        "games/valheim/introduction",
+        "games/factorio/introduction",
+        "games/sons-of-the-forest/introduction",
+        "games/7-days-to-die/introduction",
+        "games/unturned/introduction",
+        "games/fivem/introduction",
+        "games/cs2/introduction",
+        "games/ark-se/introduction",
+        "games/conan-exiles/introduction",
+        "games/core-keeper/introduction",
+        "games/vintage-story/introduction",
+        "games/garrys-mod/introduction",
+        "games/dont-starve-together/introduction"
+      ]
+    }
   ],
   "logo": {
     "light": "/logo/light-new.webp",
