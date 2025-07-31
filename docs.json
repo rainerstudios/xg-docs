@@ -12,33 +12,20 @@
     "languages": [
       {
         "language": "en",
+        "pages": [
+          "introduction",
+          "quickstart",
+          "migration",
+          "changelog"
+        ],
         "dropdowns": [
           {
-            "dropdown": "General Guides",
-            "icon": "book",
-            "description": "Getting started, billing, and server management guides",
+            "dropdown": "Panel",
+            "icon": "desktop",
+            "description": "Game panel guides and server management",
             "groups": [
               {
-                "group": "Welcome",
-                "pages": [
-                  "introduction",
-                  "quickstart",
-                  "migration",
-                  "changelog"
-                ]
-              },
-              {
-                "group": "Help & Support",
-                "pages": [
-                  "help/server-pending",
-                  "help/upgrade-plan",
-                  "help/cancel-plan",
-                  "help/troubleshooting",
-                  "help/free-trial"
-                ]
-              },
-              {
-                "group": "Game Panel",
+                "group": "Panel Guides",
                 "pages": [
                   "panel/getting-started",
                   "panel/console",
@@ -51,7 +38,24 @@
             ]
           },
           {
-            "dropdown": "Game Guides",
+            "dropdown": "Billing",
+            "icon": "credit-card",
+            "description": "Billing, plans, and account management",
+            "groups": [
+              {
+                "group": "Help & Support",
+                "pages": [
+                  "help/server-pending",
+                  "help/upgrade-plan",
+                  "help/cancel-plan",
+                  "help/troubleshooting",
+                  "help/free-trial"
+                ]
+              }
+            ]
+          },
+          {
+            "dropdown": "Games",
             "description": "Server setup and config guides for supported games",
             "icon": "gamepad",
             "groups": [
