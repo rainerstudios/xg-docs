@@ -3,9 +3,9 @@
   "theme": "aspen",
   "name": "XGamingServer Wiki",
   "colors": {
-    "primary": "#DC3962",
-    "light": "#FF81A0",
-    "dark": "#AE0C35"
+    "primary": "#10B981",
+    "light": "#34D399",
+    "dark": "#059669"
   },
   "favicon": "/favicon.png",
   "navigation": {
