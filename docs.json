@@ -8,49 +8,54 @@
     "dark": "#AE0C35"
   },
   "favicon": "/favicon.png",
-  "topbarLinks": [
+  "anchors": [
     {
       "name": "Panel",
-      "url": "/panel/getting-started"
+      "icon": "desktop",
+      "url": "panel"
     },
     {
       "name": "Billing",
-      "url": "/help"
+      "icon": "credit-card", 
+      "url": "billing"
     },
     {
       "name": "Games",
-      "url": "/games/minecraft"
+      "icon": "gamepad",
+      "url": "games"
     }
   ],
-  "navigation": {
-    "pages": [
-      "introduction",
-      "quickstart", 
-      "migration",
-      "changelog"
-    ],
-    "groups": [
-      {
-        "group": "Panel Guides",
-        "pages": [
-          "panel/getting-started",
-          "panel/console", 
-          "panel/file-manager",
-          "panel/backups",
-          "panel/importing-files",
-          "panel/sub-users"
-        ]
-      },
-      {
-        "group": "Help & Support", 
-        "pages": [
-          "help/server-pending",
-          "help/upgrade-plan",
-          "help/cancel-plan", 
-          "help/troubleshooting",
-          "help/free-trial"
-        ]
-      },
+  "navigation": [
+    {
+      "group": "Getting Started",
+      "pages": [
+        "introduction",
+        "quickstart", 
+        "migration",
+        "changelog"
+      ]
+    },
+    {
+      "group": "Panel Guides",
+      "pages": [
+        "panel/getting-started",
+        "panel/console", 
+        "panel/file-manager",
+        "panel/backups",
+        "panel/importing-files",
+        "panel/sub-users"
+      ]
+    },
+    {
+      "group": "Help & Support", 
+      "pages": [
+        "help/server-pending",
+        "help/upgrade-plan",
+        "help/cancel-plan", 
+        "help/troubleshooting",
+        "help/free-trial"
+      ]
+    },
       {
         "group": "Minecraft",
         "pages": [
@@ -154,8 +159,7 @@
           "games/dont-starve-together/introduction"
         ]
       }
-    ]
-  },
+  ],
   "logo": {
     "light": "/logo/light-new.webp",
     "dark": "/logo/dark-new.webp"
