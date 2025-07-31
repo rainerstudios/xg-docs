@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "maple",
+  "theme": "aspen",
   "name": "XGamingServer Wiki",
   "colors": {
     "primary": "#DC3962",
