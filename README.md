@@ -1,4 +1,4 @@
-# BerryByte Wiki
+# XGamingServer Wiki
 
 Public community-written wiki for all game server & virtual server related topics.
 
@@ -22,4 +22,4 @@ Once written, commit and push the changes to your fork, make a pull request with
 
 ## Licensing
 
-All content in our documentation is [CC-BY-SA-4.0](https://github.com/berrybyte-net/docs/blob/main/LICENSE) licensed.
+All content in our documentation is [CC-BY-SA-4.0](https://github.com/XGamingServer/docs/blob/main/LICENSE) licensed.

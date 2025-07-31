@@ -1,0 +1,241 @@
+---
+title: "Minecraft Plugin Manager"
+sidebarTitle: "Plugin Manager"
+description: "Easily install and manage Minecraft plugins with the integrated plugin manager"
+icon: "puzzle-piece"
+---
+
+# Minecraft Plugin Manager
+
+The Minecraft Plugin Manager is an XGamingServer exclusive add-on that simplifies plugin installation and management for your Minecraft server. No more manual downloading and uploading - install plugins with just a few clicks!
+
+## Features
+
+### One-Click Plugin Installation
+- Browse thousands of plugins from popular repositories
+- Install plugins directly from Spigot, Bukkit, and other sources
+- Automatic dependency resolution and installation
+- Version compatibility checking
+
+### Plugin Management
+- View all installed plugins with status information
+- Enable/disable plugins without server restart
+- Update plugins to latest versions automatically
+- Remove plugins cleanly with configuration cleanup
+
+### Popular Plugin Categories
+- **Administration** - WorldEdit, WorldGuard, EssentialsX
+- **Economy** - Vault, ChestShop, Jobs Reborn
+- **Protection** - GriefPrevention, Residence, Towny
+- **Fun** - Citizens, MythicMobs, Holographic Displays
+- **Performance** - ClearLag, PlugMan, LagMonitor
+
+## Getting Started
+
+### Accessing the Plugin Manager
+
+1. Log into your XGamingServer control panel
+2. Select your Minecraft server
+3. Navigate to **Add-ons** in the left sidebar
+4. Click on **Plugin Manager**
+
+<Note>
+The Plugin Manager is only available for Minecraft Java Edition servers running Spigot, Paper, or Bukkit.
+</Note>
+
+### Installing Your First Plugin
+
+<Steps>
+  <Step title="Browse Available Plugins">
+    Use the search bar or browse categories to find plugins
+  </Step>
+  
+  <Step title="Check Compatibility">
+    Ensure the plugin supports your Minecraft version
+  </Step>
+  
+  <Step title="Install Plugin">
+    Click "Install" and wait for the automatic download
+  </Step>
+  
+  <Step title="Restart Server">
+    Restart your server to load the new plugin
+  </Step>
+</Steps>
+
+## Plugin Categories
+
+### Essential Server Plugins
+
+<CardGroup cols={2}>
+  <Card title="EssentialsX" icon="star">
+    Core commands, economy, teleportation, and player management
+  </Card>
+  
+  <Card title="WorldEdit & WorldGuard" icon="globe">
+    World editing tools and region protection system
+  </Card>
+  
+  <Card title="LuckPerms" icon="users">
+    Advanced permission management system
+  </Card>
+  
+  <Card title="Vault" icon="coins">
+    Economy API that works with most economy plugins
+  </Card>
+</CardGroup>
+
+### Popular Gameplay Plugins
+
+<AccordionGroup>
+  <Accordion title="Economy Plugins">
+    - **ChestShop**: Create player-run shops with chest interfaces
+    - **Jobs Reborn**: Let players earn money through various jobs
+    - **ShopGUIPlus**: Modern GUI-based server shop system
+    - **AuctionHouse**: Server-wide auction system for trading
+  </Accordion>
+  
+  <Accordion title="Protection Plugins">
+    - **GriefPrevention**: Automatic anti-grief with claiming system
+    - **Residence**: Advanced area protection with detailed permissions
+    - **Towny**: Create towns and nations with player governments
+    - **Factions**: Team-based claiming and warfare system
+  </Accordion>
+  
+  <Accordion title="Fun & Content Plugins">
+    - **Citizens**: Create interactive NPCs with custom behaviors
+    - **MythicMobs**: Design custom monsters and boss fights
+    - **Holographic Displays**: Create floating text and images
+    - **CustomItems**: Add custom items with special abilities
+  </Accordion>
+  
+  <Accordion title="Performance Plugins">
+    - **ClearLag**: Remove entities and items to reduce lag
+    - **PlugMan**: Manage plugins without server restarts
+    - **LagMonitor**: Monitor and analyze server performance
+    - **ChunkBuster**: Optimize chunk loading and generation
+  </Accordion>
+</AccordionGroup>
+
+## Managing Installed Plugins
+
+### Plugin Status Dashboard
+View all your plugins with:
+- **Status**: Enabled, Disabled, or Error
+- **Version**: Current installed version
+- **Updates**: Available updates highlighted
+- **Dependencies**: Required plugins listed
+- **Performance**: Resource usage statistics
+
+### Plugin Operations
+
+<CardGroup cols={3}>
+  <Card title="Enable/Disable" icon="toggle-on">
+    Toggle plugins on/off without restarting the server
+  </Card>
+  
+  <Card title="Update" icon="refresh">
+    One-click updates to the latest compatible versions
+  </Card>
+  
+  <Card title="Configure" icon="gear">
+    Direct access to plugin configuration files
+  </Card>
+</CardGroup>
+
+### Bulk Operations
+- **Update All**: Update all plugins to their latest versions
+- **Disable All**: Quickly disable all plugins for troubleshooting
+- **Export List**: Create a list of installed plugins for backup
+- **Import Setup**: Install plugins from a previously exported list
+
+## Plugin Configuration
+
+### Automatic Configuration
+Many plugins are automatically configured with sensible defaults:
+- Database connections use your server's MySQL database
+- File paths are automatically configured
+- Basic permissions are set up with LuckPerms integration
+
+### Manual Configuration
+Access plugin config files directly:
+1. Go to **File Manager** in your control panel
+2. Navigate to the `plugins/[PluginName]/` folder
+3. Edit `config.yml` or other configuration files
+4. Restart your server or reload the plugin
+
+## Troubleshooting
+
+### Common Issues
+
+<AccordionGroup>
+  <Accordion title="Plugin Won't Install">
+    - Check if your server version is compatible
+    - Ensure you have sufficient disk space
+    - Verify the plugin source is available
+    - Try installing manually if automatic install fails
+  </Accordion>
+  
+  <Accordion title="Plugin Conflicts">
+    - Review the plugin dependency list
+    - Check for conflicting plugins (two similar plugins)
+    - Use the compatibility checker before installing
+    - Disable conflicting plugins one at a time
+  </Accordion>
+  
+  <Accordion title="Performance Issues">
+    - Monitor plugin resource usage in the dashboard
+    - Update plugins to latest versions
+    - Remove unused plugins
+    - Consider alternatives for resource-heavy plugins
+  </Accordion>
+  
+  <Accordion title="Update Problems">
+    - Backup your server before major plugin updates
+    - Check plugin changelogs for breaking changes
+    - Test updates on a staging server first
+    - Rollback to previous version if needed
+  </Accordion>
+</AccordionGroup>
+
+### Getting Support
+- **Plugin Documentation**: Each plugin includes links to official documentation
+- **Community Forums**: Access to plugin-specific support communities
+- **XGamingServer Support**: Our team can help with plugin-related server issues
+- **Compatibility Database**: Check known compatibility issues before installing
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Start Small" icon="seedling">
+    Install a few essential plugins first, then gradually add more
+  </Card>
+  
+  <Card title="Regular Updates" icon="calendar">
+    Keep plugins updated for security and performance improvements
+  </Card>
+  
+  <Card title="Backup Configs" icon="floppy-disk">
+    Save plugin configurations before making changes
+  </Card>
+  
+  <Card title="Monitor Performance" icon="chart-line">
+    Watch server performance when adding new plugins
+  </Card>
+</CardGroup>
+
+## Advanced Features
+
+### Custom Plugin Sources
+- Add private plugin repositories
+- Install plugins from direct download URLs
+- Upload custom or modified plugins
+- Version control for custom plugins
+
+### Automated Management
+- **Auto-Updates**: Configure plugins to update automatically
+- **Dependency Tracking**: Automatically install required dependencies
+- **Conflict Resolution**: Get warnings about potential plugin conflicts
+- **Performance Monitoring**: Automatic alerts for resource-heavy plugins
+
+The Plugin Manager makes Minecraft server administration much easier, allowing you to focus on building your community rather than managing technical details.

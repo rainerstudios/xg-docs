@@ -1,0 +1,138 @@
+---
+title: "Using the Server Console"
+sidebarTitle: "Console"
+description: "Learn how to use the console to monitor your server and send commands in real-time"
+icon: "terminal"
+---
+
+# Using the Console
+
+The Console is the most direct way to interact with your game server. It shows you the live activity of your server's software and allows you to send commands in real-time.
+
+## Understanding the Interface
+
+When you open the Console page, you'll see several key areas:
+
+### Live Output
+The main window is a scrolling log of your server's activity. This is where you'll see:
+- Chat messages from players
+- Server events (player joins/leaves, world saves, etc.)
+- Error messages and warnings
+- Plugin/mod outputs
+- System notifications
+
+### Resource Graphs
+At the top, you'll find live graphs showing your server's performance:
+- **CPU Usage** - Processing power being used
+- **RAM Usage** - Memory consumption
+- **Network Activity** - Data transfer rates
+
+These graphs are great for monitoring the health and performance of your server at a glance.
+
+### Power Controls
+The power buttons control your server's state:
+- **Start** - Boots up your server
+- **Stop** - Gracefully shuts down the server
+- **Restart** - Stops and starts the server
+- **Kill** - Forces the server to stop immediately (use sparingly)
+
+<Warning>
+Use the **Kill** button only when your server is unresponsive. It may cause data loss or corruption.
+</Warning>
+
+### Command Input
+The text box at the bottom is where you type commands to send to your server.
+
+## Sending Commands
+
+To send a command, simply type it into the input box and press `Enter`.
+
+### Example Commands by Game:
+
+<AccordionGroup>
+  <Accordion title="Minecraft Commands">
+    - `say Hello everyone!` - Send a message to all players
+    - `whitelist add PlayerName` - Add a player to the whitelist
+    - `op PlayerName` - Give a player operator permissions
+    - `weather clear` - Set weather to clear
+    - `time set day` - Set time to day
+  </Accordion>
+  
+  <Accordion title="Palworld Commands">
+    - `Broadcast Hello everyone!` - Send a message to all players
+    - `KickPlayer PlayerName` - Kick a player from the server
+    - `BanPlayer PlayerName` - Ban a player
+    - `ShowPlayers` - List all connected players
+  </Accordion>
+  
+  <Accordion title="V Rising Commands">
+    - `adminauth` - Authenticate as admin
+    - `kick PlayerName` - Kick a player
+    - `ban PlayerName` - Ban a player
+    - `list` - Show connected players
+  </Accordion>
+</AccordionGroup>
+
+## Useful Console Features
+
+### Command History
+You can quickly access commands you've recently used:
+1. Click in the command input box
+2. Press the `↑` (Up Arrow) key to cycle through previous commands
+3. Press the `↓` (Down Arrow) key to go forward in your command history
+
+### Search Console Output
+Need to find a specific event or message?
+1. Press `Ctrl+F` (or `Cmd+F` on Mac) to open the search bar
+2. Type your search term
+3. The console will highlight matching text
+
+### Copy Server Logs
+If you need to share your server logs for support:
+1. Click the **Clipboard icon** in the console toolbar
+2. This copies the last 500 lines of logs
+3. The logs are automatically uploaded to a sharing service
+4. The shareable link is copied to your clipboard
+
+### Pop-out Console
+Click the **Expand icon** to open the console in a new browser window. This is useful for:
+- Monitoring your server while working on other tasks
+- Having the console open on a second monitor
+- Keeping logs visible during file management
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Monitor Regularly" icon="eye">
+    Check your console regularly for errors, player activity, and performance issues
+  </Card>
+  
+  <Card title="Save Important Logs" icon="bookmark">
+    Use the copy logs feature to save important error messages or events
+  </Card>
+  
+  <Card title="Learn Game Commands" icon="graduation-cap">
+    Familiarize yourself with your game's specific console commands
+  </Card>
+  
+  <Card title="Use Graceful Restarts" icon="refresh">
+    Always use Stop/Start instead of Kill when possible to prevent data loss
+  </Card>
+</CardGroup>
+
+## Troubleshooting Common Issues
+
+### Console Not Loading
+- Refresh the page
+- Clear your browser cache
+- Check if your server is actually running
+
+### Commands Not Working
+- Ensure you're using the correct syntax for your game
+- Check if you have the necessary permissions
+- Verify the server is running and responsive
+
+### High Resource Usage
+- Monitor the resource graphs during peak times
+- Look for error messages that might indicate problems
+- Consider upgrading your server plan if consistently high

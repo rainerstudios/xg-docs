@@ -1,0 +1,198 @@
+---
+title: "File Manager Guide"
+sidebarTitle: "File Manager" 
+description: "Learn how to upload, edit, and manage your server files through the web interface"
+icon: "folder"
+---
+
+# Managing Files
+
+The File Manager allows you to work with all of your server's files directly from your web browser, just like using File Explorer on Windows or Finder on macOS. No need for FTP clients or command-line access!
+
+## Navigating Your Server Files
+
+### Understanding the Interface
+- **File List** - Shows all files and folders in the current directory
+- **Breadcrumbs** - Navigation trail at the top showing your current location
+- **Action Buttons** - Tools for creating, uploading, and managing files
+- **Context Menus** - Right-click or three-dots menu for file operations
+
+### Moving Around Directories
+- **Enter Folders** - Click on any folder name to open it
+- **Go Back** - Use the breadcrumb navigation at the top
+- **Home Directory** - Click the server name to return to the root folder
+
+## File Operations
+
+### Creating New Content
+
+<CardGroup cols={3}>
+  <Card title="Upload Files" icon="upload">
+    Click **Upload** to add files from your computer. Supports drag-and-drop for easy uploading.
+  </Card>
+  
+  <Card title="New Folder" icon="folder-plus">
+    Create a new directory to organize your server files.
+  </Card>
+  
+  <Card title="New File" icon="file-plus">
+    Create a blank file and open it directly in the built-in text editor.
+  </Card>
+</CardGroup>
+
+### Single File/Folder Actions
+
+Right-click any file or folder, or click the **three-dots menu (⋮)** to access these options:
+
+<AccordionGroup>
+  <Accordion title="Edit">
+    Opens text files in a powerful, browser-based code editor with:
+    - Syntax highlighting for common file types
+    - Line numbers and search functionality  
+    - Auto-save capabilities
+    - Multiple tabs for editing several files
+  </Accordion>
+  
+  <Accordion title="View">
+    - **Text Files**: Preview content without editing
+    - **Images**: Full-screen image viewer
+    - **Logs**: Formatted display for easy reading
+  </Accordion>
+  
+  <Accordion title="File Operations">
+    - **Rename**: Change the file or folder name
+    - **Move**: Relocate to a different directory
+    - **Copy**: Create a duplicate in any location
+    - **Download**: Save to your local computer
+  </Accordion>
+  
+  <Accordion title="Archive Operations">
+    - **Archive**: Compress selected items into a `.zip` file
+    - **Decompress**: Extract `.zip`, `.tar.gz`, or `.rar` files
+    - **Bulk Archive**: Great for backing up worlds or configurations
+  </Accordion>
+</AccordionGroup>
+
+### Bulk File Operations
+
+Need to manage multiple files at once?
+
+1. **Select Files** - Use checkboxes next to file names
+2. **Select All** - Check the header checkbox to select everything
+3. **Bulk Actions** - A toolbar appears with options to:
+   - Move all selected files to another directory
+   - Archive multiple files into a single `.zip`
+   - Delete multiple files simultaneously
+
+<Warning>
+**Deletion is Permanent**: Files deleted through the File Manager cannot be recovered. Always create backups of important files before making changes.
+</Warning>
+
+## Common File Management Tasks
+
+### Uploading Server Files
+
+<Steps>
+  <Step title="Navigate to Target Directory">
+    Use the file browser to go to where you want to upload files
+  </Step>
+  
+  <Step title="Click Upload">
+    Select the Upload button in the top toolbar
+  </Step>
+  
+  <Step title="Add Files">
+    Either click to browse files or drag-and-drop directly into the upload window
+  </Step>
+  
+  <Step title="Monitor Progress">
+    Watch the upload progress bar and wait for completion
+  </Step>
+</Steps>
+
+### Installing Mods or Plugins
+
+Many mods and plugins come as `.zip` files:
+
+1. **Upload** the `.zip` file to your server
+2. **Right-click** the uploaded file
+3. **Select "Decompress"** to extract the contents
+4. **Move files** to the appropriate directories (usually `mods/` or `plugins/`)
+5. **Delete** the original `.zip` file to save space
+
+### Editing Configuration Files
+
+Server configuration files (like `server.properties`, `config.yml`) can be edited directly:
+
+1. **Navigate** to the configuration file
+2. **Right-click** and select **"Edit"**
+3. **Make changes** using the built-in code editor
+4. **Save** your changes (Ctrl+S or Cmd+S)
+5. **Restart** your server to apply the new settings
+
+## File Types and Handling
+
+### Supported File Types
+
+<AccordionGroup>
+  <Accordion title="Text Files (.txt, .log, .properties, .yml, .json, .cfg)">
+    - Fully editable in the browser
+    - Syntax highlighting available
+    - Real-time validation for some formats
+  </Accordion>
+  
+  <Accordion title="Images (.png, .jpg, .gif, .svg)">
+    - Preview in full-screen viewer
+    - Thumbnail previews in file list
+    - Direct upload support
+  </Accordion>
+  
+  <Accordion title="Archives (.zip, .tar.gz, .rar)">
+    - Extract directly on the server
+    - Create archives from selected files
+    - View contents before extraction
+  </Accordion>
+  
+  <Accordion title="Binary Files (.jar, .exe, .dll)">
+    - Download only (cannot edit)
+    - Upload and manage normally
+    - Important for game servers and plugins
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Regular Backups" icon="shield">
+    Create archives of important folders like worlds, configs, and player data
+  </Card>
+  
+  <Card title="Organize Files" icon="folder-tree">
+    Keep your server organized with clear folder structures
+  </Card>
+  
+  <Card title="Test Changes" icon="flask">
+    Make backups before editing configuration files
+  </Card>
+  
+  <Card title="Monitor Disk Space" icon="hard-drive">
+    Regularly clean up unnecessary files to prevent storage issues
+  </Card>
+</CardGroup>
+
+## Troubleshooting File Issues
+
+### Upload Problems
+- **Large Files**: Break down large uploads into smaller chunks
+- **Connection Issues**: Check your internet connection and try again
+- **File Permissions**: Some files may require server restart after upload
+
+### Editor Issues  
+- **File Won't Save**: Check if the server has sufficient disk space
+- **Syntax Errors**: Use the editor's error highlighting to identify issues
+- **Encoding Problems**: Ensure files use UTF-8 encoding for special characters
+
+### Performance Tips
+- **Limit Concurrent Operations**: Avoid running multiple heavy file operations simultaneously
+- **Use Archives**: Compress large directories before downloading
+- **Clear Browser Cache**: If the interface becomes slow or unresponsive

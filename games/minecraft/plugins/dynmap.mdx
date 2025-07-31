@@ -10,7 +10,7 @@ Dynmap transforms your Minecraft server into an interactive web-based experience
 
 There are more optimized alternatives like [BlueMap](https://github.com/BlueMap-Minecraft/BlueMap) and [squaremap](https://github.com/jpenilla/squaremap), but Dynmap is still a popular choice for many Minecraft servers.<br/>
 
-This guide will walk you through installation and usage of Dynmap on your [Minecraft server](https://berrybyte.net/minecraft)!
+This guide will walk you through installation and usage of Dynmap on your [Minecraft server](https://xgamingserver.com/minecraft)!
 
 ## Installation
 
@@ -33,11 +33,11 @@ To install and configure Dynmap on your Minecraft server, follow these steps:
 
 To use a custom domain for Dynmap instead of a long numerical IP, you can use a [reverse proxy](https://en.wikipedia.org/wiki/Reverse_proxy) which allows you to access Dynmap using a custom domain name!
 
-#### With Lime at BerryByte
+#### With Lime at XGamingServer
 
-If you have a [Minecraft server from BerryByte](https://berrybyte.net/minecraft), we've simplified all steps below to a few buttons on [Lime](https://game.berrybyte.net), where you can easily set up a reverse proxy for Dynmap using the [Proxies Manager](lime/proxies) tool. We take care of SSL certificates and all the configuration for you.
+If you have a [Minecraft server from XGamingServer](https://xgamingserver.com/minecraft), we've simplified all steps below to a few buttons on [Lime](https://game.xgamingserver.com), where you can easily set up a reverse proxy for Dynmap using the [Proxies Manager](lime/proxies) tool. We take care of SSL certificates and all the configuration for you.
 
-1. Create a DNS record for your custom domain to point to `cotton.api.berrybyte.network`. If you're using [Cloudflare](https://cloudflare.com), make sure to set the proxy status to DNS only.
+1. Create a DNS record for your custom domain to point to `cotton.api.xgamingserver.network`. If you're using [Cloudflare](https://cloudflare.com), make sure to set the proxy status to DNS only.
 2. Head to the Proxies Manager tool and click on the "**Create Proxy**" button.
 3. In `Source`, input the domain used in step 1. In `Allocation`, input the allocation you created for Dynmap in the installation steps and press "**Create**".
 
@@ -54,12 +54,12 @@ Head to your domain, and it should be all ready and configured!
 All the steps stated below after the 2nd step have been simplified to a single command for your convenience:
 
 ```bash dynmap.conf
-curl -s https://cdn.berrybyte.net/scripts/dynmap.sh | sudo bash
+curl -s https://cdn.xgamingserver.com/scripts/dynmap.sh | sudo bash
 ```
 
 **Manually:**
 
-1. Set up a server to act as the reverse proxy. This can be a dedicated physical or virtual machine from a public cloud provider (order one at https://berrybyte.net/vps ;) ).
+1. Set up a server to act as the reverse proxy. This can be a dedicated physical or virtual machine from a public cloud provider (order one at https://xgamingserver.com/vps ;) ).
 2. Install a web server on the machine which you intend to run the reverse proxy on (e.g. Nginx, Apache, etc.): `sudo apt update && sudo apt -y install nginx`
 3. Set up a DNS record for your custom domain to point to the IP address of the reverse proxy server.
 4. Configure the web server on the reverse proxy server to act as the proxy for Dynmap. This will involve adding a configuration block to the web server's configuration file that specifies the custom domain you want to use for Dynmap and the IP address and port of the Minecraft server where Dynmap is running.
@@ -123,10 +123,10 @@ If you are having trouble using Dynmap, here are a few common issues and their s
 
 ## Related Guides
 
-- [Reverse Proxy Setup](/panel/proxies) - Use custom domains with BerryByte's proxy manager
+- [Reverse Proxy Setup](/panel/proxies) - Use custom domains with XGamingServer's proxy manager
 - [Installing Plugins](/games/minecraft/installing-mods) - General plugin installation guide
 - [Server Performance Optimization](/games/minecraft/aikars-flags) - Optimize server for plugin usage
 - [Chunky Plugin](/games/minecraft/plugins/chunky) - Pre-generate chunks for better map performance
 - [Server Backups](/panel/backups) - Backup before installing plugins
 
-If you continue to experience issues with Dynmap, you can ask for help on our [Discord server](https://berrybyte.net/discord)!
+If you continue to experience issues with Dynmap, you can ask for help on our [Discord server](https://xgamingserver.com/discord)!

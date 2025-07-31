@@ -1,11 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "maple",
-  "name": "berrybyte Wiki",
+  "theme": "aspen",
+  "name": "XGamingServer Wiki",
   "colors": {
-    "primary": "#DC3962",
-    "light": "#FF81A0",
-    "dark": "#AE0C35"
+    "primary": "#22C55E",
+    "light": "#16A34A",
+    "dark": "#15803D"
   },
   "favicon": "/favicon.png",
   "navigation": {
@@ -14,47 +14,180 @@
         "language": "en",
         "dropdowns": [
           {
-            "dropdown": "General Guides",
-            "icon": "book",
-            "description": "Getting started, billing, and server management guides",
+            "dropdown": "Game Servers",
+            "description": "Complete setup and configuration guides for 40+ supported games",
+            "icon": "gamepad-2",
             "groups": [
               {
-                "group": "Welcome",
+                "group": "7 Days to Die",
                 "pages": [
-                  "introduction",
-                  "quickstart",
-                  "migration",
-                  "changelog"
+                  "games/7-days-to-die/introduction"
                 ]
               },
               {
-                "group": "Help & Support",
+                "group": "Abiotic Factor",
                 "pages": [
-                  "help/server-pending",
-                  "help/upgrade-plan",
-                  "help/cancel-plan",
-                  "help/troubleshooting",
-                  "help/free-trial"
+                  "games/abiotic-factor/introduction"
                 ]
               },
               {
-                "group": "Game Panel",
+                "group": "Aloft",
                 "pages": [
-                  "panel/overview",
-                  "panel/backups",
-                  "panel/server-slices",
-                  "panel/importing-files",
-                  "panel/recycle-bin",
-                  "panel/sub-users"
+                  "games/aloft/introduction"
                 ]
-              }
-            ]
-          },
-          {
-            "dropdown": "Game Guides",
-            "description": "Server setup and config guides for supported games",
-            "icon": "gamepad",
-            "groups": [
+              },
+              {
+                "group": "American Truck Simulator",
+                "pages": [
+                  "games/american-truck-simulator/introduction"
+                ]
+              },
+              {
+                "group": "ARK: Survival Evolved",
+                "pages": [
+                  "games/ark-se/introduction"
+                ]
+              },
+              {
+                "group": "Arma 3",
+                "pages": [
+                  "games/arma-3/introduction"
+                ]
+              },
+              {
+                "group": "Arma Reforger",
+                "pages": [
+                  "games/arma-reforger/introduction"
+                ]
+              },
+              {
+                "group": "Aska",
+                "pages": [
+                  "games/aska/introduction"
+                ]
+              },
+              {
+                "group": "Assetto Corsa",
+                "pages": [
+                  "games/assetto-corsa/introduction"
+                ]
+              },
+              {
+                "group": "Barotrauma",
+                "pages": [
+                  "games/barotrauma/introduction"
+                ]
+              },
+              {
+                "group": "Brickadia",
+                "pages": [
+                  "games/brickadia/introduction"
+                ]
+              },
+              {
+                "group": "Conan Exiles",
+                "pages": [
+                  "games/conan-exiles/introduction"
+                ]
+              },
+              {
+                "group": "Core Keeper",
+                "pages": [
+                  "games/core-keeper/introduction"
+                ]
+              },
+              {
+                "group": "Counter-Strike 2",
+                "pages": [
+                  "games/cs2/introduction"
+                ]
+              },
+              {
+                "group": "DayZ",
+                "pages": [
+                  "games/dayz/introduction"
+                ]
+              },
+              {
+                "group": "Discord Bot",
+                "pages": [
+                  "games/discord-bot/introduction"
+                ]
+              },
+              {
+                "group": "Don't Starve Together",
+                "pages": [
+                  "games/dont-starve-together/introduction"
+                ]
+              },
+              {
+                "group": "Duckside",
+                "pages": [
+                  "games/duckside/introduction"
+                ]
+              },
+              {
+                "group": "Enshrouded",
+                "pages": [
+                  "games/enshrouded/introduction",
+                  "games/enshrouded/join-server",
+                  "games/enshrouded/transfer-world"
+                ]
+              },
+              {
+                "group": "Escape from Tarkov",
+                "pages": [
+                  "games/escape-from-tarkov/introduction"
+                ]
+              },
+              {
+                "group": "Euro Truck Simulator 2",
+                "pages": [
+                  "games/euro-truck-simulator-2/introduction"
+                ]
+              },
+              {
+                "group": "Factorio",
+                "pages": [
+                  "games/factorio/introduction"
+                ]
+              },
+              {
+                "group": "FiveM",
+                "pages": [
+                  "games/fivem/introduction"
+                ]
+              },
+              {
+                "group": "Foundry",
+                "pages": [
+                  "games/foundry/introduction"
+                ]
+              },
+              {
+                "group": "Garry's Mod",
+                "pages": [
+                  "games/garrys-mod/introduction"
+                ]
+              },
+              {
+                "group": "Humanitz",
+                "pages": [
+                  "games/humanitz/introduction"
+                ]
+              },
+              {
+                "group": "Icarus",
+                "pages": [
+                  "games/icarus/introduction"
+                ]
+              },
+              {
+                "group": "Left 4 Dead 2",
+                "pages": [
+                  "games/left-4-dead-2/introduction"
+                ]
+              },
               {
                 "group": "Minecraft",
                 "pages": [
@@ -79,6 +212,24 @@
                   "games/minecraft/common-errors/exception-server-tick-loop",
                   "games/minecraft/common-errors/failed-to-check-session-lock",
                   "games/minecraft/common-errors/kicked-for-flying"
+                ]
+              },
+              {
+                "group": "Mordhau",
+                "pages": [
+                  "games/mordhau/introduction"
+                ]
+              },
+              {
+                "group": "Mount & Blade II: Bannerlord",
+                "pages": [
+                  "games/mount-and-blade-2-bannerlord/introduction"
+                ]
+              },
+              {
+                "group": "Myth of Empires",
+                "pages": [
+                  "games/myth-of-empires/introduction"
                 ]
               },
               {
@@ -110,6 +261,24 @@
                 ]
               },
               {
+                "group": "Project Zomboid",
+                "pages": [
+                  "games/project-zomboid/introduction"
+                ]
+              },
+              {
+                "group": "RedM",
+                "pages": [
+                  "games/redm/introduction"
+                ]
+              },
+              {
+                "group": "Risk of Rain 2",
+                "pages": [
+                  "games/risk-of-rain-2/introduction"
+                ]
+              },
+              {
                 "group": "Rust",
                 "pages": [
                   "games/rust/introduction"
@@ -122,46 +291,21 @@
                 ]
               },
               {
-                "group": "Valheim",
+                "group": "SCP: Secret Laboratory",
                 "pages": [
-                  "games/valheim/introduction"
+                  "games/scp-secret-laboratory/introduction"
                 ]
               },
               {
-                "group": "V Rising",
+                "group": "SCUM",
                 "pages": [
-                  "games/vrising/introduction",
-                  "games/vrising/join-server",
-                  "games/vrising/configure-server-settings",
-                  "games/vrising/change-difficulty",
-                  "games/vrising/become-an-admin",
-                  "games/vrising/ban-and-kick-players"
-                ]
-              },
-              {
-                "group": "Factorio",
-                "pages": [
-                  "games/factorio/introduction"
+                  "games/scum/introduction"
                 ]
               },
               {
                 "group": "Sons of the Forest",
                 "pages": [
                   "games/sons-of-the-forest/introduction"
-                ]
-              },
-              {
-                "group": "7 Days to Die",
-                "pages": [
-                  "games/7-days-to-die/introduction"
-                ]
-              },
-              {
-                "group": "Enshrouded",
-                "pages": [
-                  "games/enshrouded/introduction",
-                  "games/enshrouded/join-server",
-                  "games/enshrouded/transfer-world"
                 ]
               },
               {
@@ -175,39 +319,75 @@
                 ]
               },
               {
+                "group": "Space Engineers",
+                "pages": [
+                  "games/space-engineers/introduction"
+                ]
+              },
+              {
+                "group": "Squad",
+                "pages": [
+                  "games/squad/introduction"
+                ]
+              },
+              {
+                "group": "Starbound",
+                "pages": [
+                  "games/starbound/introduction"
+                ]
+              },
+              {
+                "group": "Subnautica",
+                "pages": [
+                  "games/subnautica/introduction"
+                ]
+              },
+              {
+                "group": "Team Fortress 2",
+                "pages": [
+                  "games/team-fortress-2/introduction"
+                ]
+              },
+              {
+                "group": "Terraria",
+                "pages": [
+                  "games/terraria/introduction"
+                ]
+              },
+              {
+                "group": "The Forest",
+                "pages": [
+                  "games/the-forest/introduction"
+                ]
+              },
+              {
+                "group": "The Front",
+                "pages": [
+                  "games/the-front/introduction"
+                ]
+              },
+              {
+                "group": "The Lord of the Rings: Return to Moria",
+                "pages": [
+                  "games/the-lord-of-the-rings-return-to-moria/introduction"
+                ]
+              },
+              {
                 "group": "Unturned",
                 "pages": [
                   "games/unturned/introduction"
                 ]
               },
               {
-                "group": "FiveM",
+                "group": "Valheim",
                 "pages": [
-                  "games/fivem/introduction"
+                  "games/valheim/introduction"
                 ]
               },
               {
-                "group": "CS2",
+                "group": "Vein",
                 "pages": [
-                  "games/cs2/introduction"
-                ]
-              },
-              {
-                "group": "Ark SE",
-                "pages": [
-                  "games/ark-se/introduction"
-                ]
-              },
-              {
-                "group": "Conan Exiles",
-                "pages": [
-                  "games/conan-exiles/introduction"
-                ]
-              },
-              {
-                "group": "Core Keeper",
-                "pages": [
-                  "games/core-keeper/introduction"
+                  "games/vein/introduction"
                 ]
               },
               {
@@ -217,15 +397,98 @@
                 ]
               },
               {
-                "group": "Garry's Mod",
+                "group": "V Rising",
                 "pages": [
-                  "games/garrys-mod/introduction"
+                  "games/vrising/introduction",
+                  "games/vrising/join-server",
+                  "games/vrising/configure-server-settings",
+                  "games/vrising/change-difficulty",
+                  "games/vrising/become-an-admin",
+                  "games/vrising/ban-and-kick-players"
+                ]
+              }
+            ]
+          },
+          {
+            "dropdown": "Game Panel Guides",
+            "description": "Learn to use your server control panel effectively",
+            "icon": "terminal",
+            "groups": [
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "panel/getting-started",
+                  "panel/overview",
+                  "panel/account-settings"
                 ]
               },
               {
-                "group": "Don't Starve Together",
+                "group": "Server Management",
                 "pages": [
-                  "games/dont-starve-together/introduction"
+                  "panel/console",
+                  "panel/file-manager",
+                  "panel/backups",
+                  "panel/schedules",
+                  "panel/databases",
+                  "panel/users",
+                  "panel/settings",
+                  "panel/startup",
+                  "panel/network",
+                  "panel/transfer"
+                ]
+              },
+              {
+                "group": "Advanced Features",
+                "pages": [
+                  "panel/importing-files",
+                  "panel/sub-users",
+                  "panel/proxy"
+                ]
+              },
+              {
+                "group": "Add-ons & Extensions",
+                "pages": [
+                  "panel/addons/minecraft-plugins",
+                  "panel/addons/minecraft-modpacks",
+                  "panel/addons/minecraft-player-manager",
+                  "panel/addons/valheim-manager",
+                  "panel/addons/subdomain-manager",
+                  "panel/addons/database-importer",
+                  "panel/addons/mcbe-version-changer",
+                  "panel/addons/arma-reforger-config"
+                ]
+              }
+            ]
+          },
+          {
+            "dropdown": "Billing Guides",
+            "description": "Account management, billing, and support resources",
+            "icon": "credit-card",
+            "groups": [
+              {
+                "group": "Welcome & Setup",
+                "pages": [
+                  "introduction",
+                  "quickstart",
+                  "migration"
+                ]
+              },
+              {
+                "group": "Account & Billing",
+                "pages": [
+                  "billing/billing",
+                  "help/upgrade-plan",
+                  "help/cancel-plan",
+                  "help/free-trial"
+                ]
+              },
+              {
+                "group": "Support & Troubleshooting",
+                "pages": [
+                  "help/server-pending",
+                  "help/troubleshooting",
+                  "help/index",
+                  "changelog"
                 ]
               }
             ]
@@ -248,19 +511,19 @@
     "links": [
       {
         "label": "Contact us",
-        "href": "https://berrybyte.net/contact"
+        "href": "https://XGamingServer.net/contact"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Create a server",
-      "href": "https://berrybyte.net/"
+      "href": "https://XGamingServer.net/"
     }
   },
   "footer": {
     "socials": {
-      "website": "https://berrybyte.net/",
-      "github": "https://github.com/berrybyte-net/docs",
+      "website": "https://XGamingServer.net/",
+      "github": "https://github.com/XGamingServer-net/docs",
       "discord": "https://discord.gg/Wc9wMZxQ2D"
     }
   },
@@ -269,7 +532,7 @@
       "measurementId": "G-YNYEX38EPS"
     },
     "plausible": {
-      "domain": "docs.berrybyte.net"
+      "domain": "docs.XGamingServer.net"
     }
   }
 }
