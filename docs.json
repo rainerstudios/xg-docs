@@ -8,24 +8,6 @@
     "dark": "#AE0C35"
   },
   "favicon": "/favicon.png",
-  "tabs": [
-    {
-      "name": "Documentation",
-      "url": "/"
-    },
-    {
-      "name": "Panel",
-      "url": "/panel"
-    },
-    {
-      "name": "Billing", 
-      "url": "/billing"
-    },
-    {
-      "name": "Games",
-      "url": "/games"
-    }
-  ],
   "navigation": [
     {
       "group": "Getting Started",
@@ -159,6 +141,20 @@
         "games/garrys-mod/introduction",
         "games/dont-starve-together/introduction"
       ]
+    }
+  ],
+  "topbarLinks": [
+    {
+      "name": "Panel",
+      "url": "https://docs.xgamingserver.net/panel/getting-started"
+    },
+    {
+      "name": "Billing",
+      "url": "https://docs.xgamingserver.net/help"
+    },
+    {
+      "name": "Games",
+      "url": "https://docs.xgamingserver.net/games/minecraft"
     }
   ],
   "logo": {
