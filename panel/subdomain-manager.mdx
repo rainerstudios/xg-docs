@@ -1,0 +1,276 @@
+---
+title: Subdomain Manager
+sidebarTitle: Subdomain Manager
+description: Create custom, memorable addresses for your game server
+icon: globe
+---
+
+<Info>
+  The Subdomain Manager lets you create easy-to-remember addresses for your server, making it simpler for players to connect.
+</Info>
+
+## Creating a Subdomain
+
+<Steps>
+  <Step title="Access Subdomain Manager">
+    Navigate to the **Subdomain Manager** page in your panel
+  </Step>
+  
+  <Step title="Choose Your Prefix">
+    Enter your desired subdomain prefix in the text box
+    
+    <CodeGroup>
+      ```text Good Examples
+      play
+      mc
+      server
+      myguild
+      survival
+      ```
+      
+      ```text Avoid These
+      www (reserved)
+      admin (reserved)
+      api (reserved)
+      mail (reserved)
+      ```
+    </CodeGroup>
+  </Step>
+  
+  <Step title="Select Domain">
+    Choose from available domain options in the dropdown menu
+  </Step>
+  
+  <Step title="Create Subdomain">
+    Click the **Create** button to generate your custom address
+  </Step>
+</Steps>
+
+## Using Your Subdomain
+
+<Tabs>
+  <Tab title="Minecraft Servers">
+    <Steps>
+      <Step title="Share with Players">
+        Your players can now connect using your custom address:
+        
+        ```text Example
+        play.mcserver.net
+        ```
+      </Step>
+      
+      <Step title="Update Server MOTD">
+        Update your server's message of the day:
+        
+        ```properties server.properties
+        motd=Welcome to play.mcserver.net!
+        ```
+      </Step>
+      
+      <Step title="Configure Server Lists">
+        Use your subdomain when submitting to server lists for consistent branding
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="Other Game Servers">
+    <Steps>
+      <Step title="Game-Specific Setup">
+        Configure based on your game type:
+        
+        <CodeGroup>
+          ```cfg CS2/Garry's Mod
+          hostname "My Server - play.example.net"
+          ```
+          
+          ```cfg Rust
+          server.hostname "My Rust Server [play.example.net]"
+          ```
+          
+          ```cfg Valheim
+          -name "My World - play.example.net"
+          ```
+        </CodeGroup>
+      </Step>
+      
+      <Step title="Update Launch Parameters">
+        Include your subdomain in server descriptions and connection info
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="FiveM Servers">
+    <Steps>
+      <Step title="Update server.cfg">
+        ```cfg server.cfg
+        sv_projectName "My Server"
+        sv_projectDesc "Connect at play.fivem.net"
+        ```
+      </Step>
+      
+      <Step title="FiveM Server List">
+        Update your server listing with the new subdomain for professional appearance
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Domain Options
+
+<CardGroup cols={2}>
+  <Card title="Gaming Domains" icon="gamepad-2">
+    - `mcserver.net`
+    - `gameserver.net` 
+    - `minecraftserver.net`
+    - `fivem.net`
+  </Card>
+  
+  <Card title="Generic Domains" icon="globe">
+    - `server.net`
+    - `gamehost.net`
+    - `play.net`
+    - `gaming.net`
+  </Card>
+</CardGroup>
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Choose Memorable Names" icon="brain">
+    <CardGroup cols={2}>
+      <Card title="Good Examples">
+        - `play` - Simple and clear
+        - `survival` - Describes game mode
+        - `myguild` - Community identity
+        - `creative` - Specific purpose
+      </Card>
+      
+      <Card title="Avoid These">
+        - Random numbers/letters
+        - Very long names
+        - Special characters
+        - Confusing abbreviations
+      </Card>
+    </CardGroup>
+  </Accordion>
+  
+  <Accordion title="Branding Consistency" icon="palette">
+    - Use the same subdomain across all platforms
+    - Include it in your Discord server name
+    - Add it to social media profiles
+    - Use it in YouTube/Twitch descriptions
+  </Accordion>
+  
+  <Accordion title="SEO Benefits" icon="magnifying-glass">
+    - Improves search engine visibility
+    - Creates consistent brand presence
+    - Makes sharing easier for players
+    - Professional appearance for partnerships
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Subdomain Not Working" icon="exclamation-triangle">
+    **Problem**: Players can't connect using the subdomain
+    
+    **Solutions**:
+    1. Wait 5-10 minutes for DNS propagation
+    2. Clear DNS cache: `ipconfig /flushdns` (Windows) or `sudo dscacheutil -flushcache` (Mac)
+    3. Try connecting with the original IP to confirm server is online
+    4. Check if subdomain was created successfully in the panel
+  </Accordion>
+  
+  <Accordion title="Subdomain Already Taken" icon="xmark-circle">
+    **Problem**: Your desired subdomain is unavailable
+    
+    **Solutions**:
+    - Try variations: `play1`, `play-server`, `myplay`
+    - Use your server name: `myserver`, `myguild`
+    - Try different domain options
+    - Add descriptive words: `survival-server`, `creative-world`
+  </Accordion>
+  
+  <Accordion title="DNS Propagation Delays" icon="clock">
+    **Problem**: Subdomain works sometimes but not always
+    
+    **Solutions**:
+    - DNS changes can take up to 24 hours globally
+    - Test from different networks/devices
+    - Use online DNS checkers to verify propagation
+    - Be patient - propagation varies by location
+  </Accordion>
+</AccordionGroup>
+
+## Advanced Features
+
+### Multiple Subdomains
+
+<Info>
+  You can create multiple subdomains for the same server for different purposes
+</Info>
+
+<Tabs>
+  <Tab title="Game Mode Specific">
+    ```text Examples
+    survival.mcserver.net - Survival world
+    creative.mcserver.net - Creative world  
+    minigames.mcserver.net - Minigame server
+    ```
+  </Tab>
+  
+  <Tab title="Regional Servers">
+    ```text Examples
+    us.gameserver.net - US server
+    eu.gameserver.net - EU server
+    asia.gameserver.net - Asian server
+    ```
+  </Tab>
+  
+  <Tab title="Event Servers">
+    ```text Examples
+    event.server.net - Special events
+    beta.server.net - Beta testing
+    dev.server.net - Development
+    ```
+  </Tab>
+</Tabs>
+
+### Integration with Other Services
+
+<CardGroup cols={2}>
+  <Card title="Website Integration" icon="window">
+    Use subdomains for consistent branding:
+    - `www.yourserver.net` - Main website
+    - `play.yourserver.net` - Game server
+    - `forum.yourserver.net` - Community forum
+  </Card>
+  
+  <Card title="Voice Chat" icon="microphone">
+    Create matching voice server addresses:
+    - `voice.yourserver.net` - TeamSpeak/Discord
+    - `ts.yourserver.net` - TeamSpeak server
+    - `discord.yourserver.net` - Discord redirect
+  </Card>
+</CardGroup>
+
+## Monitoring Your Subdomain
+
+<Steps>
+  <Step title="Test Connectivity">
+    Regularly test your subdomain from different locations and networks
+  </Step>
+  
+  <Step title="Monitor DNS Health">
+    Use tools like [DNSChecker.org](https://dnschecker.org) to verify global propagation
+  </Step>
+  
+  <Step title="Update Marketing Materials">
+    Ensure all promotional materials use the new subdomain consistently
+  </Step>
+</Steps>
+
+<Warning>
+  Never delete a subdomain that players are actively using without giving advance notice and providing the new connection details.
+</Warning>

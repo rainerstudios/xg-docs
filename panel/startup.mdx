@@ -1,0 +1,418 @@
+---
+title: Startup Configuration
+sidebarTitle: Startup
+description: Configure server startup parameters and Java/runtime settings
+icon: rocket-launch
+---
+
+<Info>
+  The Startup page allows you to configure how your server starts, including Java arguments, memory allocation, and game-specific launch parameters.
+</Info>
+
+## Understanding Startup Variables
+
+<Tabs>
+  <Tab title="Server Variables">
+    <Steps>
+      <Step title="View Current Variables">
+        Navigate to the **Startup** tab to see all configured variables
+      </Step>
+      
+      <Step title="Common Variables">
+        <ParamField path="SERVER_JARFILE" type="string" default="server.jar">
+          The server executable file name
+        </ParamField>
+        <ParamField path="VANILLA_VERSION" type="string" default="latest">
+          Minecraft version to use (for vanilla servers)
+        </ParamField>
+        <ParamField path="STARTUP" type="string" required>
+          Complete startup command with all arguments
+        </ParamField>
+        <ParamField path="MEMORY_LIMIT" type="number" default="1024">
+          Maximum memory allocation in MB
+        </ParamField>
+      </Step>
+      
+      <Step title="Modify Variables">
+        Click on any variable field to edit its value
+        
+        <Note>
+          Changes to startup variables require a server restart to take effect
+        </Note>
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="Docker Image">
+    <Steps>
+      <Step title="Check Current Image">
+        View the Docker image and version your server is using
+      </Step>
+      
+      <Step title="Available Images">
+        Common images include:
+        - `minecraft/java` - Standard Java Minecraft
+        - `minecraft/bedrock` - Bedrock Edition
+        - `source/srcds` - Source games
+        - `nodejs` - Node.js applications
+      </Step>
+      
+      <Step title="Update Image">
+        Contact support if you need to change the base Docker image
+        
+        <Warning>
+          Changing Docker images may require server reconfiguration
+        </Warning>
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Memory Configuration
+
+<Steps>
+  <Step title="Determine Memory Needs">
+    Calculate memory requirements based on:
+    
+    <CardGroup cols={2}>
+      <Card title="Player Count" icon="users">
+        - 1-10 players: 1-2GB
+        - 10-50 players: 2-4GB  
+        - 50+ players: 4GB+
+      </Card>
+      
+      <Card title="Modifications" icon="puzzle">
+        - Vanilla: Base memory
+        - Light mods: +25%
+        - Heavy modpacks: +50-100%
+      </Card>
+    </CardGroup>
+  </Step>
+  
+  <Step title="Set Memory Allocation">
+    Update the memory variables:
+    
+    <CodeGroup>
+      ```text Low Memory (1GB)
+      MEMORY_LIMIT: 1024
+      ```
+      
+      ```text Medium Memory (2GB)
+      MEMORY_LIMIT: 2048
+      ```
+      
+      ```text High Memory (4GB)
+      MEMORY_LIMIT: 4096
+      ```
+    </CodeGroup>
+  </Step>
+  
+  <Step title="Verify Allocation">
+    Check the startup command includes correct memory flags:
+    
+    ```bash Minecraft Example
+    java -Xms128M -Xmx{{MEMORY_LIMIT}}M -jar {{SERVER_JARFILE}}
+    ```
+  </Step>
+</Steps>
+
+## Java Arguments Optimization
+
+<Tabs>
+  <Tab title="Basic Arguments">
+    <CodeGroup>
+      ```bash Standard Arguments
+      -Xms128M -Xmx{{MEMORY_LIMIT}}M
+      -XX:+UseG1GC
+      -XX:+ParallelRefProcEnabled
+      -XX:MaxGCPauseMillis=200
+      ```
+      
+      ```bash Aikar's Flags (Recommended)
+      -Xms{{MEMORY_LIMIT}}M -Xmx{{MEMORY_LIMIT}}M
+      -XX:+UseG1GC
+      -XX:+ParallelRefProcEnabled
+      -XX:MaxGCPauseMillis=200
+      -XX:+UnlockExperimentalVMOptions
+      -XX:+DisableExplicitGC
+      -XX:+AlwaysPreTouch
+      -XX:G1NewSizePercent=30
+      -XX:G1MaxNewSizePercent=40
+      -XX:G1HeapRegionSize=8M
+      -XX:G1ReservePercent=20
+      -XX:G1HeapWastePercent=5
+      -XX:G1MixedGCCountTarget=4
+      -XX:InitiatingHeapOccupancyPercent=15
+      -XX:G1MixedGCLiveThresholdPercent=90
+      -XX:G1RSetUpdatingPauseTimePercent=5
+      -XX:SurvivorRatio=32
+      -XX:+PerfDisableSharedMem
+      -XX:MaxTenuringThreshold=1
+      ```
+    </CodeGroup>
+  </Tab>
+  
+  <Tab title="Performance Tuning">
+    <AccordionGroup>
+      <Accordion title="Garbage Collection" icon="trash">
+        ```bash G1GC Settings
+        -XX:+UseG1GC
+        -XX:G1HeapRegionSize=8M
+        -XX:MaxGCPauseMillis=200
+        ```
+        
+        Optimizes memory cleanup for better performance
+      </Accordion>
+      
+      <Accordion title="Memory Management" icon="memory">
+        ```bash Memory Flags
+        -XX:+AlwaysPreTouch
+        -XX:+DisableExplicitGC
+        -XX:G1NewSizePercent=30
+        ```
+        
+        Improves memory allocation and reduces lag spikes
+      </Accordion>
+      
+      <Accordion title="Performance Monitoring" icon="chart-line">
+        ```bash Monitoring Flags
+        -XX:+PerfDisableSharedMem
+        -XX:+UnlockExperimentalVMOptions
+        ```
+        
+        Reduces OS-level interference and enables advanced optimizations
+      </Accordion>
+    </AccordionGroup>
+  </Tab>
+  
+  <Tab title="Game-Specific">
+    <CodeGroup>
+      ```bash Modded Minecraft
+      -XX:+UseG1GC
+      -XX:+ParallelRefProcEnabled
+      -XX:MaxGCPauseMillis=200
+      -XX:+UnlockExperimentalVMOptions
+      -XX:G1NewSizePercent=20
+      -XX:G1ReservePercent=20
+      -XX:MaxDirectMemorySize=1G
+      ```
+      
+      ```bash Large Servers (8GB+)
+      -XX:G1HeapRegionSize=16M
+      -XX:G1NewSizePercent=40
+      -XX:G1MaxNewSizePercent=50
+      -XX:G1ReservePercent=15
+      ```
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+## Game-Specific Startup Options
+
+<Tabs>
+  <Tab title="Minecraft Java">
+    <Steps>
+      <Step title="Server Type Configuration">
+        <CodeGroup>
+          ```text Vanilla
+          SERVER_JARFILE: server.jar
+          VANILLA_VERSION: 1.20.4
+          ```
+          
+          ```text Paper
+          SERVER_JARFILE: paper.jar
+          BUILD_NUMBER: latest
+          ```
+          
+          ```text Forge
+          SERVER_JARFILE: forge-installer.jar
+          FORGE_VERSION: 47.2.0
+          ```
+        </CodeGroup>
+      </Step>
+      
+      <Step title="Additional Arguments">
+        ```bash Common Arguments
+        -Dfile.encoding=UTF-8
+        -Djline.terminal=jline.UnsupportedTerminal
+        -Dlog4j2.formatMsgNoLookups=true
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="Minecraft Bedrock">
+    <Steps>
+      <Step title="Server Configuration">
+        ```text Bedrock Variables
+        BEDROCK_VERSION: latest
+        LD_LIBRARY_PATH: .
+        ```
+      </Step>
+      
+      <Step title="Permission Level">
+        ```text Permission Options
+        PERMISSION: member
+        # Options: visitor, member, operator
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="Other Games">
+    <AccordionGroup>
+      <Accordion title="Palworld" icon="dragon">
+        ```text Palworld Settings
+        PLAYERS: 32
+        PORT: 8211
+        QUERY_PORT: 27015
+        COMMUNITY: false
+        ```
+      </Accordion>
+      
+      <Accordion title="Valheim" icon="axe">
+        ```text Valheim Configuration
+        SERVER_NAME: My Valheim Server
+        WORLD_NAME: Dedicated
+        PASSWORD: mypassword
+        ```
+      </Accordion>
+      
+      <Accordion title="Rust" icon="hammer">
+        ```text Rust Variables
+        HOSTNAME: My Rust Server
+        SEED: 12345
+        WORLDSIZE: 3000
+        MAXPLAYERS: 100
+        ```
+      </Accordion>
+    </AccordionGroup>
+  </Tab>
+</Tabs>
+
+## Advanced Configuration
+
+### Environment Variables
+
+<Steps>
+  <Step title="Add Custom Variables">
+    You can add custom environment variables for specific needs:
+    
+    ```text Examples
+    TZ=America/New_York (Set timezone)
+    LANG=en_US.UTF-8 (Set language)
+    JAVA_TOOL_OPTIONS=-Duser.timezone=UTC
+    ```
+  </Step>
+  
+  <Step title="Reference Variables">
+    Use variables in your startup command:
+    
+    ```bash
+    java -Xmx{{MEMORY_LIMIT}}M -jar {{SERVER_JARFILE}} --port {{SERVER_PORT}}
+    ```
+  </Step>
+</Steps>
+
+### Startup Command Customization
+
+<Tabs>
+  <Tab title="Command Structure">
+    ```bash Basic Structure
+    java [JVM_ARGS] -jar [SERVER_JAR] [GAME_ARGS]
+    ```
+    
+    <ParamField path="JVM_ARGS" type="string">
+      Java Virtual Machine arguments (memory, garbage collection)
+    </ParamField>
+    <ParamField path="SERVER_JAR" type="string">
+      Path to the server executable file
+    </ParamField>
+    <ParamField path="GAME_ARGS" type="string">
+      Game-specific startup arguments
+    </ParamField>
+  </Tab>
+  
+  <Tab title="Custom Commands">
+    <Steps>
+      <Step title="Backup Original">
+        Always save the original startup command before modifications
+      </Step>
+      
+      <Step title="Test Changes">
+        Start your server after changes to ensure it boots correctly
+      </Step>
+      
+      <Step title="Monitor Performance">
+        Watch server performance after startup modifications
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Troubleshooting Startup Issues
+
+<AccordionGroup>
+  <Accordion title="Server Won't Start" icon="exclamation-triangle">
+    **Common Causes**:
+    - Invalid Java arguments
+    - Insufficient memory allocation
+    - Missing or corrupted server files
+    - Port conflicts
+    
+    **Solutions**:
+    1. Reset to default startup command
+    2. Check server logs for error messages
+    3. Verify file permissions
+    4. Contact support if issues persist
+  </Accordion>
+  
+  <Accordion title="Performance Issues" icon="gauge">
+    **Symptoms**:
+    - High CPU usage
+    - Memory errors
+    - Frequent garbage collection
+    
+    **Solutions**:
+    - Increase memory allocation
+    - Optimize Java arguments
+    - Use Aikar's flags for better GC
+    - Monitor resource usage
+  </Accordion>
+  
+  <Accordion title="Memory Errors" icon="memory">
+    **Error Messages**:
+    - OutOfMemoryError
+    - GC overhead limit exceeded
+    
+    **Solutions**:
+    - Increase `MEMORY_LIMIT` variable
+    - Optimize server plugins/mods
+    - Use memory-efficient Java flags
+    - Consider upgrading server plan
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Regular Testing" icon="flask">
+    Test startup changes on a quiet server first
+  </Card>
+  
+  <Card title="Backup Configuration" icon="floppy-disk">
+    Document working configurations before changes
+  </Card>
+  
+  <Card title="Monitor Resources" icon="chart-line">
+    Watch CPU and memory usage after modifications
+  </Card>
+  
+  <Card title="Stay Updated" icon="arrow-up">
+    Keep Java arguments current with best practices
+  </Card>
+</CardGroup>
+
+<Info>
+  Need help optimizing your startup configuration? Our support team can help you choose the best settings for your specific use case.
+</Info>

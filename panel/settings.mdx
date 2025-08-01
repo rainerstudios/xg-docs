@@ -1,0 +1,459 @@
+---
+title: Server Settings
+sidebarTitle: Settings
+description: Configure server properties, game modes, and advanced options
+icon: sliders
+---
+
+<Info>
+  The Settings page provides access to your server's core configuration files, allowing you to customize gameplay, performance, and behavior without needing to edit files manually.
+</Info>
+
+## Server Properties Overview
+
+<Tabs>
+  <Tab title="Basic Settings">
+    <Steps>
+      <Step title="Access Settings">
+        Navigate to the **Settings** tab in your server panel
+      </Step>
+      
+      <Step title="Core Configuration">
+        <ParamField path="Server Name" type="string" default="A Minecraft Server">
+          The name displayed in server lists and MOTD
+        </ParamField>
+        <ParamField path="MOTD" type="string" default="A Minecraft Server">
+          Message shown to players in the server list
+        </ParamField>
+        <ParamField path="Max Players" type="number" default="20">
+          Maximum number of concurrent players
+        </ParamField>
+        <ParamField path="Game Mode" type="select" default="survival">
+          Default game mode: survival, creative, adventure, spectator
+        </ParamField>
+      </Step>
+      
+      <Step title="Apply Changes">
+        Click **Save** and restart your server for changes to take effect
+        
+        <Warning>
+          Most setting changes require a server restart to apply
+        </Warning>
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="World Settings">
+    <Steps>
+      <Step title="World Generation">
+        <ParamField path="Level Name" type="string" default="world">
+          Name of the main world folder
+        </ParamField>
+        <ParamField path="Level Seed" type="string" optional>
+          Specific seed for world generation
+        </ParamField>
+        <ParamField path="Generator Settings" type="string" optional>
+          Custom world generation parameters
+        </ParamField>
+      </Step>
+      
+      <Step title="World Behavior">
+        <ParamField path="Difficulty" type="select" default="easy">
+          peaceful, easy, normal, hard
+        </ParamField>
+        <ParamField path="Hardcore" type="boolean" default="false">
+          Enable hardcore mode (ban on death)
+        </ParamField>
+        <ParamField path="PvP" type="boolean" default="true">
+          Allow player vs player combat
+        </ParamField>
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="Performance">
+    <Steps>
+      <Step title="View Distance">
+        <ParamField path="View Distance" type="number" default="10">
+          Chunks loaded around each player (2-32)
+        </ParamField>
+        <ParamField path="Simulation Distance" type="number" default="10">
+          Distance for mob spawning and redstone (3-32)
+        </ParamField>
+      </Step>
+      
+      <Step title="Entity Limits">
+        <ParamField path="Entity Broadcast Range" type="number" default="100">
+          How far entities are visible to players
+        </ParamField>
+        <ParamField path="Max Entity Cramming" type="number" default="24">
+          Maximum entities in one block before damage
+        </ParamField>
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Game-Specific Settings
+
+<Tabs>
+  <Tab title="Minecraft Java">
+    <AccordionGroup>
+      <Accordion title="Server Behavior" icon="server">
+        <CardGroup cols={2}>
+          <Card title="Online Mode">
+            ```properties
+            online-mode=true
+            # Requires premium Minecraft accounts
+            # Set to false for cracked servers
+            ```
+          </Card>
+          
+          <Card title="Spawn Settings">
+            ```properties
+            spawn-protection=16
+            allow-nether=true
+            allow-flight=false
+            ```
+          </Card>
+        </CardGroup>
+      </Accordion>
+      
+      <Accordion title="World Configuration" icon="globe">
+        ```properties Key Settings
+        generate-structures=true
+        spawn-monsters=true
+        spawn-animals=true
+        spawn-npcs=true
+        level-type=minecraft\:normal
+        ```
+      </Accordion>
+      
+      <Accordion title="Network Settings" icon="network-wired">
+        ```properties Network Options
+        server-port=25565
+        query.port=25565
+        enable-query=false
+        enable-rcon=false
+        ```
+      </Accordion>
+    </AccordionGroup>
+  </Tab>
+  
+  <Tab title="Minecraft Bedrock">
+    <AccordionGroup>
+      <Accordion title="Basic Settings" icon="cube">
+        ```properties Bedrock Configuration
+        server-name=Dedicated Server
+        gamemode=survival
+        force-gamemode=false
+        difficulty=easy
+        ```
+      </Accordion>
+      
+      <Accordion title="Player Settings" icon="users">
+        ```properties Player Configuration
+        max-players=10
+        allow-cheats=false
+        default-player-permission-level=member
+        ```
+      </Accordion>
+    </AccordionGroup>
+  </Tab>
+  
+  <Tab title="Other Games">
+    <AccordionGroup>
+      <Accordion title="Palworld" icon="dragon">
+        <CodeGroup>
+          ```ini Server Settings
+          [/Script/Pal.PalGameWorldSettings]
+          Difficulty=None
+          DayTimeSpeedRate=1.0
+          NightTimeSpeedRate=1.0
+          ExpRate=1.0
+          PalCaptureRate=1.0
+          PalSpawnNumRate=1.0
+          ```
+          
+          ```ini Player Settings  
+          PalDamageRateAttack=1.0
+          PalDamageRateDefense=1.0
+          PlayerDamageRateAttack=1.0
+          PlayerDamageRateDefense=1.0
+          PlayerStomachDecreaseRate=1.0
+          ```
+        </CodeGroup>
+      </Accordion>
+      
+      <Accordion title="Valheim" icon="axe">
+        ```bash Launch Parameters
+        -name "My Server Name"
+        -port 2456
+        -world "Dedicated"
+        -password "mypassword"
+        -public 1
+        ```
+      </Accordion>
+      
+      <Accordion title="Rust" icon="hammer">
+        ```cfg Server Configuration
+        server.hostname "My Rust Server"
+        server.description "Welcome to my server!"
+        server.maxplayers 100
+        server.worldsize 3000
+        server.seed 12345
+        ```
+      </Accordion>
+    </AccordionGroup>
+  </Tab>
+</Tabs>
+
+## Advanced Configuration
+
+### Performance Optimization
+
+<Steps>
+  <Step title="View Distance Tuning">
+    <CardGroup cols={2}>
+      <Card title="Low Population">
+        ```properties Recommended
+        view-distance=12
+        simulation-distance=8
+        ```
+        Better performance for fewer players
+      </Card>
+      
+      <Card title="High Population">
+        ```properties Recommended  
+        view-distance=8
+        simulation-distance=6
+        ```
+        Optimized for many concurrent players
+      </Card>
+    </CardGroup>
+  </Step>
+  
+  <Step title="Entity Management">
+    ```properties Entity Limits
+    max-world-size=29999984
+    entity-broadcast-range-percentage=100
+    max-entity-cramming=24
+    ```
+  </Step>
+  
+  <Step title="Network Optimization">
+    ```properties Network Settings
+    network-compression-threshold=256
+    player-idle-timeout=0
+    max-tick-time=60000
+    ```
+  </Step>
+</Steps>
+
+### Security Settings
+
+<Tabs>
+  <Tab title="Authentication">
+    <Steps>
+      <Step title="Online Mode">
+        ```properties Security Options
+        online-mode=true
+        prevent-proxy-connections=false
+        ```
+        
+        <Warning>
+          Only disable online-mode if you understand the security implications
+        </Warning>
+      </Step>
+      
+      <Step title="Whitelist">
+        ```properties Player Control
+        white-list=false
+        enforce-whitelist=false
+        ```
+        
+        Enable whitelist for private servers
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="Anti-Grief">
+    <Steps>
+      <Step title="Spawn Protection">
+        ```properties Protection Settings
+        spawn-protection=16
+        op-permission-level=4
+        function-permission-level=2
+        ```
+      </Step>
+      
+      <Step title="Flight & Movement">
+        ```properties Movement Controls
+        allow-flight=false
+        max-player-movement-speed=10
+        ```
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+### Resource Packs & Data Packs
+
+<Steps>
+  <Step title="Resource Pack Configuration">
+    ```properties Resource Pack Settings
+    resource-pack=
+    resource-pack-sha1=
+    resource-pack-prompt=
+    require-resource-pack=false
+    ```
+  </Step>
+  
+  <Step title="Data Pack Settings">
+    ```properties Data Pack Options
+    initial-enabled-packs=vanilla
+    initial-disabled-packs=
+    ```
+  </Step>
+  
+  <Step title="Upload Instructions">
+    <Tabs>
+      <Tab title="Resource Packs">
+        1. Upload the resource pack ZIP to your server
+        2. Set `resource-pack` to the download URL
+        3. Generate SHA1 hash for verification
+        4. Restart server to apply
+      </Tab>
+      
+      <Tab title="Data Packs">
+        1. Upload data pack to `world/datapacks/`
+        2. Add pack name to `initial-enabled-packs`
+        3. Restart server or use `/datapack enable`
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+## Configuration Templates
+
+<Tabs>
+  <Tab title="Survival Server">
+    ```properties Survival Configuration
+    gamemode=survival
+    difficulty=normal
+    pvp=true
+    spawn-monsters=true
+    spawn-animals=true
+    generate-structures=true
+    allow-flight=false
+    max-players=50
+    view-distance=10
+    ```
+  </Tab>
+  
+  <Tab title="Creative Server">
+    ```properties Creative Configuration
+    gamemode=creative
+    difficulty=peaceful
+    pvp=false
+    spawn-monsters=false
+    allow-flight=true
+    force-gamemode=true
+    max-players=20
+    view-distance=12
+    ```
+  </Tab>
+  
+  <Tab title="Minigame Server">
+    ```properties Minigame Configuration
+    gamemode=adventure
+    difficulty=easy
+    pvp=true
+    spawn-protection=0
+    allow-flight=true
+    force-gamemode=true
+    max-players=100
+    view-distance=6
+    ```
+  </Tab>
+  
+  <Tab title="Hardcore Server">
+    ```properties Hardcore Configuration
+    gamemode=survival
+    hardcore=true
+    difficulty=hard
+    pvp=true
+    spawn-monsters=true
+    allow-flight=false
+    max-players=20
+    view-distance=8
+    ```
+  </Tab>
+</Tabs>
+
+## Troubleshooting Settings
+
+<AccordionGroup>
+  <Accordion title="Server Won't Start" icon="exclamation-triangle">
+    **Common Issues**:
+    - Invalid property values
+    - Syntax errors in configuration
+    - Conflicting settings
+    
+    **Solutions**:
+    1. Check server logs for error messages
+    2. Reset to default configuration
+    3. Validate property syntax
+    4. Remove conflicting plugins/mods
+  </Accordion>
+  
+  <Accordion title="Performance Problems" icon="gauge">
+    **Symptoms**:
+    - Low TPS (ticks per second)
+    - Player lag
+    - High resource usage
+    
+    **Solutions**:
+    - Reduce view distance
+    - Lower simulation distance  
+    - Limit entity spawning
+    - Optimize world generation settings
+  </Accordion>
+  
+  <Accordion title="Connection Issues" icon="wifi">
+    **Problems**:
+    - Can't connect to server
+    - Authentication failures
+    - Proxy connection errors
+    
+    **Solutions**:
+    - Verify port settings
+    - Check online-mode configuration
+    - Review firewall settings
+    - Test with different clients
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+<CardGroup>
+  <Card title="Backup Before Changes" icon="floppy-disk">
+    Always backup your server before making significant configuration changes
+  </Card>
+  
+  <Card title="Test Incrementally" icon="flask">
+    Make one change at a time to identify what causes issues
+  </Card>
+  
+  <Card title="Monitor Performance" icon="chart-line">
+    Watch server performance after configuration changes
+  </Card>
+  
+  <Card title="Document Changes" icon="file-text">
+    Keep notes on what settings work best for your server
+  </Card>
+</CardGroup>
+
+<Info>
+  **Pro Tip**: Use the `/gamerule` command in-game for temporary testing before making permanent configuration changes.
+</Info>

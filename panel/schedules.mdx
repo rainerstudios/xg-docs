@@ -1,0 +1,327 @@
+---
+title: Automating Tasks with Schedules
+sidebarTitle: Schedules
+description: Set up automated tasks to run commands, restart servers, and create backups
+icon: calendar-days
+---
+
+<Info>
+  Schedules allow you to automate repetitive tasks like server restarts, backups, and announcements. They use cron syntax for flexible timing options.
+</Info>
+
+## Creating Your First Schedule
+
+<Steps>
+  <Step title="Navigate to Schedules">
+    Click on the **Schedules** tab in your server panel
+  </Step>
+  
+  <Step title="Create New Schedule">
+    Click the **Create Schedule** button
+  </Step>
+  
+  <Step title="Configure Schedule">
+    <Tabs>
+      <Tab title="Basic Settings">
+        - **Name**: Give your schedule a descriptive name (e.g., "Daily Restart")
+        - **Enabled**: Toggle whether the schedule is active
+        - **Only When Server Online**: Run only when server is running
+      </Tab>
+      
+      <Tab title="Timing (Cron)">
+        Enter the schedule timing using these five fields:
+        
+        ```text
+        ┌───────────── minute (0 - 59)
+        │ ┌───────────── hour (0 - 23)
+        │ │ ┌───────────── day of month (1 - 31)
+        │ │ │ ┌───────────── month (1 - 12)
+        │ │ │ │ ┌───────────── day of week (0 - 7)
+        │ │ │ │ │
+        * * * * *
+        ```
+      </Tab>
+    </Tabs>
+  </Step>
+  
+  <Step title="Save Schedule">
+    Click **Create Schedule** to save
+  </Step>
+</Steps>
+
+## Common Schedule Examples
+
+<Tabs>
+  <Tab title="Daily Tasks">
+    <CodeGroup>
+      ```text Daily at 4 AM
+      0 4 * * *
+      ```
+      
+      ```text Twice Daily (6 AM & 6 PM)
+      0 6,18 * * *
+      ```
+      
+      ```text Every Day at Midnight
+      0 0 * * *
+      ```
+    </CodeGroup>
+  </Tab>
+  
+  <Tab title="Hourly Tasks">
+    <CodeGroup>
+      ```text Every Hour
+      0 * * * *
+      ```
+      
+      ```text Every 30 Minutes
+      0,30 * * * *
+      ```
+      
+      ```text Every 3 Hours
+      0 */3 * * *
+      ```
+    </CodeGroup>
+  </Tab>
+  
+  <Tab title="Weekly Tasks">
+    <CodeGroup>
+      ```text Every Monday at 3 AM
+      0 3 * * 1
+      ```
+      
+      ```text Weekends at 10 PM
+      0 22 * * 0,6
+      ```
+      
+      ```text Friday Nights at 8 PM
+      0 20 * * 5
+      ```
+    </CodeGroup>
+  </Tab>
+</Tabs>
+
+## Adding Tasks to Schedules
+
+<Steps>
+  <Step title="Select Your Schedule">
+    Click on the schedule name to open it
+  </Step>
+  
+  <Step title="Create New Task">
+    Click **New Task** button
+  </Step>
+  
+  <Step title="Configure Task Action">
+    <Tabs>
+      <Tab title="Send Command">
+        Execute server commands:
+        
+        ```text Examples
+        say Server restarting in 5 minutes!
+        save-all
+        whitelist reload
+        ```
+      </Tab>
+      
+      <Tab title="Power Action">
+        Control server power state:
+        - **Start**: Start the server
+        - **Stop**: Stop the server
+        - **Restart**: Restart the server
+        - **Kill**: Force stop the server
+      </Tab>
+      
+      <Tab title="Create Backup">
+        Automatically create a backup of your server
+        
+        <Note>
+          Backups created by schedules count toward your backup limit
+        </Note>
+      </Tab>
+    </Tabs>
+  </Step>
+  
+  <Step title="Set Time Offset">
+    **Time Offset** (in seconds): Delay before this task runs after the previous task
+    
+    <Info>
+      Tasks run in order. Use offsets to create sequences like warnings before restarts.
+    </Info>
+  </Step>
+  
+  <Step title="Save Task">
+    Click **Create Task** to add it to the schedule
+  </Step>
+</Steps>
+
+## Practical Schedule Examples
+
+### Daily Server Restart with Warning
+
+<Steps>
+  <Step title="Create Schedule">
+    - Name: "Daily Restart"
+    - Cron: `0 4 * * *` (4 AM daily)
+  </Step>
+  
+  <Step title="Add Warning Tasks">
+    <CodeGroup>
+      ```text Task 1: 5-minute warning
+      Action: Send Command
+      Payload: say Server restarting in 5 minutes!
+      Offset: 0 seconds
+      ```
+      
+      ```text Task 2: 1-minute warning
+      Action: Send Command
+      Payload: say Server restarting in 1 minute! Please disconnect safely.
+      Offset: 240 seconds (4 minutes after task 1)
+      ```
+      
+      ```text Task 3: Final warning
+      Action: Send Command
+      Payload: say Server restarting NOW!
+      Offset: 50 seconds
+      ```
+    </CodeGroup>
+  </Step>
+  
+  <Step title="Add Restart Task">
+    ```text Task 4: Restart
+    Action: Power Action
+    Payload: restart
+    Offset: 10 seconds
+    ```
+  </Step>
+</Steps>
+
+### Automated Backup System
+
+<Steps>
+  <Step title="Create Multiple Schedules">
+    <CardGroup cols={2}>
+      <Card title="Hourly Backups">
+        - Cron: `0 * * * *`
+        - Task: Create Backup
+        - Keep during peak hours
+      </Card>
+      
+      <Card title="Daily Archive">
+        - Cron: `0 3 * * *`
+        - Task: Create Backup
+        - For long-term storage
+      </Card>
+    </CardGroup>
+  </Step>
+  
+  <Step title="Add Cleanup Commands">
+    Add tasks to manage world data:
+    
+    ```text
+    Action: Send Command
+    Payload: purge-old-chunks
+    ```
+  </Step>
+</Steps>
+
+### Scheduled Announcements
+
+<Tabs>
+  <Tab title="Vote Reminders">
+    ```text Every 2 hours
+    Cron: 0 */2 * * *
+    Task: say Don't forget to vote! /vote
+    ```
+  </Tab>
+  
+  <Tab title="Event Notifications">
+    ```text Friday 7 PM
+    Cron: 0 19 * * 5
+    Task: say Weekend event starts in 1 hour!
+    ```
+  </Tab>
+  
+  <Tab title="Maintenance Windows">
+    ```text Sunday 2 AM
+    Cron: 0 2 * * 0
+    Task: say Weekly maintenance in 30 minutes
+    ```
+  </Tab>
+</Tabs>
+
+## Managing Schedules
+
+<CardGroup cols={2}>
+  <Card title="Run Now" icon="play">
+    Test your schedule immediately with the **Run Now** button
+  </Card>
+  
+  <Card title="Enable/Disable" icon="toggle-on">
+    Toggle schedules on/off without deleting them
+  </Card>
+  
+  <Card title="Clone Schedule" icon="copy">
+    Duplicate existing schedules to create variations
+  </Card>
+  
+  <Card title="View Logs" icon="scroll">
+    Check execution history and debug issues
+  </Card>
+</CardGroup>
+
+## Advanced Cron Patterns
+
+<AccordionGroup>
+  <Accordion title="Complex Timing Examples" icon="clock">
+    ```text Every 15 minutes
+    */15 * * * *
+    
+    Weekdays at 9 AM
+    0 9 * * 1-5
+    
+    First Monday of month
+    0 0 1-7 * 1
+    
+    Every 5 minutes between 8 AM and 5 PM
+    */5 8-17 * * *
+    ```
+  </Accordion>
+  
+  <Accordion title="Special Characters" icon="asterisk">
+    - `*` - Any value
+    - `,` - Multiple values (e.g., `1,3,5`)
+    - `-` - Range (e.g., `1-5`)
+    - `/` - Step values (e.g., `*/5`)
+  </Accordion>
+  
+  <Accordion title="Cron Generators" icon="wand-magic-sparkles">
+    Use online tools to generate cron expressions:
+    - [Crontab.guru](https://crontab.guru)
+    - [Cron Expression Generator](https://www.freeformatter.com/cron-expression-generator-quartz.html)
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+<Warning>
+  Always test schedules with **Run Now** before relying on them for critical tasks
+</Warning>
+
+<CardGroup>
+  <Card title="Stagger Schedules" icon="layer-group">
+    Avoid scheduling multiple intensive tasks at the same time
+  </Card>
+  
+  <Card title="Warning Messages" icon="megaphone">
+    Always warn players before restarts or maintenance
+  </Card>
+  
+  <Card title="Backup Before Updates" icon="shield-check">
+    Schedule backups before automated updates or changes
+  </Card>
+  
+  <Card title="Monitor Performance" icon="gauge">
+    Check if scheduled tasks impact server performance
+  </Card>
+</CardGroup>

@@ -1,0 +1,237 @@
+---
+title: Managing Databases
+sidebarTitle: Databases
+description: Create and manage MySQL databases for your game server
+icon: database
+---
+
+<Info>
+  Many game servers require databases to store player data, statistics, and configurations. This guide will help you manage your server's databases.
+</Info>
+
+## Creating a Database
+
+<Steps>
+  <Step title="Navigate to Databases">
+    Click on the **Databases** tab in your server's control panel
+  </Step>
+  
+  <Step title="Create New Database">
+    Click the **New Database** button at the top of the page
+  </Step>
+  
+  <Step title="Configure Database">
+    Enter a name for your database (e.g., `my_server_db`)
+    
+    <Note>
+      Database names should be lowercase and can include underscores
+    </Note>
+  </Step>
+  
+  <Step title="Create Database">
+    Click **Create Database** to finalize the creation
+  </Step>
+</Steps>
+
+## Connecting to Your Database
+
+<Tabs>
+  <Tab title="From Game Server">
+    <Steps>
+      <Step title="Get Connection Details">
+        Click the **eye icon** next to your database to view details
+      </Step>
+      
+      <Step title="Copy Credentials">
+        Use the copy buttons to get:
+        - **Endpoint**: The server address and port
+        - **Username**: Your database username
+        - **Password**: Your secure password
+        - **Database**: The database name
+      </Step>
+      
+      <Step title="Update Configuration">
+        Add these details to your game server's config file:
+        
+        <CodeGroup>
+          ```yaml minecraft/config.yml
+          database:
+            host: 'your-endpoint-here'
+            port: 3306
+            username: 'your-username'
+            password: 'your-password'
+            database: 'your-database-name'
+          ```
+          
+          ```json fivem/server.cfg
+          set mysql_connection_string "mysql://username:password@endpoint:3306/database"
+          ```
+          
+          ```properties rust/oxide.config.json
+          "ConnectionString": "server=endpoint;port=3306;database=dbname;user=username;password=yourpass;"
+          ```
+        </CodeGroup>
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="External Tools">
+    <Steps>
+      <Step title="Choose Your Tool">
+        Popular database management tools:
+        - **HeidiSQL** (Windows)
+        - **DBeaver** (Cross-platform)
+        - **TablePlus** (Mac/Windows)
+        - **phpMyAdmin** (Web-based)
+      </Step>
+      
+      <Step title="Create Connection">
+        Use these connection settings:
+        
+        <Card>
+          <ParamField path="hostname" type="string" required>
+            The endpoint address (without port)
+          </ParamField>
+          <ParamField path="port" type="number" default="3306">
+            MySQL port number
+          </ParamField>
+          <ParamField path="username" type="string" required>
+            Your database username
+          </ParamField>
+          <ParamField path="password" type="string" required>
+            Your database password
+          </ParamField>
+          <ParamField path="database" type="string">
+            The specific database name
+          </ParamField>
+        </Card>
+      </Step>
+      
+      <Step title="Test Connection">
+        Click "Test Connection" in your tool to verify settings
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Database Operations
+
+### Resetting Password
+
+<Warning>
+  Resetting the password will disconnect any active connections. Make sure to update your server configuration immediately after.
+</Warning>
+
+<Steps>
+  <Step title="Open Database Details">
+    Click the **eye icon** next to your database
+  </Step>
+  
+  <Step title="Rotate Password">
+    Click the **Rotate Password** button
+  </Step>
+  
+  <Step title="Update Configurations">
+    Copy the new password and update all server configs using this database
+  </Step>
+</Steps>
+
+### Deleting a Database
+
+<Danger>
+  Deleting a database is permanent and cannot be undone. All data will be lost!
+</Danger>
+
+<Steps>
+  <Step title="Click Delete">
+    Click the **trash icon** next to the database
+  </Step>
+  
+  <Step title="Confirm Deletion">
+    Type the full database name to confirm
+  </Step>
+  
+  <Step title="Delete">
+    Click **Delete Database** to permanently remove it
+  </Step>
+</Steps>
+
+## Common Use Cases
+
+<AccordionGroup>
+  <Accordion title="Multiple Game Modes" icon="layer-group">
+    Create separate databases for different game modes:
+    - `survival_db` - For survival world data
+    - `creative_db` - For creative world data
+    - `minigames_db` - For minigame statistics
+  </Accordion>
+  
+  <Accordion title="Plugin Databases" icon="puzzle">
+    Many plugins require their own database:
+    - **Economy plugins**: Store player balances
+    - **Permission plugins**: Store ranks and permissions
+    - **Logging plugins**: Store player actions
+  </Accordion>
+  
+  <Accordion title="Website Integration" icon="globe">
+    Connect your game server to a website:
+    - Player statistics pages
+    - Online shops
+    - Forum integrations
+    - Vote systems
+  </Accordion>
+</AccordionGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Connection Refused" icon="xmark">
+    **Problem**: Can't connect to database
+    
+    **Solutions**:
+    - Verify the endpoint address is correct
+    - Check if the port is included in the connection string
+    - Ensure password hasn't been changed
+    - Confirm database hasn't been deleted
+  </Accordion>
+  
+  <Accordion title="Access Denied" icon="lock">
+    **Problem**: Authentication failed
+    
+    **Solutions**:
+    - Double-check username and password
+    - Try rotating the password
+    - Ensure you're using the database-specific credentials
+    - Check for special characters that need escaping
+  </Accordion>
+  
+  <Accordion title="Too Many Connections" icon="users">
+    **Problem**: Connection limit reached
+    
+    **Solutions**:
+    - Restart your game server to close stale connections
+    - Check for plugins creating excessive connections
+    - Contact support to increase connection limit
+    - Implement connection pooling in your plugins
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Regular Backups" icon="clock-rotate-left">
+    Export your database regularly, especially before major updates
+  </Card>
+  
+  <Card title="Secure Passwords" icon="shield-check">
+    Use the auto-generated passwords and rotate them periodically
+  </Card>
+  
+  <Card title="Connection Pooling" icon="diagram-project">
+    Configure plugins to reuse connections instead of creating new ones
+  </Card>
+  
+  <Card title="Monitor Usage" icon="chart-line">
+    Keep an eye on database size and query performance
+  </Card>
+</CardGroup>
