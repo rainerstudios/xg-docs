@@ -42,7 +42,8 @@
               "panel/recycle-bin",
               "panel/schedules",
               "panel/startup",
-              "panel/settings"
+              "panel/settings",
+              "panel/activity"
             ]
           },
           {
@@ -106,6 +107,7 @@
               {
                 "group": "Getting Started",
                 "pages": [
+                  "games/minecraft/basic-setup",
                   "games/minecraft/join-server",
                   "games/minecraft/updating-jars",
                   "games/minecraft/changing-versions"
@@ -249,6 +251,25 @@
               "games/soulmask/update-server",
               "games/soulmask/change-server-settings",
               "games/soulmask/banning-and-unbanning-players"
+            ]
+          },
+          {
+            "group": "Arma Reforger",
+            "icon": "helicopter",
+            "pages": [
+              "games/arma-reforger/introduction",
+              {
+                "group": "Getting Started",
+                "pages": [
+                  "games/arma-reforger/basic-setup"
+                ]
+              },
+              {
+                "group": "Mission Creation",
+                "pages": [
+                  "games/arma-reforger/mission-creation-basics"
+                ]
+              }
             ]
           },
           {

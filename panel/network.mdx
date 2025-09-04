@@ -1,0 +1,316 @@
+---
+title: "Network Configuration"
+sidebarTitle: "Network"
+description: "Manage ports, allocations, and subdomain settings for your game server"
+icon: "network-wired"
+---
+
+The Network tab controls all networking aspects of your game server, including port allocations, subdomain management, and traffic monitoring.
+
+## Overview
+
+Network configuration ensures your server is properly accessible to players and external tools. You can manage:
+
+- **Primary Allocation** - Your server's main IP and port
+- **Additional Ports** - Extra ports for plugins, web panels, or RCON
+- **Subdomains** - Custom domains for easier player access
+- **Network Statistics** - Real-time traffic monitoring
+
+<Info>
+Network changes may temporarily disconnect active players. Plan changes during low-traffic periods when possible.
+</Info>
+
+## Primary Allocation
+
+Your server's primary allocation is automatically assigned during setup and includes:
+
+<CardGroup cols={2}>
+  <Card title="IP Address" icon="globe">
+    **Example**: `178.156.160.221`
+    
+    The public IP address players use to connect to your server
+  </Card>
+  
+  <Card title="Port Number" icon="hashtag">
+    **Example**: `25565` (Minecraft default)
+    
+    The specific port your game server listens on
+  </Card>
+</CardGroup>
+
+<Warning>
+Changing your primary allocation may require players to update their connection details and could affect existing bookmarks.
+</Warning>
+
+## Managing Additional Ports
+
+### Creating New Port Allocations
+
+<Steps>
+  <Step title="Click Create Allocation">
+    Navigate to the Network tab and click **Create Allocation**
+  </Step>
+  
+  <Step title="Configure Port Settings">
+    Fill in the allocation details:
+    
+    <ParamField path="IP Address" type="string" default="Auto-assigned">
+      Usually inherits your server's primary IP address
+    </ParamField>
+    
+    <ParamField path="Port" type="number" required>
+      Choose a port between 1024-65535 (must be unique)
+    </ParamField>
+    
+    <ParamField path="Alias" type="string">
+      Optional friendly name for easy identification
+    </ParamField>
+  </Step>
+  
+  <Step title="Save Allocation">
+    Click **Create** to finalize the new port allocation
+  </Step>
+</Steps>
+
+### Common Port Use Cases
+
+<AccordionGroup>
+  <Accordion title="Game Server Ports" icon="gamepad">
+    **Minecraft**:
+    - `25565` - Main server
+    - `25575` - RCON access
+    - `19132` - Bedrock edition
+    
+    **Rust**:
+    - `28015` - Game connection
+    - `28016` - RCON access
+    - `28082` - App/web port
+  </Accordion>
+
+  <Accordion title="Web Management Ports" icon="globe">
+    **Common web panels**:
+    - `8080` - Alternative web access
+    - `8443` - HTTPS web panels  
+    - `9090` - Monitoring dashboards
+    - `3000` - Development servers
+  </Accordion>
+
+  <Accordion title="Query & Stats Ports" icon="chart-line">
+    **Server query protocols**:
+    - `25566` - Minecraft query port
+    - `27015` - Source engine query
+    - `7777` - GameSpy protocol
+    - `8766` - TeamSpeak 3 query
+  </Accordion>
+
+  <Accordion title="Voice Communication" icon="microphone">
+    **Voice servers**:
+    - `9987` - TeamSpeak 3 server
+    - `64738` - Mumble server
+    - `22222` - Discord bot connections
+  </Accordion>
+</AccordionGroup>
+
+## Subdomain Management
+
+### Creating Custom Subdomains
+
+Subdomains provide memorable addresses for your players instead of raw IP addresses.
+
+<Steps>
+  <Step title="Open Subdomain Settings">
+    Click **Create Subdomain** in the Network tab
+  </Step>
+  
+  <Step title="Configure Subdomain">
+    <ParamField path="Subdomain" type="string" required>
+      Choose a unique subdomain (lowercase, no spaces)
+      
+      **Example**: `mc`, `play`, `survival`
+    </ParamField>
+    
+    <ParamField path="Domain" type="string" default="Auto-filled">
+      The base domain provided by XGamingServer
+      
+      **Example**: `dedicatedminecraft.host`
+    </ParamField>
+    
+    <ParamField path="Allocation" type="select" required>
+      Select which port allocation this subdomain should point to
+    </ParamField>
+  </Step>
+  
+  <Step title="DNS Propagation">
+    Wait 5-30 minutes for DNS changes to propagate globally
+  </Step>
+  
+  <Step title="Test Connection">
+    Verify players can connect using the new subdomain
+  </Step>
+</Steps>
+
+### Subdomain Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Descriptive Names" icon="tag">
+    Use clear, game-relevant subdomain names:
+    - `survival.yourdomain.host`
+    - `creative.yourdomain.host`  
+    - `lobby.yourdomain.host`
+  </Card>
+  
+  <Card title="Consistent Branding" icon="palette">
+    Maintain consistent naming across your server network:
+    - `mc-survival.host`
+    - `mc-creative.host`
+    - `mc-events.host`
+  </Card>
+</CardGroup>
+
+## Network Monitoring
+
+### Traffic Statistics
+
+The Network tab displays real-time network usage:
+
+<AccordionGroup>
+  <Accordion title="Current Session" icon="activity">
+    - **Bytes In**: Data received by your server
+    - **Bytes Out**: Data sent by your server  
+    - **Active Connections**: Current player connections
+    - **Peak Concurrent**: Highest simultaneous connections
+  </Accordion>
+
+  <Accordion title="Historical Data" icon="chart-area">
+    - **24-hour trends**: Traffic patterns over the past day
+    - **Weekly overview**: Bandwidth usage across the week
+    - **Monthly totals**: Cumulative data transfer statistics
+  </Accordion>
+</AccordionGroup>
+
+### Understanding Network Usage
+
+<Tip>
+High outbound traffic often indicates:
+- Large world downloads (new players joining)
+- Frequent chunk loading (players exploring)  
+- Plugin data synchronization
+- Automatic backups or file transfers
+</Tip>
+
+## Port Security & Firewall
+
+### Default Security Measures
+
+XGamingServer automatically provides:
+
+- **DDoS Protection** - Filters malicious traffic
+- **Port Isolation** - Each allocation is independently secured
+- **Access Logging** - Connection attempts are recorded
+- **Rate Limiting** - Prevents connection flooding
+
+### Manual Security Configuration
+
+<Steps>
+  <Step title="Review Open Ports">
+    Regularly audit your port allocations and close unused ones
+  </Step>
+  
+  <Step title="Monitor Connection Logs">
+    Check the Activity tab for suspicious connection patterns
+  </Step>
+  
+  <Step title="Use Strong Authentication">
+    Enable passwords/whitelisting for sensitive ports (RCON, web panels)
+  </Step>
+</Steps>
+
+## Troubleshooting Network Issues
+
+<AccordionGroup>
+  <Accordion title="Cannot Connect to Server" icon="plug-circle-exclamation">
+    **Common Causes**:
+    - Server is offline or starting up
+    - Incorrect IP address or port
+    - Firewall blocking the connection
+    - DNS propagation still in progress (for subdomains)
+    
+    **Solutions**:
+    1. Verify server is running in the Console tab
+    2. Double-check connection details
+    3. Try connecting via IP address instead of subdomain
+    4. Wait 30 minutes for DNS updates to complete
+  </Accordion>
+
+  <Accordion title="Port Already in Use" icon="exclamation-triangle">
+    **Problem**: Error when creating new port allocation
+    
+    **Solutions**:
+    - Choose a different port number
+    - Check if another service is using the port
+    - Review existing allocations for conflicts
+    - Contact support if the port should be available
+  </Accordion>
+
+  <Accordion title="High Network Usage" icon="gauge-high">
+    **Problem**: Unexpected bandwidth consumption
+    
+    **Investigation Steps**:
+    1. Check for DDoS attacks in activity logs
+    2. Review recent plugin installations
+    3. Monitor player activity for unusual patterns
+    4. Inspect backup/sync processes
+    
+    **Solutions**:
+    - Implement connection rate limiting
+    - Optimize plugin configurations
+    - Schedule data-intensive tasks during off-peak hours
+  </Accordion>
+
+  <Accordion title="Subdomain Not Working" icon="globe-slash">
+    **Problem**: Players can't connect via custom subdomain
+    
+    **Troubleshooting**:
+    1. Confirm subdomain points to correct allocation
+    2. Test direct IP connection to isolate DNS issues
+    3. Use `nslookup` or `dig` to verify DNS resolution
+    4. Wait additional time for global DNS propagation
+    
+    **DNS Testing Commands**:
+    ```bash
+    # Windows/Linux
+    nslookup your-subdomain.host
+    
+    # Linux/macOS  
+    dig your-subdomain.host
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## Advanced Network Configuration
+
+### Custom Domain Integration
+
+<Note>
+Custom domain setup requires DNS configuration at your domain registrar. Contact support for assistance with advanced DNS configurations.
+</Note>
+
+For enterprise users wanting to use their own domains:
+
+1. **Purchase domain** from a registrar (GoDaddy, Cloudflare, etc.)
+2. **Create DNS records** pointing to your server IP
+3. **Contact support** to configure SSL certificates
+4. **Test thoroughly** before announcing to players
+
+### Load Balancing & Proxies
+
+For high-traffic servers, consider:
+
+- **Reverse proxy setup** (Nginx, Cloudflare)
+- **Multiple server instances** behind a load balancer
+- **Geographic distribution** for global player base
+- **CDN integration** for static content delivery
+
+---
+
+Need help with advanced network configuration? Join our [Discord support server](https://discord.gg/Jx5KjXTsRS) for expert assistance.

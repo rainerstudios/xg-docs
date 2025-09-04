@@ -1,0 +1,525 @@
+---
+title: "Mission Creation Basics"
+description: "Learn the fundamentals of creating missions in Arma Reforger using the mission editor"
+icon: "map"
+---
+
+The mission editor is one of Arma Reforger's most powerful features, allowing you to create custom scenarios, objectives, and environments. This guide will teach you the fundamentals of mission creation from concept to deployment.
+
+<Info>
+This guide assumes you've already set up your server. If not, start with our [Basic Setup Guide](/games/arma-reforger/basic-setup).
+</Info>
+
+## Understanding Missions
+
+### What is a Mission?
+
+An Arma Reforger mission consists of:
+- **Map/Terrain** - The environment where gameplay takes place
+- **Entities** - Players, AI units, vehicles, and objects
+- **Objectives** - Goals and tasks for players to complete
+- **Logic** - Scripts and triggers that control mission flow
+
+### Mission Types
+
+<Tabs>
+  <Tab title="Scenario Missions">
+    **Fixed story-driven experiences**
+    - Predetermined objectives and outcomes
+    - Scripted events and sequences
+    - Best for: Campaign-style gameplay, training scenarios
+  </Tab>
+  
+  <Tab title="Sandbox Missions">
+    **Open-ended gameplay environments**
+    - Player-driven objectives
+    - Emergent gameplay situations
+    - Best for: Persistent worlds, roleplay servers
+  </Tab>
+  
+  <Tab title="Competitive Missions">
+    **Player vs Player focused**
+    - Team-based objectives
+    - Balanced resource allocation
+    - Best for: Tournaments, organized events
+  </Tab>
+</Tabs>
+
+## Getting Started with the Mission Editor
+
+### Accessing the Editor
+
+<Steps>
+  <Step title="Launch Arma Reforger">
+    Open the game from your Steam library
+  </Step>
+  
+  <Step title="Open Mission Editor">
+    From the main menu, select **Mission Editor** (formerly called "World Editor")
+  </Step>
+  
+  <Step title="Choose Your Starting Point">
+    - **Create New Mission** - Start from scratch
+    - **Load Existing** - Modify an existing mission
+    - **Templates** - Use pre-built mission templates
+  </Step>
+</Steps>
+
+### Interface Overview
+
+The mission editor interface consists of several key areas:
+
+<AccordionGroup>
+  <Accordion title="3D Viewport" icon="cube">
+    **Main editing area where you:**
+    - Place and position entities
+    - Navigate the terrain
+    - Preview your mission layout
+    - Test entity interactions
+    
+    **Navigation Controls:**
+    - **WASD** - Move camera
+    - **Mouse** - Look around
+    - **Shift** - Move faster
+    - **Ctrl** - Move slower
+  </Accordion>
+
+  <Accordion title="Entity Browser" icon="list">
+    **Catalog of available objects:**
+    - **Characters** - Player spawns, AI units
+    - **Vehicles** - Cars, trucks, helicopters, tanks
+    - **Structures** - Buildings, fortifications, props
+    - **Weapons & Equipment** - Armaments and gear
+    - **Logic** - Triggers, objectives, scripts
+  </Accordion>
+
+  <Accordion title="Hierarchy Panel" icon="sitemap">
+    **Organization of mission elements:**
+    - View all placed entities
+    - Group related objects
+    - Manage parent-child relationships
+    - Quick selection and navigation
+  </Accordion>
+
+  <Accordion title="Properties Panel" icon="sliders">
+    **Configure selected entities:**
+    - Position, rotation, scale
+    - Entity-specific settings
+    - Scripting parameters
+    - Visual appearance options
+  </Accordion>
+</AccordionGroup>
+
+## Creating Your First Mission
+
+### Step 1: Choose Your Map
+
+Select an appropriate map for your mission:
+
+<CardGroup cols={2}>
+  <Card title="Everon" icon="mountain">
+    **51km² island terrain**
+    - Varied landscapes and elevations
+    - Multiple towns and settlements
+    - Ideal for large-scale operations
+    - Best for: Open warfare, exploration missions
+  </Card>
+  
+  <Card title="Arland" icon="trees">
+    **Smaller forested region**
+    - Dense woodland terrain
+    - Limited open areas
+    - More intimate combat scenarios
+    - Best for: Infantry operations, stealth missions
+  </Card>
+</CardGroup>
+
+### Step 2: Place Player Spawn Points
+
+Every mission needs spawn points where players enter the game:
+
+<Steps>
+  <Step title="Find Player Spawn in Entity Browser">
+    Navigate to **Logic** → **Spawn Points** → **Player Respawn Point**
+  </Step>
+  
+  <Step title="Place Spawn Points">
+    - Click to place in the 3D viewport
+    - Position away from immediate danger
+    - Consider team-based spawning for multiplayer
+  </Step>
+  
+  <Step title="Configure Spawn Settings">
+    In the Properties panel, set:
+    - **Faction** (if team-based)
+    - **Respawn Type** (once, unlimited, etc.)
+    - **Spawn Protection** duration
+  </Step>
+</Steps>
+
+### Step 3: Add AI Units
+
+Populate your mission with computer-controlled characters:
+
+<Tabs>
+  <Tab title="Individual Units">
+    <Steps>
+      <Step title="Select Unit Type">
+        Browse **Entities** → **Characters** and choose:
+        - **Infantry** - Soldiers with various equipment
+        - **Crew** - Vehicle operators
+        - **Specialists** - Medics, engineers, officers
+      </Step>
+      
+      <Step title="Place and Configure">
+        - Position unit in desired location
+        - Set faction allegiance
+        - Configure equipment loadout
+        - Adjust behavior settings (aggressive, defensive, etc.)
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="Groups and Squads">
+    <Steps>
+      <Step title="Create Group Entity">
+        Place a **Group** object from the Logic section
+      </Step>
+      
+      <Step title="Add Units to Group">
+        - Place individual units
+        - Assign them to the group via Properties panel
+        - Set group leader and hierarchy
+      </Step>
+      
+      <Step title="Configure Group Behavior">
+        - **Formation** - How units move together
+        - **Combat Mode** - Aggression level
+        - **Movement Type** - Walking, running, stealth
+        - **Waypoints** - Patrol routes and objectives
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+### Step 4: Place Vehicles and Equipment
+
+Add vehicles and equipment to enhance gameplay:
+
+<AccordionGroup>
+  <Accordion title="Vehicles" icon="car">
+    **Types available:**
+    - **Transport** - Trucks, jeeps, helicopters
+    - **Combat** - Tanks, armored vehicles
+    - **Support** - Medical, repair, supply vehicles
+    
+    **Placement tips:**
+    - Position on roads or clear terrain
+    - Ensure adequate space for movement
+    - Consider fuel and ammunition supplies
+  </Accordion>
+
+  <Accordion title="Weapons & Supplies" icon="gun">
+    **Essential items:**
+    - **Weapon Caches** - Additional armaments
+    - **Ammunition Boxes** - Resupply points
+    - **Medical Supplies** - Health restoration
+    - **Communication Equipment** - Radios, command posts
+    
+    **Strategic placement:**
+    - Near objectives or key locations
+    - Protected but accessible positions
+    - Consider balance between teams
+  </Accordion>
+</AccordionGroup>
+
+### Step 5: Define Objectives
+
+Create goals that give your mission purpose:
+
+<Steps>
+  <Step title="Access Objective System">
+    Find **Logic** → **Objectives** in the Entity Browser
+  </Step>
+  
+  <Step title="Choose Objective Type">
+    Common objective types:
+    - **Destroy Target** - Eliminate specific entity
+    - **Capture Area** - Control geographic location
+    - **Escort Mission** - Protect moving target
+    - **Collect Items** - Gather intelligence/supplies
+  </Step>
+  
+  <Step title="Configure Objective Parameters">
+    Set in Properties panel:
+    - **Title** and **Description** for players
+    - **Success Conditions** - What triggers completion
+    - **Failure Conditions** - What causes mission failure
+    - **Time Limits** - Maximum mission duration
+  </Step>
+  
+  <Step title="Link Objectives to Entities">
+    Connect objectives to relevant mission elements:
+    - Target buildings or units to destroy
+    - Areas to capture or defend
+    - Items to collect or deliver
+  </Step>
+</Steps>
+
+## Advanced Mission Elements
+
+### Environmental Effects
+
+Enhance immersion with dynamic environmental conditions:
+
+<Tabs>
+  <Tab title="Weather System">
+    **Configure dynamic weather:**
+    - **Time of Day** - Dawn, day, dusk, night cycles
+    - **Weather Patterns** - Clear, cloudy, rain, fog
+    - **Visibility Effects** - Fog density, darkness levels
+    - **Wind Conditions** - Affects ballistics and sound
+  </Tab>
+  
+  <Tab title="Atmospheric Settings">
+    **Control ambiance:**
+    - **Ambient Sounds** - Wildlife, distant combat
+    - **Lighting Conditions** - Shadows, contrast
+    - **Particle Effects** - Dust, smoke, debris
+  </Tab>
+</Tabs>
+
+### Trigger Systems
+
+Create dynamic events that respond to player actions:
+
+<Steps>
+  <Step title="Place Trigger Entity">
+    Find **Logic** → **Triggers** and select appropriate type
+  </Step>
+  
+  <Step title="Define Trigger Area">
+    - **Shape** - Sphere, box, or custom polygon
+    - **Size** - Coverage area dimensions
+    - **Activation** - Enter, exit, or presence conditions
+  </Step>
+  
+  <Step title="Set Activation Conditions">
+    Configure what activates the trigger:
+    - **Faction Filter** - Specific teams only
+    - **Unit Type** - Infantry, vehicles, or both
+    - **Player Count** - Minimum/maximum requirements
+  </Step>
+  
+  <Step title="Define Actions">
+    Set what happens when triggered:
+    - **Spawn Entities** - Reinforcements, enemies
+    - **Modify Objectives** - Update mission goals
+    - **Environmental Changes** - Weather, lighting
+    - **Audio/Visual Effects** - Explosions, messages
+  </Step>
+</Steps>
+
+## Testing Your Mission
+
+### Initial Testing
+
+<Steps>
+  <Step title="Save Your Mission">
+    Use **Ctrl+S** or **File** → **Save** to preserve your work
+  </Step>
+  
+  <Step title="Enter Play Mode">
+    Click the **Play** button or press **F5** to test your mission
+  </Step>
+  
+  <Step title="Basic Functionality Check">
+    Verify that:
+    - Player spawns work correctly
+    - AI units behave as expected
+    - Objectives display and function
+    - No immediate crashes or errors occur
+  </Step>
+  
+  <Step title="Return to Edit Mode">
+    Press **Escape** and select **Exit to Editor** to make adjustments
+  </Step>
+</Steps>
+
+### Comprehensive Testing
+
+<AccordionGroup>
+  <Accordion title="Performance Testing" icon="gauge-high">
+    **Monitor system performance:**
+    - Frame rate stability
+    - Memory usage patterns
+    - Network performance (multiplayer)
+    - Loading time benchmarks
+    
+    **Optimization strategies:**
+    - Reduce entity count in dense areas
+    - Limit simultaneous AI activities
+    - Optimize texture and model complexity
+  </Accordion>
+
+  <Accordion title="Gameplay Testing" icon="gamepad">
+    **Evaluate player experience:**
+    - Objective clarity and progression
+    - Difficulty balance and fairness
+    - Player engagement and pacing
+    - Multiplayer team balance
+    
+    **Common issues to check:**
+    - Unreachable objectives
+    - Overpowered or underpowered AI
+    - Confusing navigation or instructions
+    - Unbalanced resource distribution
+  </Accordion>
+
+  <Accordion title="Multiplayer Testing" icon="users">
+    **Test with multiple players:**
+    - Spawn point distribution and fairness
+    - Objective scaling with player count
+    - Team communication and coordination
+    - Server stability under load
+    
+    **Specific multiplayer concerns:**
+    - Network synchronization issues
+    - Player collision and interference
+    - Spectator mode functionality
+    - Reconnection handling
+  </Accordion>
+</AccordionGroup>
+
+## Publishing Your Mission
+
+### Preparing for Release
+
+<Steps>
+  <Step title="Final Quality Check">
+    - Complete thorough testing process
+    - Fix any identified bugs or issues
+    - Optimize performance as needed
+    - Gather feedback from test players
+  </Step>
+  
+  <Step title="Create Mission Documentation">
+    Prepare information for players:
+    - **Brief Description** - Mission overview and goals
+    - **Player Requirements** - Recommended count, skill level
+    - **Special Instructions** - Controls, mechanics, rules
+    - **Credits** - Acknowledge contributors and sources
+  </Step>
+  
+  <Step title="Package Mission Files">
+    Ensure all required files are included:
+    - Main mission file (.enf)
+    - Custom scripts and configurations
+    - Required assets and dependencies
+    - Installation instructions
+  </Step>
+</Steps>
+
+### Distribution Options
+
+<CardGroup cols={2}>
+  <Card title="Steam Workshop" icon="steam" href="https://steamcommunity.com/workshop/browse/?appid=1874900">
+    **Official distribution platform**
+    - Built-in download and installation
+    - Automatic updates for subscribers
+    - Community ratings and feedback
+    - Integrated with game browser
+  </Card>
+  
+  <Card title="Community Forums" icon="comments">
+    **Community-driven sharing**
+    - Direct file downloads
+    - Detailed discussion and feedback
+    - Version control and updates
+    - Custom installation procedures
+  </Card>
+</CardGroup>
+
+## Best Practices for Mission Design
+
+### Design Principles
+
+<AccordionGroup>
+  <Accordion title="Player Experience Focus" icon="user">
+    **Always prioritize the player:**
+    - Clear objectives and instructions
+    - Appropriate difficulty progression
+    - Multiple approaches to objectives
+    - Meaningful choices and consequences
+  </Accordion>
+
+  <Accordion title="Balanced Challenge" icon="scale">
+    **Maintain engagement without frustration:**
+    - Scale difficulty to player skill level
+    - Provide adequate resources and support
+    - Include optional objectives for variety
+    - Test with players of different skill levels
+  </Accordion>
+
+  <Accordion title="Technical Optimization" icon="gear">
+    **Ensure smooth performance:**
+    - Limit simultaneous complex operations
+    - Use LOD (Level of Detail) systems effectively
+    - Optimize script execution frequency
+    - Monitor and reduce memory usage
+  </Accordion>
+
+  <Accordion title="Narrative Coherence" icon="book">
+    **Create believable scenarios:**
+    - Logical unit placement and behavior
+    - Realistic equipment and loadouts
+    - Consistent faction relationships
+    - Immersive environmental storytelling
+  </Accordion>
+</AccordionGroup>
+
+### Common Pitfalls to Avoid
+
+<Warning>
+**Performance Killers:**
+- Placing too many AI units in small areas
+- Overusing complex particle effects
+- Creating excessive trigger overlaps
+- Ignoring frame rate optimization
+
+**Gameplay Issues:**
+- Unclear or impossible objectives
+- Unfair AI advantage or player disadvantage
+- Poor spawn point placement
+- Inadequate testing with real players
+</Warning>
+
+---
+
+## Next Steps
+
+With the basics mastered, consider exploring these advanced topics:
+
+<CardGroup cols={2}>
+  <Card title="Advanced Mission Design" icon="rocket" href="/games/arma-reforger/advanced-mission-design">
+    Learn dynamic events, AI customization, and complex scenarios
+  </Card>
+  
+  <Card title="Scripting Guide" icon="code" href="/games/arma-reforger/scripting-basics">
+    Master Enforce Script for custom behaviors and interactions
+  </Card>
+  
+  <Card title="Custom Assets" icon="palette" href="/games/arma-reforger/custom-assets">
+    Import your own textures, models, and sounds
+  </Card>
+  
+  <Card title="Multiplayer Missions" icon="users" href="/games/arma-reforger/multiplayer-missions">
+    Design engaging multiplayer scenarios and events
+  </Card>
+</CardGroup>
+
+<Note>
+Mission creation is an iterative process. Don't expect perfection on your first attempt. Each mission you create will teach you new techniques and help you develop your skills as a mission designer.
+</Note>
+
+Need help with mission creation? Join our [Discord community](https://discord.gg/Jx5KjXTsRS) to connect with other mission creators and get real-time support.

@@ -1,0 +1,485 @@
+---
+title: "Basic Server Setup"
+description: "Complete guide to setting up and configuring your Minecraft server from scratch"
+icon: "gear"
+---
+
+This comprehensive guide walks you through setting up your Minecraft server on XGamingServer from initial configuration to welcoming your first players.
+
+<Info>
+This guide assumes you've already created a Minecraft server instance through the XGamingServer panel. If you need help creating a server, check our [Getting Started guide](/quickstart).
+</Info>
+
+## Step 1: Choose Your Server Type
+
+The first decision is selecting the right server software for your needs:
+
+<CardGroup cols={2}>
+  <Card title="Paper" icon="scroll">
+    **Best for**: Performance-focused servers
+    - Excellent performance optimizations
+    - Wide plugin compatibility
+    - Regular updates and bug fixes
+    - **Recommended for beginners**
+  </Card>
+  
+  <Card title="Forge" icon="hammer">
+    **Best for**: Modded gameplay
+    - Extensive mod ecosystem
+    - Advanced mod capabilities
+    - Higher resource requirements
+    - Best for experienced users
+  </Card>
+  
+  <Card title="Fabric" icon="shirt">
+    **Best for**: Lightweight modding
+    - Fast startup and performance
+    - Modern modding framework
+    - Growing mod ecosystem
+    - Good balance of features and performance
+  </Card>
+  
+  <Card title="Spigot" icon="plug">
+    **Best for**: Plugin-based servers
+    - Stable and well-tested
+    - Large plugin library
+    - Community-driven development
+    - Good for established servers
+  </Card>
+</CardGroup>
+
+<Steps>
+  <Step title="Navigate to Server Type">
+    Go to the **Server Type** tab in your control panel
+  </Step>
+  
+  <Step title="Select Your Software">
+    Choose from the available options based on your server goals
+  </Step>
+  
+  <Step title="Apply Changes">
+    Your server will automatically download and configure the selected software
+  </Step>
+</Steps>
+
+## Step 2: Configure Resources
+
+Proper resource allocation ensures smooth gameplay for your players:
+
+### Resource Allocation Guidelines
+
+<Tabs>
+  <Tab title="Vanilla Servers">
+    **Recommended for vanilla gameplay:**
+    
+    | Players | CPU Cores | RAM | Disk Space |
+    |---------|-----------|-----|------------|
+    | 1-10    | 1 core    | 2GB | 5GB        |
+    | 10-20   | 2 cores   | 4GB | 10GB       |
+    | 20-50   | 3 cores   | 6GB | 15GB       |
+    | 50+     | 4+ cores  | 8GB+ | 20GB+     |
+  </Tab>
+  
+  <Tab title="Modded Servers">
+    **Recommended for modded gameplay:**
+    
+    | Mod Count | CPU Cores | RAM | Disk Space |
+    |-----------|-----------|-----|------------|
+    | 1-50      | 2 cores   | 4GB | 10GB       |
+    | 50-150    | 3 cores   | 8GB | 20GB       |
+    | 150-300   | 4 cores   | 12GB | 30GB      |
+    | 300+      | 6+ cores  | 16GB+ | 50GB+    |
+  </Tab>
+</Tabs>
+
+<Warning>
+Under-allocating resources can cause server crashes, lag, and poor player experience. It's better to start with slightly more resources than you think you need.
+</Warning>
+
+## Step 3: Basic Server Configuration
+
+### Essential server.properties Settings
+
+Navigate to **File Manager** and edit the `server.properties` file:
+
+```properties
+# Server Identity
+server-name=My Awesome Server
+motd=Welcome to my Minecraft server!
+
+# Basic Settings  
+gamemode=survival
+difficulty=normal
+max-players=20
+
+# World Generation
+level-name=world
+level-type=minecraft:normal
+generate-structures=true
+
+# Performance Settings
+view-distance=10
+simulation-distance=8
+
+# Security Settings
+online-mode=true
+enable-whitelist=false
+
+# Networking
+server-port=25565
+query.port=25565
+```
+
+<AccordionGroup>
+  <Accordion title="Gamemode Options">
+    - **survival**: Players must gather resources and can die
+    - **creative**: Players have unlimited resources and can fly  
+    - **adventure**: Custom maps with limited block interaction
+    - **spectator**: Players can observe but not interact
+  </Accordion>
+  
+  <Accordion title="Difficulty Levels">
+    - **peaceful**: No hostile mobs, health regenerates
+    - **easy**: Reduced damage from mobs and environment
+    - **normal**: Standard gameplay balance
+    - **hard**: Maximum challenge with full damage
+  </Accordion>
+  
+  <Accordion title="Performance Considerations">
+    - **view-distance**: Higher values = more world loaded = more RAM/CPU usage
+    - **simulation-distance**: Affects mob spawning and crop growth radius
+    - **max-players**: More players = higher resource requirements
+  </Accordion>
+</AccordionGroup>
+
+## Step 4: Security & User Management
+
+### Setting Up Operators
+
+Grant yourself admin permissions:
+
+<Steps>
+  <Step title="Start Your Server">
+    Use the **Console** tab to boot up your server
+  </Step>
+  
+  <Step title="Add Yourself as Operator">
+    In the console, type:
+    ```
+    op YourMinecraftUsername
+    ```
+  </Step>
+  
+  <Step title="Verify Permissions">
+    Join the server and test admin commands like `/gamemode creative`
+  </Step>
+</Steps>
+
+### Whitelist Configuration (Recommended)
+
+For better control over who can join:
+
+```bash
+# Enable whitelist
+whitelist on
+
+# Add players
+whitelist add PlayerName
+whitelist add AnotherPlayer
+
+# View whitelist
+whitelist list
+```
+
+## Step 5: Essential Plugins Installation
+
+### Recommended Starter Plugins
+
+<CardGroup cols={2}>
+  <Card title="EssentialsX" icon="toolbox">
+    **Core functionality plugin**
+    - Home and teleport commands
+    - Economy system
+    - Player kits and warps
+    - Chat formatting
+  </Card>
+  
+  <Card title="WorldEdit" icon="globe-americas">
+    **World editing tool**
+    - Large-scale building tools
+    - Copy/paste structures  
+    - Terrain modification
+    - Essential for builders
+  </Card>
+  
+  <Card title="LuckPerms" icon="users-gear">
+    **Advanced permissions**
+    - Detailed permission control
+    - Group-based permissions
+    - Web interface
+    - Database support
+  </Card>
+  
+  <Card title="CoreProtect" icon="shield-check">
+    **Anti-grief protection**
+    - Block change logging
+    - Rollback capabilities
+    - Player action tracking
+    - Essential for public servers
+  </Card>
+</CardGroup>
+
+### Plugin Installation Process
+
+<Steps>
+  <Step title="Browse Available Plugins">
+    Use the **Plugins** tab to search for plugins by name
+  </Step>
+  
+  <Step title="Install Plugins">
+    Click **Install** next to your desired plugins
+  </Step>
+  
+  <Step title="Restart Server">
+    Restart your server to load the new plugins
+  </Step>
+  
+  <Step title="Configure Plugins">
+    Edit plugin config files in the **File Manager** as needed
+  </Step>
+</Steps>
+
+## Step 6: World Management
+
+### Creating Custom Worlds
+
+<Tabs>
+  <Tab title="Upload Existing World">
+    <Steps>
+      <Step title="Prepare World Folder">
+        Ensure your world folder contains `level.dat` and region files
+      </Step>
+      
+      <Step title="Stop Server">
+        Use the console to stop your server safely
+      </Step>
+      
+      <Step title="Upload via File Manager">
+        Navigate to your server root and upload the world folder
+      </Step>
+      
+      <Step title="Update server.properties">
+        Change `level-name=YourWorldName` to match the uploaded folder
+      </Step>
+      
+      <Step title="Start Server">
+        Boot up the server to load your custom world
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="Generate New World">
+    <Steps>
+      <Step title="Stop Server">
+        Always stop the server before changing world settings
+      </Step>
+      
+      <Step title="Edit World Settings">
+        In `server.properties`, modify:
+        ```properties
+        level-name=NewWorldName
+        level-type=minecraft:amplified  # or flat, normal, etc.
+        level-seed=YourSeedHere
+        ```
+      </Step>
+      
+      <Step title="Delete Old World (Optional)">
+        Remove the old world folder to free up space
+      </Step>
+      
+      <Step title="Start Server">
+        The server will generate a new world based on your settings
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Step 7: Performance Optimization
+
+### Java Flags (Aikar's Flags)
+
+For optimal performance, configure Java startup flags:
+
+<CodeGroup>
+  ```bash 2-4GB RAM
+  java -Xms2G -Xmx2G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar server.jar nogui
+  ```
+  
+  ```bash 4-8GB RAM  
+  java -Xms4G -Xmx4G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true -jar server.jar nogui
+  ```
+</CodeGroup>
+
+### Additional Performance Settings
+
+```properties
+# In server.properties
+max-tick-time=60000
+network-compression-threshold=256
+
+# Entity and spawn settings
+spawn-limits.monsters=70
+spawn-limits.animals=10
+spawn-limits.water-animals=15
+spawn-limits.ambient=15
+```
+
+## Step 8: Backup Strategy
+
+### Automated Backup Setup
+
+<Steps>
+  <Step title="Navigate to Schedules">
+    Go to the **Schedules** tab in your control panel
+  </Step>
+  
+  <Step title="Create Backup Schedule">
+    Set up automated backups:
+    - **Frequency**: Daily at 3 AM (off-peak hours)
+    - **Action**: Create Backup
+    - **Retention**: Keep last 7 backups
+  </Step>
+  
+  <Step title="Test Backup">
+    Create a manual backup to ensure the process works
+  </Step>
+</Steps>
+
+<Tip>
+Store critical backups offline (download them locally) for extra protection against data loss.
+</Tip>
+
+## Step 9: Final Testing
+
+### Pre-Launch Checklist
+
+<AccordionGroup>
+  <Accordion title="Server Accessibility" icon="globe">
+    - [ ] Server starts without errors
+    - [ ] Players can connect using the server IP
+    - [ ] Subdomain (if configured) works correctly
+    - [ ] No connection timeout issues
+  </Accordion>
+  
+  <Accordion title="Permissions & Security" icon="shield">
+    - [ ] Operator permissions work correctly
+    - [ ] Whitelist functions properly (if enabled)
+    - [ ] Plugin permissions are configured
+    - [ ] Anti-grief protection is active
+  </Accordion>
+  
+  <Accordion title="Performance & Stability" icon="gauge-high">
+    - [ ] TPS remains at 20 during normal gameplay
+    - [ ] Memory usage is within acceptable limits
+    - [ ] No frequent garbage collection pauses
+    - [ ] Plugins load without conflicts
+  </Accordion>
+  
+  <Accordion title="Backup & Recovery" icon="clock-rotate-left">
+    - [ ] Manual backup creation works
+    - [ ] Scheduled backups are configured
+    - [ ] Backup restoration process tested
+    - [ ] Critical files are included in backups
+  </Accordion>
+</AccordionGroup>
+
+## Step 10: Launch & Community Building
+
+### Going Live
+
+<Steps>
+  <Step title="Announce Your Server">
+    Share your server details with friends or communities
+  </Step>
+  
+  <Step title="Monitor Performance">
+    Keep an eye on the **Console** and resource usage during initial player influx
+  </Step>
+  
+  <Step title="Gather Feedback">
+    Ask early players for feedback on gameplay, performance, and features
+  </Step>
+  
+  <Step title="Iterate and Improve">
+    Make adjustments based on player feedback and server performance data
+  </Step>
+</Steps>
+
+### Community Resources
+
+<CardGroup cols={2}>
+  <Card title="Player Communication" icon="comments">
+    Set up Discord or forums for out-of-game communication
+  </Card>
+  
+  <Card title="Server Listing" icon="list">
+    Submit your server to directories like Planet Minecraft or Minecraft-Server-List
+  </Card>
+  
+  <Card title="Documentation" icon="book">
+    Create guides for your players explaining rules, commands, and features
+  </Card>
+  
+  <Card title="Regular Events" icon="calendar">
+    Plan regular events, contests, or community activities
+  </Card>
+</CardGroup>
+
+---
+
+## Troubleshooting Common Setup Issues
+
+<AccordionGroup>
+  <Accordion title="Server Won't Start" icon="circle-exclamation">
+    **Common causes:**
+    - Insufficient RAM allocation
+    - Corrupted world files
+    - Plugin conflicts
+    - Invalid server.properties settings
+    
+    **Solutions:**
+    1. Check console logs for specific error messages
+    2. Increase RAM allocation in server settings
+    3. Remove recently added plugins
+    4. Reset server.properties to default values
+  </Accordion>
+  
+  <Accordion title="Poor Performance" icon="gauge-low">
+    **Symptoms:**
+    - TPS below 20
+    - Player lag and connection timeouts
+    - High memory usage
+    
+    **Solutions:**
+    1. Apply Aikar's Java flags
+    2. Reduce view-distance and simulation-distance
+    3. Limit maximum players
+    4. Remove resource-intensive plugins
+    5. Optimize world settings
+  </Accordion>
+  
+  <Accordion title="Players Cannot Connect" icon="plug-circle-exclamation">
+    **Troubleshooting steps:**
+    1. Verify server is running and shows "Done!" in console
+    2. Check if server IP and port are correct
+    3. Ensure online-mode matches player account type
+    4. Test whitelist settings if enabled
+    5. Check for firewall or network issues
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+This guide provides a solid foundation for your Minecraft server. As your server grows and evolves, explore advanced topics like custom plugins, complex redstone contraptions, and community management strategies.
+</Note>
+
+Need additional help? Join our [Discord community](https://discord.gg/Jx5KjXTsRS) for real-time support and tips from other server administrators.

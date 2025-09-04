@@ -1,0 +1,234 @@
+---
+title: "Activity & Audit Logs"
+sidebarTitle: "Activity"
+description: "Monitor server events, track user actions, and review audit trails for your XGamingServer instance"
+icon: "clock-rotate-left"
+---
+
+The Activity tab provides a comprehensive audit trail of all server events, including administrative actions, server state changes, user activity logs, and system warnings or errors.
+
+## Overview
+
+The Activity feed displays a chronological timeline of server events, helping you:
+
+- **Track administrative actions** performed by you and subusers
+- **Monitor server state changes** (starts, stops, restarts)
+- **Review user activity** for security and accountability
+- **Identify system issues** through warnings and error logs
+
+<Info>
+All timestamps are displayed in your local timezone and include the user's IP address for security tracking.
+</Info>
+
+## Event Types
+
+<AccordionGroup>
+  <Accordion title="Power Actions" icon="power-off">
+    Records all server power state changes:
+    - **Server started** by admin@email.com
+    - **Server restarted** by admin@email.com  
+    - **Server stopped** by admin@email.com
+    - **Server crashed** - System event
+    
+    Each power action includes the full startup command used and execution time.
+  </Accordion>
+
+  <Accordion title="File Operations" icon="file-edit">
+    Tracks all file management activities:
+    - **File uploaded**: `server.properties`
+    - **File edited**: `config.yml`
+    - **File deleted**: `old_backup.zip`
+    - **Directory created**: `plugins/`
+    
+    Shows the specific user who performed the action and affected file paths.
+  </Accordion>
+
+  <Accordion title="User Management" icon="users">
+    Records subuser and permission changes:
+    - **Subuser added**: moderator@email.com
+    - **Subuser removed**: former-admin@email.com
+    - **Permissions modified** for existing subuser
+    - **Login attempts** (both successful and failed)
+  </Accordion>
+
+  <Accordion title="Backup Operations" icon="database">
+    Documents all backup-related activities:
+    - **Backup created**: "Pre-Update Backup"
+    - **Backup restored**: "Rollback to stable version"
+    - **Backup deleted**: Automated cleanup
+    - **Scheduled backup** execution status
+  </Accordion>
+
+  <Accordion title="Security Events" icon="shield-exclamation">
+    Alerts for security-related incidents:
+    - **Failed login attempts** from unknown IPs
+    - **Permission denied** actions
+    - **Suspicious file access** patterns
+    - **SFTP connection attempts**
+  </Accordion>
+</AccordionGroup>
+
+## Filtering & Search
+
+Refine the activity log using the built-in filtering options:
+
+### Time Range Filters
+- **Last 24 hours** - Recent activity
+- **Last 7 days** - Weekly overview
+- **Last 30 days** - Monthly audit
+- **Custom range** - Specify exact dates
+
+### Event Type Filters
+- **Power Actions** - Server start/stop/restart events
+- **File Management** - Upload, edit, delete operations
+- **User Actions** - Login, permission changes
+- **System Events** - Automated processes, errors
+
+### User-Specific Filtering
+- Filter by **primary admin** actions
+- Filter by **specific subuser** activity
+- Show **system-generated** events only
+
+### Keyword Search
+Use the search bar to find specific events:
+```
+"backup failed"
+"config.yml"  
+"192.168.1.100"
+```
+
+## Detailed Event Information
+
+Click on any activity entry to view comprehensive details:
+
+<CardGroup cols={2}>
+  <Card title="Execution Context" icon="info-circle">
+    - **Full command or action** that was performed
+    - **Working directory** where the action occurred
+    - **Process ID** and execution time
+    - **Exit codes** for completed operations
+  </Card>
+  
+  <Card title="User Information" icon="user">
+    - **Account email** and display name
+    - **Source IP address** and geolocation
+    - **Session details** and authentication method
+    - **Permission level** at time of action
+  </Card>
+</CardGroup>
+
+## Common Use Cases
+
+### Security Auditing
+<Steps>
+  <Step title="Review Failed Logins">
+    Filter events by "Security" type to identify unauthorized access attempts
+  </Step>
+  
+  <Step title="Track Permission Changes">
+    Monitor user management events for suspicious permission modifications
+  </Step>
+  
+  <Step title="Verify File Access">
+    Check file operation logs to ensure only authorized changes were made
+  </Step>
+</Steps>
+
+### Troubleshooting Server Issues
+<Steps>
+  <Step title="Identify Error Patterns">
+    Search for error keywords to find recurring issues
+  </Step>
+  
+  <Step title="Cross-Reference with Console">
+    Use timestamps to correlate activity logs with console output
+  </Step>
+  
+  <Step title="Track Configuration Changes">
+    Review recent file edits that may have caused server problems
+  </Step>
+</Steps>
+
+### Accountability & Team Management
+<Steps>
+  <Step title="Monitor Team Activity">
+    Filter by individual team members to review their actions
+  </Step>
+  
+  <Step title="Document Changes">
+    Use activity logs as evidence for change management processes
+  </Step>
+  
+  <Step title="Identify Training Needs">
+    Look for patterns that suggest team members need additional guidance
+  </Step>
+</Steps>
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Regular Reviews" icon="calendar-check">
+    Schedule weekly activity log reviews to maintain security awareness and catch issues early
+  </Card>
+  
+  <Card title="Document Incidents" icon="file-text">
+    Export relevant activity logs when reporting issues to support or for compliance records
+  </Card>
+  
+  <Card title="Monitor Automation" icon="robot">
+    Keep an eye on scheduled tasks and automated processes to ensure they're working correctly
+  </Card>
+  
+  <Card title="Set Up Alerts" icon="bell">
+    Configure external monitoring tools to alert on specific activity patterns if needed
+  </Card>
+</CardGroup>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Missing Activity Logs" icon="exclamation-triangle">
+    **Problem**: Recent actions aren't showing in the activity feed
+    
+    **Solutions**:
+    - Refresh the page to load the latest events
+    - Check if time range filters are excluding recent activity
+    - Verify that the action actually completed successfully
+  </Accordion>
+
+  <Accordion title="Unknown User in Logs" icon="user-question">
+    **Problem**: Activity shows "Unknown user" for some actions
+    
+    **Explanation**:
+    - User account was deleted but historical actions remain logged
+    - System-generated events may not have an associated user
+    - This is normal behavior and maintains audit trail integrity
+  </Accordion>
+
+  <Accordion title="Suspicious Activity Detected" icon="shield-exclamation">
+    **Problem**: Unusual patterns or unauthorized access attempts
+    
+    **Immediate Actions**:
+    1. Change all account passwords immediately
+    2. Revoke access for suspicious subuser accounts  
+    3. Enable two-factor authentication if not already active
+    4. Contact support with the relevant activity log details
+  </Accordion>
+</AccordionGroup>
+
+## Exporting Activity Data
+
+For compliance or detailed analysis, you can export activity data:
+
+1. **Set appropriate filters** to narrow down the events you need
+2. **Copy relevant entries** using browser selection tools
+3. **Screenshot important events** for visual documentation
+4. **Contact support** for bulk export assistance if needed
+
+<Tip>
+Activity logs are retained for 90 days. For long-term audit requirements, consider regularly exporting important events.
+</Tip>
+
+---
+
+Need help analyzing suspicious activity? Join our [Discord support server](https://discord.gg/Jx5KjXTsRS) and include your **Server ID** when submitting tickets.

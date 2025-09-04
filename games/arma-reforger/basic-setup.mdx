@@ -1,0 +1,395 @@
+---
+title: "Basic Server Setup"
+description: "Learn how to install and configure your Arma Reforger server for the first time"
+icon: "server"
+---
+
+Setting up your Arma Reforger server is the foundation for hosting immersive military simulation experiences. This comprehensive guide walks you through installation, configuration, and initial testing.
+
+<Info>
+This guide assumes you have a basic understanding of game server management. For complete beginners, start with our [Introduction to Game Servers](/quickstart) guide.
+</Info>
+
+## System Requirements
+
+Before setting up your server, ensure you meet the minimum requirements:
+
+<Tabs>
+  <Tab title="Minimum Requirements">
+    | Component | Specification |
+    |-----------|---------------|
+    | **OS** | Windows 10 (64-bit) or Linux Ubuntu 18.04+ |
+    | **CPU** | Intel Core i5-4460 or AMD FX-6300 |
+    | **RAM** | 8 GB |
+    | **GPU** | NVIDIA GTX 960 or AMD RX 570 |
+    | **Storage** | 20 GB free space |
+    | **Network** | Broadband internet connection |
+  </Tab>
+  
+  <Tab title="Recommended Requirements">
+    | Component | Specification |
+    |-----------|---------------|
+    | **OS** | Windows 11 (64-bit) or Linux Ubuntu 22.04+ |
+    | **CPU** | Intel Core i7-6700K or AMD Ryzen 5 2600X |
+    | **RAM** | 16 GB or higher |
+    | **GPU** | NVIDIA GTX 1060 or AMD RX 580 |
+    | **Storage** | 50 GB free space (SSD recommended) |
+    | **Network** | High-speed broadband with low latency |
+  </Tab>
+</Tabs>
+
+<Warning>
+Arma Reforger is CPU-intensive. Performance scales significantly with processor quality and RAM capacity.
+</Warning>
+
+## Step 1: Server Installation
+
+### Using XGamingServer (Recommended)
+
+<Steps>
+  <Step title="Access Your Server">
+    Log into your XGamingServer control panel and select your Arma Reforger server instance
+  </Step>
+  
+  <Step title="Verify Installation">
+    The server files should be automatically downloaded and configured. Check the **File Manager** to confirm the installation
+  </Step>
+  
+  <Step title="Initial Boot">
+    Use the **Console** tab to start your server for the first time and verify it loads without errors
+  </Step>
+</Steps>
+
+### Manual Installation (Advanced Users)
+
+For those self-hosting, you can install using SteamCMD:
+
+<CodeGroup>
+  ```bash Linux
+  # Download and install SteamCMD
+  wget https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz
+  tar -xvzf steamcmd_linux.tar.gz
+  
+  # Install Arma Reforger server
+  ./steamcmd.sh +force_install_dir ./arma-reforger_server/ +login anonymous +app_update 1874900 +quit
+  ```
+  
+  ```cmd Windows
+  # Download SteamCMD from Valve's website
+  # Extract to C:\SteamCMD\
+  
+  # Install Arma Reforger server
+  steamcmd.exe +force_install_dir c:\SteamCMD\arma-reforger_server\ +login anonymous +app_update 1874900 +quit
+  ```
+</CodeGroup>
+
+## Step 2: Basic Server Configuration
+
+### Server Settings File
+
+Navigate to your server's configuration directory and create/edit the `server.cfg` file:
+
+```properties
+# Server Identity
+hostname="My Arma Reforger Server"
+password=""  # Leave empty for public server
+
+# Player Limits
+maxPlayers=20
+
+# Mission Configuration  
+mission="DefaultMission"
+missionTimeout=600
+
+# Network Settings
+port=2302
+queryPort=2303
+
+# Performance Settings
+maxDesyncTime=60
+maxPacketLoss=50
+
+# Logging
+logLevel=2
+logFile="server.log"
+
+# Security
+verifySignatures=2
+kickDuplicate=1
+```
+
+<AccordionGroup>
+  <Accordion title="Server Identity Options">
+    - **hostname**: Server name displayed in browser (max 64 characters)
+    - **password**: Server password for private servers (leave empty for public)
+    - **admin**: Admin password for server management
+  </Accordion>
+  
+  <Accordion title="Mission Settings">
+    - **mission**: Name of the mission file to load
+    - **missionTimeout**: Time limit for missions in seconds
+    - **template**: Mission template to use for dynamic missions
+  </Accordion>
+  
+  <Accordion title="Network Configuration">
+    - **port**: Main server port (default: 2302)
+    - **queryPort**: Query port for server browsers (default: 2303)
+    - **maxDesyncTime**: Maximum allowed desync before kick
+    - **maxPacketLoss**: Maximum packet loss percentage before kick
+  </Accordion>
+</AccordionGroup>
+
+### Port Configuration
+
+Ensure the following ports are open and accessible:
+
+| Port | Protocol | Purpose |
+|------|----------|---------|
+| 2302 | UDP | Main game traffic |
+| 2303 | UDP | Server queries |
+| 2304-2306 | UDP | Additional traffic (if needed) |
+
+<Steps>
+  <Step title="Configure Firewall">
+    Open the required ports in your firewall or router
+  </Step>
+  
+  <Step title="Verify Port Accessibility">
+    Use online port checkers to confirm ports are reachable
+  </Step>
+  
+  <Step title="Test Connection">
+    Attempt to connect from a different network to verify accessibility
+  </Step>
+</Steps>
+
+## Step 3: Mission Setup
+
+### Default Mission Configuration
+
+Create a basic mission to get started:
+
+<Steps>
+  <Step title="Access Mission Editor">
+    Launch Arma Reforger and open the **Mission Editor** from the main menu
+  </Step>
+  
+  <Step title="Select Map">
+    Choose from available maps:
+    - **Everon**: Large island map with varied terrain
+    - **Arland**: Smaller map ideal for focused scenarios
+  </Step>
+  
+  <Step title="Place Essential Elements">
+    Add the following to your mission:
+    - **Player spawn points** (where players start)
+    - **Objectives** (capture points, destroy targets, etc.)
+    - **Vehicles and equipment** (transport, weapons, supplies)
+    - **AI units** (enemies, friendlies, civilians)
+  </Step>
+  
+  <Step title="Save and Export">
+    Save your mission and export it to the server's missions folder
+  </Step>
+</Steps>
+
+### Mission File Structure
+
+Your missions should be organized as follows:
+
+```
+/missions/
+├── YourMission.enf          # Main mission file
+├── YourMission/             # Mission folder
+│   ├── scripts/             # Custom scripts
+│   ├── prefabs/             # Custom objects
+│   └── textures/            # Custom textures
+```
+
+## Step 4: Advanced Configuration
+
+### Performance Optimization
+
+Edit server settings for optimal performance:
+
+```properties
+# Advanced Performance Settings
+maxFPS=50
+minFPS=20
+memoryPointLimit=1000000
+
+# AI Settings  
+aiSkill=0.8
+aiAccuracy=0.6
+aiShake=0.5
+
+# Vehicle Settings
+maxVehicles=50
+vehicleRespawnTime=300
+
+# Cleanup Settings
+deadBodyRemovalTime=600
+wreckRemovalTime=1800
+```
+
+### Security Configuration
+
+Implement security measures:
+
+```properties
+# Anti-cheat Settings
+verifySignatures=2  # Strict signature verification
+kickDuplicate=1     # Kick duplicate UIDs
+maxPing=300         # Maximum allowed ping
+
+# Admin Settings
+adminPassword="YourSecureAdminPassword"
+enableAdmin=1
+
+# Logging for Security
+logLevel=3          # Detailed logging
+auditLog=1          # Enable audit logging
+```
+
+<Warning>
+Never use default or weak admin passwords. Use a strong, unique password for server administration.
+</Warning>
+
+## Step 5: Testing Your Server
+
+### Initial Server Test
+
+<Steps>
+  <Step title="Start Server">
+    Use the console to start your server and monitor startup messages
+  </Step>
+  
+  <Step title="Check Server Status">
+    Verify the server appears in the in-game browser or use external server browsers
+  </Step>
+  
+  <Step title="Test Connection">
+    Connect from the game client and verify you can:
+    - Join the server successfully
+    - Spawn without errors
+    - Move around the map
+    - Access basic game functions
+  </Step>
+  
+  <Step title="Load Testing">
+    If possible, have multiple people connect simultaneously to test stability
+  </Step>
+</Steps>
+
+### Common Startup Issues
+
+<AccordionGroup>
+  <Accordion title="Server Not Starting" icon="circle-exclamation">
+    **Symptoms**: Server fails to boot or crashes immediately
+    
+    **Common Causes**:
+    - Missing or corrupted game files
+    - Invalid configuration syntax
+    - Insufficient system resources
+    - Port conflicts with other services
+    
+    **Solutions**:
+    1. Verify game files through Steam or reinstall
+    2. Check server.cfg for syntax errors
+    3. Ensure adequate RAM and CPU resources
+    4. Check for port conflicts using `netstat` command
+  </Accordion>
+  
+  <Accordion title="Cannot Connect to Server" icon="plug-circle-exclamation">
+    **Symptoms**: Server starts but players cannot connect
+    
+    **Common Causes**:
+    - Firewall blocking connections
+    - Incorrect IP or port configuration
+    - Server overloaded or crashed
+    - Network routing issues
+    
+    **Solutions**:
+    1. Verify firewall and port forwarding settings
+    2. Double-check IP address and port numbers
+    3. Monitor server resources and stability
+    4. Test connection from different networks
+  </Accordion>
+  
+  <Accordion title="Mission Loading Errors" icon="map">
+    **Symptoms**: Server starts but missions fail to load
+    
+    **Common Causes**:
+    - Missing mission files
+    - Corrupted mission data
+    - Incompatible mods or addons
+    - Insufficient permissions
+    
+    **Solutions**:
+    1. Verify mission files are complete and in correct location
+    2. Try loading different missions to isolate issues
+    3. Remove recently added mods to test compatibility
+    4. Check file and folder permissions
+  </Accordion>
+</AccordionGroup>
+
+## Step 6: Basic Administration
+
+### Admin Commands
+
+Connect to your server and use these essential admin commands:
+
+```bash
+# Player Management
+#shutdown 5          # Shutdown server in 5 minutes
+#kick PlayerName     # Kick a player
+#ban PlayerName      # Ban a player
+
+# Mission Control
+#mission MissionName # Load specific mission
+#restart            # Restart current mission
+
+# Server Information
+#players            # List connected players
+#status             # Show server status
+#uptime             # Display server uptime
+```
+
+### Log Monitoring
+
+Monitor your server logs for:
+
+- **Connection Events**: Player joins, leaves, timeouts
+- **Error Messages**: Script errors, missing files, network issues
+- **Performance Metrics**: FPS, memory usage, network traffic
+- **Security Events**: Failed admin attempts, suspicious activity
+
+## Next Steps
+
+With your basic server setup complete, consider these next steps:
+
+<CardGroup cols={2}>
+  <Card title="Create Custom Missions" icon="map" href="/games/arma-reforger/missions/mission-creation-basics">
+    Design engaging scenarios for your players
+  </Card>
+  
+  <Card title="Performance Tuning" icon="gauge-high" href="/games/arma-reforger/server-management/performance-optimization">
+    Optimize your server for better performance
+  </Card>
+  
+  <Card title="Community Management" icon="users" href="/games/arma-reforger/community/hosting-events">
+    Build and manage your player community
+  </Card>
+  
+  <Card title="Advanced Scripting" icon="code" href="/games/arma-reforger/scripting/introduction-to-scripting">
+    Add custom functionality with Enforce Script
+  </Card>
+</CardGroup>
+
+---
+
+<Note>
+This guide provides the foundation for your Arma Reforger server. As you become more comfortable with server management, explore advanced topics like custom scripting, persistent worlds, and complex mission design.
+</Note>
+
+Need assistance with server setup? Join our [Discord community](https://discord.gg/Jx5KjXTsRS) for real-time support from our team and fellow server administrators.
