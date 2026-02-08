@@ -312,8 +312,8 @@
     }
   ],
   "logo": {
-    "light": "/logo/light-new.webp",
-    "dark": "/logo/dark-new.webp"
+    "light": "/logo/dark.svg",
+    "dark": "/logo/dark.svg"
   },
   "background": {
     "color": {
